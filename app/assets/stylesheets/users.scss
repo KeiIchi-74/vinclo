@@ -3,6 +3,7 @@
 @import 'users/shared/font-size';
 @import 'users/shared/font-weight';
 @import 'users/shared/header';
+@import 'users/shared/footer';
 
 /* universal */
 
@@ -11,4 +12,10 @@ header {
   box-shadow: $shadow 0px 2px 4px;
   position: relative;
   z-index: 3;
+}
+
+footer {
+  background-color: $black;
+  color: $white;
+  padding: 0px 20px 10px;
 }
