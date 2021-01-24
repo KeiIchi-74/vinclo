@@ -1,0 +1,14 @@
+@import 'users/shared/custom-variables';
+
+@import 'users/shared/font-size';
+@import 'users/shared/font-weight';
+@import 'users/shared/header';
+
+/* universal */
+
+header {
+  background-color: $white;
+  box-shadow: $shadow 0px 2px 4px;
+  position: relative;
+  z-index: 3;
+}

@@ -1,0 +1,66 @@
+.header-bottom-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+
+  .header-bottom-selector-container {
+    display: flex;
+    margin-left: -3px;
+
+    .header-bottom-selector {
+      cursor: pointer;
+      height: 44px;
+      padding: 0px 10px;
+      position: relative;
+      z-index: 3;
+
+      .header-bottom-selector-a {
+        display: block;
+        line-height: 36px;
+        white-space: nowrap;
+
+        .fa-home {
+          color: $red;
+        }
+      }
+    }
+  }
+
+  .header-bottom-button {
+    display: flex;
+    cursor: pointer;
+
+    .register-button {
+      text-align: center;
+
+      .register-button-a {
+        background-color: $red;
+        border: 1px solid $red;
+        border-radius: 4px;
+        color: $white;
+        display: block;
+        padding: 8px 10px;
+      }
+    }
+
+    .login-button {
+      text-align: center;
+      margin-left: 11px;
+
+      .login-button-a {
+        background-color: $white;
+        border: 1px solid $blue;
+        border-radius: 4px;
+        color: $blue;
+        display: block;
+        padding: 8px 10px;
+        transition: all 0.3s ease-out 0s;
+
+        &:hover {
+          background-color: $blue;
+          color: $white;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.header-top-container {
+  display: flex;
+  justify-content: space-between;
+
+  .site-name-container {
+    align-items: center;
+    display: flex;
+    height: 40px;
+    margin-right: 45px;
+  }
+
+  .store-search-container {
+    position: relative;
+    width: 100%;
+
+    .store-search-input {
+      background-color: $input-bg;
+      border: 1px solid $border;
+      border-radius: 4px;
+      height: 40px;
+      line-height: 1.4em;
+      padding: 0px 50px 0px 10px;
+      position: relative;
+      width: 100%;
+    }
+
+    .search-button {
+      background-color: transparent;
+      border: none;
+      border-radius: 0px 4px 4px 0px;
+      cursor: pointer;
+      height: 40px;
+      padding: 0px;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      width: 40px;
+    }
+  }
+}
