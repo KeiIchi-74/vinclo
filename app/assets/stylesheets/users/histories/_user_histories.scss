@@ -1,0 +1,137 @@
+.user-histories-section {
+  padding-bottom: 2rem;
+  margin: 2rem 0 0;
+  background-color: $white;
+
+  .user-histories-wrap {
+    width: 940px;
+    margin: 0 auto;
+    position: relative;
+    background: $white;
+    padding-bottom: 1.6rem;
+
+    .user-histories-box {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 1.6rem;
+      border-bottom: 1px solid $border;
+
+      .user-histories-title {
+        padding: 3rem 1.6rem 1.4rem;
+        text-align: center;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      .user-histories-title-is-active {
+        color: $red;
+        border-bottom: 3px solid $red;
+      }
+    }
+
+    .user-histories-container {
+      overflow: hidden;
+      height: 200px;
+      
+
+      
+      .user-histories-ul {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding-left: 0;
+        
+        .user-histories-li {
+          width: 108.75px;
+          margin-left: 0;
+
+          &:hover {
+            cursor: pointer;
+          }
+          
+          .user-histories-a {
+            width: 100%;
+            display: block;
+            
+            .user-histories-dl {
+              
+              .user-histories-dt {
+                height: 100px;
+                border-radius: 5px;
+                
+                img {
+                  height: 100px;
+                  border-radius: 5px;
+                }
+              }
+              
+              .user-histories-dt-empty {
+                background: #f5ddd0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+                .fa-store-alt {
+                  color: $white;
+                }
+              }
+              
+              .user-histories-stores-name {
+                line-height: 1.5;
+                max-height: 32px;
+                overflow: hidden;
+                color: $black;
+                margin-top: .5rem;
+              }
+              
+              .user-histories-prefecture {
+                margin-top: .1rem;
+                line-height: 1.2rem;
+                color: $black;
+                opacity: 0.5;
+              }
+            }
+          }
+        }
+      }
+      
+      .user-histories-login {
+        padding: 1rem 0 2.5rem;
+        text-align: center;
+        margin: 5px 0;
+        
+        .user-histories-p {
+          margin: 5px 0;
+          line-height: 1.3;
+        }
+        
+        .user-histories-login-button {
+          width: 300px;
+          margin: 1.5rem auto 0;
+          border-radius: 5px;
+          color: $blue;
+          border: 1px solid $blue;
+          display: block;
+          text-align: center;
+          padding: .8rem;
+          font-size: 1.1rem;
+          transition: all 0.3s ease-out 0s;
+
+          &:hover {
+            cursor: pointer;
+            background-color: $blue;
+            color: $white;
+          }
+        }
+      }
+    }
+
+    .user-histories-container-not-active {
+      display: none;
+    }
+  }
+}
