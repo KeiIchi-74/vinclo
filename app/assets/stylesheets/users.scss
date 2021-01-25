@@ -3,9 +3,14 @@
 @import 'users/shared/font-weight';
 @import 'users/shared/header';
 @import 'users/shared/swiper';
+@import 'users/notifications/recent_notifications';
 @import 'users/shared/footer';
 
 /* universal */
+
+body {
+  background-color: $gray;
+}
 
 header {
   background-color: $white;
