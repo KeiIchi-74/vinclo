@@ -1,0 +1,57 @@
+.search-prefectures-container {
+  margin-top: 0;
+  padding-bottom: 4rem;
+  background-color: $white;
+
+  .search-prefectures-wrap {
+    width: 940px;
+    margin: 0 auto;
+    padding: 4rem 0 0;
+    position: relative;
+    border-top: 4px solid $gray;
+
+    .search-prefectures-title {
+      padding: 0;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 1.3rem;
+    }
+
+    .search-prefectures-button-container {
+      margin-top: 3.6rem;
+      padding: 0;
+
+      .search-prefectures-button-ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+
+        li {
+
+          .search-prefectures-button-a {
+            padding: .3rem .1rem;
+            color: $black;
+            display: block;
+
+            &:hover {
+              cursor: pointer;
+            }
+
+            .search-prefectures-button-span {
+              padding: .5rem 1.7rem;
+              border-radius: 42px;
+              font-size: .8rem;
+              border: 1px solid $border;
+              display: block;
+              transition: all 0.3s ease-out 0s;
+
+              &:hover {
+                border: 1px solid $red;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
