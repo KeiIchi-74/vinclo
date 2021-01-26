@@ -27,6 +27,7 @@
           img {
             height: 100px;
             border-radius: 5px;
+            width: 100%;
           }
         }
         
@@ -39,9 +40,13 @@
           .fa-store-alt {
             color: $white;
           }
+
+          .fa-tshirt {
+            color: $white;
+          }
         }
         
-        .sar-image-stores-name {
+        .sar-image-title {
           line-height: 1.5;
           max-height: 32px;
           overflow: hidden;
@@ -49,7 +54,7 @@
           margin-top: .5rem;
         }
         
-        .sar-image-prefecture {
+        .sar-image-sub {
           margin-top: .1rem;
           line-height: 1.2rem;
           color: $black;
