@@ -33,71 +33,7 @@
     .user-histories-container {
       overflow: hidden;
       height: 200px;
-      
-
-      
-      .user-histories-ul {
-        display: flex;
-        justify-content: space-between;
-        position: relative;
-        width: 100%;
-        height: 100%;
-        padding-left: 0;
-        
-        .user-histories-li {
-          width: 108.75px;
-          margin-left: 0;
-
-          &:hover {
-            cursor: pointer;
-          }
-          
-          .user-histories-a {
-            width: 100%;
-            display: block;
-            
-            .user-histories-dl {
-              
-              .user-histories-dt {
-                height: 100px;
-                border-radius: 5px;
-                
-                img {
-                  height: 100px;
-                  border-radius: 5px;
-                }
-              }
-              
-              .user-histories-dt-empty {
-                background: #f5ddd0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                
-                .fa-store-alt {
-                  color: $white;
-                }
-              }
-              
-              .user-histories-stores-name {
-                line-height: 1.5;
-                max-height: 32px;
-                overflow: hidden;
-                color: $black;
-                margin-top: .5rem;
-              }
-              
-              .user-histories-prefecture {
-                margin-top: .1rem;
-                line-height: 1.2rem;
-                color: $black;
-                opacity: 0.5;
-              }
-            }
-          }
-        }
-      }
-      
+       
       .user-histories-login {
         padding: 1rem 0 2.5rem;
         text-align: center;
