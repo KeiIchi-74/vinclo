@@ -55,3 +55,5 @@ gem 'cells-rails'
 gem 'cells-erb'
 
 gem 'active_hash'
+
+gem 'devise'
