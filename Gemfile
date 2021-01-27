@@ -57,3 +57,5 @@ gem 'cells-erb'
 gem 'active_hash'
 
 gem 'devise'
+
+gem 'rails-i18n'
