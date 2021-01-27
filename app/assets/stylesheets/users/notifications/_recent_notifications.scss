@@ -1,0 +1,43 @@
+.recent-notifications-container {
+  padding: 1.5rem 0 0;
+
+  .recent-notifications-text-container {
+    width: 940px;
+    padding: .9rem 1rem;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background: $white;
+
+    .recent-notifications-p {
+      justify-content: space-between;
+      
+      .recent-notifications-a {
+        color: $red;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 .5rem;
+        align-items: center;
+        text-align: center;
+
+        .recent-notifications-span {
+
+          &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+          }
+        }
+
+        .fa-chevron-right {
+          color: $black;
+          opacity: 0.5;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.swiper-container {
+  height: 300px;
+  border-bottom: 15px solid $white ;
+
+  .swiper-wrapper {
+
+    .swiper-slide {
+      width: 1425px;
+      transition-duration: 0ms;
+      opacity: 0;
+      transform: translate3d(0px, 0px, 0px);
+
+      .swiper-content{
+        height: 100%;
+
+        img {
+          margin: 0 auto;
+          height: 100%;
+          width: 600px;
+        }
+      }
+    }
+  }
+
+  .swiper-pagination {
+    margin-left: 500px;
+  }
+}

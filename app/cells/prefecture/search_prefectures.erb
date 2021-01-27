@@ -1,0 +1,16 @@
+<section class='search-prefectures-section'>
+  <div class='search-prefectures-container'>
+    <h2 class='search-prefectures-title fw-700'>都道府県から探す</h2>
+    <div class='search-prefectures-button-container'>
+      <ul class='search-prefectures-button-ul'>
+        <% @prefectures.each do | prefecture | %>
+          <li>
+            <a class='search-prefectures-button-a'>
+              <span class='search-prefectures-button-span'><%= prefecture.name %></span>
+            </a>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</section>
