@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vinclo</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'css/reset.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'devises', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'devise', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <main>
+      <%= yield %>
+    </main>
+    <footer class='fs-12'>
+      <%= render partial: 'users/shared/footer_bottom' %>
+    </footer>
+    <script src="https://kit.fontawesome.com/fb52d9c8d6.js" crossorigin="anonymous"></script>
+  </body>
+</html>

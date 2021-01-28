@@ -1,0 +1,100 @@
+<div class='regis-container'>
+  <div class='regis-header'>
+    <div class='regis-header-wrap'>
+      <h1>
+        <%= link_to 'Vinclo', root_path %>
+      </h1>
+      <p class='regis-login-button'>
+        <a>ログインはこちら</a>
+      </p>
+    </div>
+  </div>
+  <div>
+    <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
+      <div class='regis-main'>
+        <section class='regis-main-section'>
+          <div class='regis-input'>
+            <h2 class='fs-18 fw-700'>メールアドレスで新規会員登録</h2>
+            <div class='regis-form-input'>
+              <p class='regis-form-input-p fs-12'>※すべてが必須項目です。パスワードは半角英字と半角数字の両方を含めて設定してください。</p>
+              <div class='regis-input-box'>
+                <div>
+                  <%= f.email_field :email, autofocus: true, placeholder: "メールアドレス", class: 'fs-16 fw-700' %>
+                </div>
+              </div>
+              <div class='regis-input-box'>
+                <p class='regis-input-title fs-14 fw-700'>生年月日</p>
+                <div>
+                  <%= f.date_select(
+                      :birth_date,
+                      class:'select-birth fs-16 fw-700',
+                      id:"birth-date",
+                      use_month_numbers: true,
+                      prompt: true,
+                      start_year: 1930,
+                      end_year: (Time.now.year - 12),
+                      date_separator: '') %>
+                </div>
+              </div>
+              <div class='regis-input-box'>
+                <div class='regis-input-password'>
+                  <%= f.password_field :password, placeholder: "パスワード【6〜16文字】" %>
+                </div>
+                <div class='regis-confirmation'>
+                  <%= f.password_field :password_confirmation, placeholder: "パスワード【確認】" %>
+                </div>
+              </div>
+            </div>
+            <div class='regis-submit-button'>
+              <%= f.submit "規約に同意して仮登録メール送信" %>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class='regis-social-login'>
+            <h2 class='fs-18 fw-700'>他のサービスIDで新規会員登録</h2>
+            <div class='regis-social-box'>
+              <ul>
+                <li>
+                  <a class='regis-social-a'><i class="fab fa-facebook regis-social-icon fs-35"></i>Facebook</a>
+                </li>
+                <li>
+                  <a class='regis-social-a'><img src="https://img.icons8.com/color/96/000000/google-logo.png" class="google-img regis-social-icon">Google</a>
+                </li>
+                <li>
+                  <a class='regis-social-a'><i class="fab fa-line regis-social-icon fs-35"></i>LINE</a>
+                </li>
+                <li>
+                  <a class='regis-social-a'><i class="fab fa-twitter-square regis-social-icon fs-35"></i>Twitter</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class='regis-sub'>
+        <section>
+          <div class='regis-agreement'>
+            <div class='regis-other-agreement'>
+              <div class='regis-other-agreement-container'>
+                <h2 class='regis-other-agreement-h2 fw-700'>以下規約をご確認いただき、同意の上でお手続きください。</h2>
+                <p class='regis-other-agreement-p'>
+                  <a>ビンクロ会員規約</a>
+                </p>
+              </div>
+            </div>
+            <div class='regis-other-agreement'>
+              <ul>
+                <li>「ビンクロ会員」サービスの登録にあたっては、生年月日、パスワード及びメールアドレスのご登録が必要です。ご登録いただいた情報は、お客様のビンクロ会員サービスご利用のため、また、ビンクロサイトの制作のための参考として利用します。</li>
+                <li><span>ビンクロの</span><a>プライバシーポリシー</a>をご確認ください</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <div class='regis-submit-button'>
+          <%= f.submit "規約に同意して仮登録メール送信" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

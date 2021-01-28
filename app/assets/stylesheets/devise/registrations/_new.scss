@@ -1,0 +1,290 @@
+.regis-container {
+  color: $black;
+  margin: 0 auto;
+  position: relative;
+  width: 960px;
+
+  .regis-header {
+    width: 100%;
+    margin: 0 auto 40px;
+    border-bottom: 1px solid $border;
+
+    .regis-header-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 20px auto;
+      width: 960px;
+
+      h1 {
+        width: auto;
+
+        a {
+          color: $black;
+          text-decoration: none;
+        }
+      }
+
+      .regis-login-button {
+        background-color: $white;
+        border: 1px solid $blue;
+        border-radius: 4px;
+        color: $blue;
+        display: block;
+        padding: 8px 10px;
+        transition: all 0.3s ease-out 0s;
+
+        &:hover {
+          background-color: $blue;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  div {
+
+    form {
+
+      .regis-main {
+        background: $gray;
+        border: 1px solid $border;
+        overflow: hidden;
+        padding: 50px 40px;
+        width: 880px;
+        margin: 0 auto 40px;
+
+        .regis-main-section {
+
+          .regis-input {
+            width: 440px;
+            margin: 0 auto 40px;
+            border-right: 1px solid $border;
+            float: left;
+
+            h2 {
+              margin: 0 auto 40px;
+              text-align: center;
+              width: 390px;
+            }
+
+            .regis-form-input {
+              margin: 0 auto 32px;
+              width: 390px;
+
+              .regis-form-input-p {
+                margin-bottom: 10px;
+              }
+
+              .regis-input-box {
+                margin-bottom: 20px;
+
+              .regis-input-title {
+                margin-bottom: 5px;
+              }
+
+                div {
+                  
+                  input {
+                    padding: 15px 10px;
+                    width: 100%;
+                    -webkit-border-radius: 4px;
+                    border: 1px solid $border;
+                    -webkit-box-shadow: 1px 1px 5px $border inset;
+                  }
+
+                  select {
+                    padding: 15px 10px;
+                    -webkit-border-radius: 4px;
+                    border: 1px solid $border;
+                    -webkit-box-shadow: 1px 1px 5px $border inset;
+                    width: calc(80% / 3);
+                  }
+                }
+
+                .regis-confirmation {
+                  margin-top: 10px;
+                }
+
+              }
+            }
+
+            .regis-submit-button {
+              margin: 20px auto;
+              padding: 1px;
+              position: relative;
+              width: 308px;
+
+              input {
+                border: 0;
+                cursor: pointer;
+                display: block;
+                height: 59px;
+                width: 308px;
+                color: $white;
+                background-color: $white;
+                background-color: $green;
+                border-radius: 8px;
+
+                &:hover {
+                  opacity: 0.7;
+                }
+              }
+            }
+          }
+        }
+
+        section {
+
+          .regis-social-login {
+            width: 380px;
+            margin-right: 0;
+            margin-left: auto;
+
+            h2 {
+              margin-bottom: 40px;
+              text-align: center;
+              width: 380px;
+            }
+
+            .regis-social-box {
+              margin: 0 auto;
+              width: 253px;
+
+              ul {
+                list-style: none;
+
+                li {
+                  margin-bottom: 10px;
+
+                  a {
+                    background: $white none;
+                    position: relative;
+                    border: 1px solid $border;
+                    border-radius: 4px;
+                    color: $black;
+                    cursor: pointer;
+                    font-size: 1rem;
+                    display: block;
+                    font-weight: 700;
+                    line-height: 1;
+                    padding: 15px 8px 15px 20px;
+                    text-align: center;
+                    align-items: center;
+                    text-decoration: none;
+                    text-indent: 0;
+                    width: auto;
+                    height: auto;
+                    display: flex;
+
+                    &:hover {
+                      opacity: 0.5;
+                    }
+
+                    .regis-social-icon {
+                      height: 35px;
+                      width: 35px;
+                      margin-right: 30px;
+                    }
+
+                    .fa-facebook {
+                      color: $blue;
+                    }
+
+                    .fa-line {
+                      color: $Line;
+                    }
+
+                    .fa-twitter-square {
+                      color: $Twitter;
+                    }
+                    
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .regis-sub {
+
+      section {
+
+        .regis-agreement {
+
+          .regis-other-agreement {
+            margin: 0 auto;
+            width: 853px;
+
+            .regis-other-agreement-container {
+              margin-bottom: 50px!important;
+              text-align: center;
+
+              .regis-other-agreement-h2 {
+                margin-bottom: 20px!important;
+              }
+
+              .regis-other-agreement-p {
+                margin-bottom: 20px!important;
+
+                a {
+                  color: $a-blue;
+                  overflow: hidden;
+                  text-decoration: underline;
+
+                  &:hover {
+                    opacity: 0.7;
+                    cursor: pointer;
+                  }
+                }
+              }
+            }
+
+            ul {
+
+              li {
+                margin-bottom: 10px;
+
+                a {
+                  color: $a-blue;
+                  overflow: hidden;
+                  text-decoration: underline;
+
+                  &:hover {
+                    opacity: 0.7;
+                    cursor: pointer;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .regis-submit-button {
+        margin: 20px auto 40px;
+        padding: 1px;
+        position: relative;
+        width: 308px;
+
+        input {
+          border: 0;
+          cursor: pointer;
+          display: block;
+          height: 59px;
+          width: 308px;
+          color: $white;
+          background-color: $white;
+          background-color: $green;
+          border-radius: 8px;
+
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+  }
+}
