@@ -33,6 +33,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 4.0.0'
   gem 'brakeman', require: false
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -46,7 +47,6 @@ group :development do
   gem 'bullet'
   gem 'pry-rails'
   gem 'rails_best_practices', require: false
-  gem 'factory_bot_rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
