@@ -46,6 +46,7 @@ group :development do
   gem 'bullet'
   gem 'pry-rails'
   gem 'rails_best_practices', require: false
+  gem 'factory_bot_rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
