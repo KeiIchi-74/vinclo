@@ -56,9 +56,31 @@
         display: block;
         padding: 8px 10px;
         transition: all 0.3s ease-out 0s;
+        text-decoration: none;
 
         &:hover {
           background-color: $blue;
+          color: $white;
+        }
+      }
+    }
+
+    .logout-button {
+      text-align: center;
+      margin-left: 11px;
+
+      .logout-button-a {
+        background-color: $white;
+        border: 1px solid $red;
+        border-radius: 4px;
+        color: $red;
+        display: block;
+        padding: 8px 10px;
+        transition: all 0.3s ease-out 0s;
+        text-decoration: none;
+
+        &:hover {
+          background-color: $red;
           color: $white;
         }
       }

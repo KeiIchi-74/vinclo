@@ -4,6 +4,7 @@
 @import 'users/shared/footer';
 
 @import 'devise/registrations/new';
+@import 'devise/pre_registrations/index';
 
 /* universal */
 
@@ -11,8 +12,6 @@ body {
   background-color: $white;
 }
 
-footer {
-  background-color: $black;
-  color: $white;
-  padding: 0px 20px 10px;
+main {
+  min-height: 100vh;
 }

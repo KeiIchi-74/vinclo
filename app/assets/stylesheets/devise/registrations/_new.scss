@@ -26,17 +26,39 @@
       }
 
       .regis-login-button {
-        background-color: $white;
-        border: 1px solid $blue;
-        border-radius: 4px;
-        color: $blue;
-        display: block;
-        padding: 8px 10px;
-        transition: all 0.3s ease-out 0s;
 
-        &:hover {
-          background-color: $blue;
+        a {
+          background-color: $white;
+          border: 1px solid $blue;
+          border-radius: 4px;
+          color: $blue;
+          display: block;
+          padding: 8px 10px;
+          transition: all 0.3s ease-out 0s;
+          text-decoration: none;
+  
+          &:hover {
+            background-color: $blue;
+            color: $white;
+          }
+        }
+      }
+
+      .register-button {
+        text-align: center;
+
+        .register-button-a {
+          background-color: $red;
+          border: 1px solid $red;
+          border-radius: 4px;
           color: $white;
+          display: block;
+          padding: 8px 10px;
+          text-decoration: none;
+
+          &:hover {
+            cursor: pointer;
+          }
         }
       }
     }
@@ -84,6 +106,10 @@
               }
 
                 div {
+
+                  li {
+                    color: $red;
+                  }
                   
                   input {
                     padding: 15px 10px;
