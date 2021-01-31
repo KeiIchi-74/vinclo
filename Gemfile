@@ -45,7 +45,6 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rubocop', require: false
   gem 'bullet'
-  gem 'pry-rails'
   gem 'rails_best_practices', require: false
 end
 
@@ -60,3 +59,5 @@ gem 'active_hash'
 gem 'devise'
 
 gem 'rails-i18n'
+
+gem 'pry-rails'
