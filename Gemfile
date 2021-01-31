@@ -53,7 +53,7 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
   gem 'factory_bot_rails'
-  gem 'detabase_rewinder'
+  gem 'database_rewinder'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
