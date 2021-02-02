@@ -4,16 +4,18 @@
       <h1>
         <%= link_to 'Vinclo', root_path %>
       </h1>
-      <p class='register-button'>
-        <%= link_to '新規会員登録の方はこちら', new_user_registration_path, class: 'register-button-a' %>
-      </p>
+      <div>
+        <p class='register-button'>
+          <%= link_to '新規会員登録の方はこちら', new_user_registration_path, class: 'register-button-a' %>
+        </p>
+      </div>
     </div>
   </div>
   <div>
     <%= form_with model: @user, url: user_session_path, class: 'registration-main', local: true do |f| %>
       <div class='regis-main'>
         <section class='regis-main-section'>
-          <div class='regis-input'>
+          <div class='regis-input' style="border-right:1px solid rgb(204, 204, 204);float:left;">
             <h2 class='fs-18 fw-700'>メールアドレスでログイン</h2>
             <div class='regis-form-input'>
               <p class='regis-form-input-p fs-12'>※新規会員登録ページで入力したメールアドレスとパスワードを入力してください。</p>
@@ -35,6 +37,13 @@
                     <% end %>
                   <% end %>
                   <%= f.password_field :password, placeholder: "パスワード【6〜16文字】", class: 'fs-16 fw-700' %>
+                </div>
+              </div>
+              <div class='regis-input-box'>
+                <div class='edit-user-regis'>
+                  <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+                    <%= link_to 'パスワードをお忘れの方はこちら', new_user_password_path, class: 'fs-12' %>
+                  <% end %>
                 </div>
               </div>
             </div>

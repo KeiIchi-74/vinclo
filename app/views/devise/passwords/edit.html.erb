@@ -1,25 +1,54 @@
-<h2>Change your password</h2>
-
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-  <%= f.hidden_field :reset_password_token %>
-
-  <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+<div class='regis-container'>
+  <div class='regis-header'>
+    <div class='regis-header-wrap'>
+      <h1>
+        <%= link_to 'Vinclo', root_path %>
+      </h1>
+      <div>
+        <p class='register-button' style="margin-right:15px;">
+          <%= link_to '新規会員登録の方はこちら', new_user_registration_path, class: 'register-button-a' %>
+        </p>
+        <p class='regis-login-button'>
+          <%= link_to 'ログインの方はこちら', new_user_session_path %>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+    <%= f.hidden_field :reset_password_token %>
+      <div class='regis-main'>
+        <section class='regis-main-section'>
+          <div class='regis-input'>
+            <h2 class='fs-18 fw-700'>パスワード再設定</h2>
+            <div class='regis-form-input'>
+              <p class='regis-form-input-p fs-12'>※新しいパスワードを設定してください。<br>※パスワード再設定設定完了後は自動でログインされます。</p>
+              <div class='regis-input-box'>
+                <div class='regis-input-password'>
+                  <% if resource.errors.any? %>
+                    <% resource.errors.messages[:password].each do |message| %>
+                      <li><%= "パスワード#{message}" %></li>
+                    <% end %>
+                  <% end %>
+                  <%= f.password_field :password, placeholder: "パスワード【6〜16文字】", class: 'fs-16 fw-700' %>
+                </div>
+                <div class='regis-confirmation'>
+                  <% if resource.errors.any? %>
+                    <% resource.errors.messages[:password_confirmation].each do |message| %>
+                      <li><%= "パスワード【確認用】#{message}" %></li>
+                    <% end %>
+                  <% end %>
+                  <%= f.password_field :password_confirmation, placeholder: "パスワード【確認用】", class: 'fs-16 fw-700' %>
+                </div>
+              </div>
+            </div>
+            <div class='regis-submit-button'>
+              <%= f.submit "パスワードを再設定する" %>
+            </div>
+          </div>
+        </section>
+      </div>
     <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Change my password" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
+<%= render partial: 'users/shared/footer_bottom' %>

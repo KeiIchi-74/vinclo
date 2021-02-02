@@ -11,18 +11,13 @@
       <div class='preregis-main'>
         <section>
           <div class='preregis-confirmation'>
-            <h1 class='fs-16 fw-700'>仮登録メール送付</h1>
+            <h1 class='fs-16 fw-700'>パスワード再設定用確認メール送付</h1>
             <div class='preregis-confirmation-email'>
-              <% if @resource.nil? %>
-                <p>以下のボタンから再度登録をお願いします。</p>
-              <% else %>
-                <p><%= @resource['email'] %></p>
                 <p class='preregis-confirmation-text fs-16'>
                   メールに記載されているリンクを
                   <br class='fs-16'>
-                  クリックし登録を完了させてください。
+                  クリックしパスワードの再設定を完了させてください。
                 </p>
-              <% end %>
             </div>
           </div>
         </section>
@@ -31,10 +26,10 @@
           <br>
           もう一度ご確認の上、再度お試しください。
           <br>
-          ログイン登録が完了した場合は、このページを閉じてもらってかまいません。
+          ※パスワード再設定が完了した場合は、このページを閉じてもらってかまいません。
         </p>
         <p class='register-button'>
-          <%= link_to 'メールが届かない方はこちら', new_user_registration_path, class: 'register-button-a' %>
+          <%= link_to 'メールが届かない方はこちら', new_user_password_path, class: 'register-button-a' %>
         </p>
       </div>
     </div>

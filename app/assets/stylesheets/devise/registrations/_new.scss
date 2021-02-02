@@ -25,24 +25,29 @@
         }
       }
 
-      .regis-login-button {
+      div {
+        display: flex;
 
-        a {
-          background-color: $white;
-          border: 1px solid $blue;
-          border-radius: 4px;
-          color: $blue;
-          display: block;
-          padding: 8px 10px;
-          transition: all 0.3s ease-out 0s;
-          text-decoration: none;
+        .regis-login-button {
   
-          &:hover {
-            background-color: $blue;
-            color: $white;
+          a {
+            background-color: $white;
+            border: 1px solid $blue;
+            border-radius: 4px;
+            color: $blue;
+            display: block;
+            padding: 8px 10px;
+            transition: all 0.3s ease-out 0s;
+            text-decoration: none;
+    
+            &:hover {
+              background-color: $blue;
+              color: $white;
+            }
           }
         }
       }
+
 
       .register-button {
         text-align: center;
@@ -81,8 +86,6 @@
           .regis-input {
             width: 440px;
             margin: 0 auto 40px;
-            border-right: 1px solid $border;
-            float: left;
 
             h2 {
               margin: 0 auto 40px;
@@ -132,6 +135,19 @@
                   margin-top: 10px;
                 }
 
+              }
+
+              .edit-user-regis {
+                text-align: center;
+                
+                a {
+                  text-decoration: none;
+                  color: $a-blue;
+
+                  &:hover {
+                    text-decoration: underline;
+                  }
+                }
               }
             }
 
