@@ -5,12 +5,7 @@ RSpec.feature 'Sign up', type: :feature do
     ActionMailer::Base.deliveries.clear
   end
 
-  def extract_confirmation_url(mail)
-    body = mail.body.encoded
-    body[/http[^"]+/]
-  end
-
-  scenario '正しい情報を入力すれば仮登録メールが送信されて、そのリンクに正しく入力すればトップページに移動し、ログアウト、ログインが行える' do
+  scenario '正しい情報を入力すれば仮登録メールが送信されて、そのリンクを押せば、会員登録が完了する' do
     visit root_path
     expect(page).to have_content('新規会員登録')
     click_link '新規会員登録'
@@ -23,27 +18,23 @@ RSpec.feature 'Sign up', type: :feature do
 
     # メールが送信される
     expect { click_button 'regis-submit-1' }.to change { ActionMailer::Base.deliveries.size }.by(1)
-    expect(page).to have_content('仮登録メール送付')
+    expect(User.count).to eq 1
+
+    # 認証カラムの値は空になっている
+    expect(User.first.confirmed_at).to eq nil
+    expect(page).to have_content('会員登録用メール送付')
 
     # メール内のリンク(url)をとりだす
     mail = ActionMailer::Base.deliveries.last
     url = extract_confirmation_url(mail)
     visit url
-    expect(page).to have_content('メールアドレスでログイン')
-    fill_in 'user_email', with: 'sample@sample.com'
-    fill_in 'user_password', with: '00000a'
-    click_button 'ログイン'
-    expect(page).to have_content('ログアウト')
 
-    # ログアウト
-    click_link 'ログアウト'
-    expect(page).to have_content('ログイン')
+    # リンク先のページに遷移するとユーザーの認証カラムに値が入る
+    expect(User.first.confirmed_at).to_not eq nil
+    expect(page).to have_content('会員登録が完了しました。')
 
-    # 新規会員登録をおこなった後そのユーザーデータでログイン
-    click_link 'ログイン'
-    fill_in 'user_email', with: 'sample@sample.com'
-    fill_in 'user_password', with: '00000a'
-    click_button 'ログイン'
-    expect(page).to have_content('ログアウト')
-  end
+    # 登録が完了したユーザーが、再びメールのリンクをクリックした場合に、登録完了を知らせるページに遷移する
+    visit url
+    expect(page).to have_content('メールアドレスは既に登録済みです。ログインしてください。')
+  end 
 end

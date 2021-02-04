@@ -1,16 +1,38 @@
-<h2>Resend confirmation instructions</h2>
-
-<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+<div class='regis-container'>
+  <div class='regis-header'>
+    <div class='regis-header-wrap'>
+      <h1>
+        <%= link_to 'Vinclo', root_path %>
+      </h1>
+      <div>
+        <p class='regis-login-button'>
+          <%= link_to 'ログインの方はこちら', new_user_session_path %>
+        </p>
+      </div>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Resend confirmation instructions" %>
+  <div>
+    <div class='registration-main'>
+      <div class='regis-main'>
+        <section class='regis-main-section'>
+          <div class='regis-input'>
+            <div class='regis-form-input'>
+              <div class='regis-input-box'>
+                <div>
+                  <% if @user.errors.any? %>
+                    <% @user.errors.messages[:email].each do |message| %>
+                      <li><%= "メールアドレス#{message}" %></li>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
   </div>
-<% end %>
+</div>
+<%= render partial: 'users/shared/footer_bottom' %>
 
-<%= render "devise/shared/links" %>
+

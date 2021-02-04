@@ -16,7 +16,7 @@
       <div class='regis-main'>
         <section class='regis-main-section'>
           <div class='regis-input' style="border-right:1px solid rgb(204, 204, 204);float:left;">
-            <h2 class='fs-18 fw-700'>メールアドレスで新規会員登録</h2>
+            <h2 class='fs-17 fw-700'>メールアドレスで新規会員登録</h2>
             <div class='regis-form-input'>
               <p class='regis-form-input-p fs-12'>※すべてが必須項目です。パスワードは半角英字と半角数字の両方を含めて設定してください。</p>
               <div class='regis-input-box'>
@@ -68,26 +68,19 @@
               </div>
             </div>
             <div class='regis-submit-button'>
-              <%= f.submit "規約を確認して仮登録メール送信", id: 'regis-submit-1' %>
+              <%= f.submit "規約を確認して会員登録用メール送信", id: 'regis-submit-1' %>
             </div>
           </div>
         </section>
         <section>
           <div class='regis-social-login'>
-            <h2 class='fs-18 fw-700'>他のサービスIDで新規会員登録</h2>
+            <h2 class='fs-17 fw-700'>他のサービス（メールアドレス）を用いて<br>新規会員登録</h2>
             <div class='regis-social-box'>
               <ul>
                 <li>
-                  <a class='regis-social-a'><i class="fab fa-facebook regis-social-icon fs-35"></i>Facebook</a>
-                </li>
-                <li>
-                  <a class='regis-social-a'><img src="https://img.icons8.com/color/96/000000/google-logo.png" class="google-img regis-social-icon">Google</a>
-                </li>
-                <li>
-                  <a class='regis-social-a'><i class="fab fa-line regis-social-icon fs-35"></i>LINE</a>
-                </li>
-                <li>
-                  <a class='regis-social-a'><i class="fab fa-twitter-square regis-social-icon fs-35"></i>Twitter</a>
+                  <%= link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: "regis-social-a" do %>
+                    <img src="https://img.icons8.com/color/96/000000/google-logo.png" class="google-img regis-social-icon">Google
+                  <% end %>
                 </li>
               </ul>
             </div>
@@ -114,7 +107,7 @@
           </div>
         </section>
         <div class='regis-submit-button'>
-          <%= f.submit "規約を確認して仮登録メール送信", id: 'regis-submit-2' %>
+          <%= f.submit "規約を確認して会員登録用メール送信", id: 'regis-submit-2' %>
         </div>
       </div>
     <% end %>

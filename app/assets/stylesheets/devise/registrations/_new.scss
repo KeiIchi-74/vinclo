@@ -69,9 +69,19 @@
     }
   }
 
+  .flash-success {
+    width: 50%;
+    padding: 10px;
+    margin: 0 auto 30px;
+    text-align: center;
+    background-color: $green;
+    color: $white;
+    border-radius: 4px;
+  }
+
   div {
 
-    form {
+    .registration-main {
 
       .regis-main {
         background: $gray;

@@ -30,7 +30,7 @@ ja:
       user: ユーザー
   devise:
     confirmations:
-      confirmed: メールアドレスが確認できました。
+      confirmed: 会員登録が完了しました。
       new:
         resend_confirmation_instructions: アカウント確認メール再送
       send_instructions: アカウントの有効化について数分以内にメールでご連絡します。
@@ -50,7 +50,7 @@ ja:
         action: メールアドレスの確認
         greeting: "%{recipient}様"
         instruction: 以下のリンクをクリックし、メールアドレスの確認手続を完了させてください。
-        subject: メールアドレス確認メール
+        subject: ビンクロ会員登録用メール
       email_changed:
         greeting: こんにちは、%{recipient}様。
         message: あなたのメールの変更（%{email}）をお知らせいたします。

@@ -1,4 +1,9 @@
 <div class='header-container'>
   <%= render partial: 'users/shared/header_top' %>
+  <% if flash[:notice].present? %>
+    <div class='flash-success fs-16'>
+      <p><%= flash[:notice] %><br><span class='fs-10'>※このメッセージはページを再度読み込むことで表示されなくなります。</span></p>
+    </div>
+  <% end %>
   <%= render partial: 'users/shared/header_bottom' %>
 </div>

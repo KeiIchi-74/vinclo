@@ -11,31 +11,28 @@
       </div>
     </div>
   </div>
+  <% if flash[:notice].present? %>
+    <div class='flash-success fs-18'>
+      <p><%= flash[:notice] %><br><span class='fs-10'>※このメッセージはページを再度読み込むことで表示されなくなります。</span></p>    </div>
+  <% end %>
   <div>
     <%= form_with model: @user, url: user_session_path, class: 'registration-main', local: true do |f| %>
       <div class='regis-main'>
         <section class='regis-main-section'>
           <div class='regis-input' style="border-right:1px solid rgb(204, 204, 204);float:left;">
-            <h2 class='fs-18 fw-700'>メールアドレスでログイン</h2>
+            <h2 class='fs-17 fw-700'>メールアドレスでログイン</h2>
             <div class='regis-form-input'>
-              <p class='regis-form-input-p fs-12'>※新規会員登録ページで入力したメールアドレスとパスワードを入力してください。</p>
+              <p class='regis-form-input-p fs-12'>※新規会員登録ページで入力したメールアドレスとパスワードを入力してください。<br>※他のサービス（メールアドレス）を用いた方は右のボタンからでもログインが可能です。</p>
               <div class='regis-input-box'>
                 <div>
-                  <% if @user.errors.any? %>
-                    <% @user.errors.messages[:email].each do |message| %>
-                      <li><%= "メールアドレス#{message}" %></li>
-                    <% end %>
+                  <% if flash[:alert] %>
+                    <li><%= flash[:alert] %></li>
                   <% end %>
                   <%= f.email_field :email, autofocus: true, placeholder: "メールアドレス", class: 'fs-16 fw-700' %>
                 </div>
               </div>
               <div class='regis-input-box'>
                 <div class='regis-input-password'>
-                  <% if @user.errors.any? %>
-                    <% @user.errors.messages[:password].each do |message| %>
-                      <li><%= "パスワード#{message}" %></li>
-                    <% end %>
-                  <% end %>
                   <%= f.password_field :password, placeholder: "パスワード【6〜16文字】", class: 'fs-16 fw-700' %>
                 </div>
               </div>
@@ -54,20 +51,13 @@
         </section>
         <section>
           <div class='regis-social-login'>
-            <h2 class='fs-18 fw-700'>他のサービスIDでログイン</h2>
+            <h2 class='fs-17 fw-700'>他のサービスでログイン</h2>
             <div class='regis-social-box'>
               <ul>
                 <li>
-                  <a class='regis-social-a'><i class="fab fa-facebook regis-social-icon fs-35"></i>Facebook</a>
-                </li>
-                <li>
-                  <a class='regis-social-a'><img src="https://img.icons8.com/color/96/000000/google-logo.png" class="google-img regis-social-icon">Google</a>
-                </li>
-                <li>
-                  <a class='regis-social-a'><i class="fab fa-line regis-social-icon fs-35"></i>LINE</a>
-                </li>
-                <li>
-                  <a class='regis-social-a'><i class="fab fa-twitter-square regis-social-icon fs-35"></i>Twitter</a>
+                  <%= link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: "regis-social-a" do %>
+                    <img src="https://img.icons8.com/color/96/000000/google-logo.png" class="google-img regis-social-icon">Google
+                  <% end %>
                 </li>
               </ul>
             </div>

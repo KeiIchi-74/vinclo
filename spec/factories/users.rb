@@ -18,4 +18,11 @@ FactoryBot.define do
     birth_date            { '1930-01-03' }
     confirmed_at          { Time.now }
   end
+  factory :authenticated_user_have_omniauth_email, class: User do
+    email                 { 'sample@sample.com' }
+    password              { '00000d' }
+    password_confirmation { password }
+    birth_date            { '1930-01-04'}
+    confirmed_at          { Time.now }
+  end
 end
