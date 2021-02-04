@@ -1,0 +1,17 @@
+@import 'users/shared/custom-variables';
+@import 'users/shared/font-size';
+@import 'users/shared/font-weight';
+@import 'users/shared/footer';
+
+@import 'devise/registrations/new';
+@import 'devise/pre_registrations/index';
+
+/* universal */
+
+body {
+  background-color: $white;
+}
+
+main {
+  min-height: 100vh;
+}

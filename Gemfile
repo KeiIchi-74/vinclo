@@ -33,7 +33,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 4.0.0'
   gem 'brakeman', require: false
-  gem 'factory_bot_rails'
+  gem 'pry-rails'
 end
 
 group :development do
@@ -48,6 +48,13 @@ group :development do
   gem 'rails_best_practices', require: false
 end
 
+group :test do
+  gem 'capybara', '>= 2.15'
+  gem 'factory_bot_rails'
+  gem 'database_rewinder'
+  gem 'launchy'
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
@@ -56,8 +63,8 @@ gem 'cells-erb'
 
 gem 'active_hash'
 
-gem 'devise'
-
 gem 'rails-i18n'
 
-gem 'pry-rails'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'
+gem 'devise', git: "https://github.com/heartcombo/devise.git",  branch: "ca-omniauth-2"

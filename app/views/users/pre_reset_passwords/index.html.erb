@@ -1,0 +1,38 @@
+<div class='preregis-page'>
+  <div class='preregis-page-container'>
+    <header class='preregis-header'>
+      <div class='preregis-header-wrap'>
+        <h1>
+          <a>Vinclo</a>
+        </h1>
+      </div>
+    </header>
+    <div class='preregis-container'>
+      <div class='preregis-main'>
+        <section>
+          <div class='preregis-confirmation'>
+            <h1 class='fs-16 fw-700'>パスワード再設定用確認メール送付</h1>
+            <div class='preregis-confirmation-email'>
+                <p class='preregis-confirmation-text fs-16'>
+                  メールに記載されているリンクを
+                  <br class='fs-16'>
+                  クリックしパスワードの再設定を完了させてください。
+                </p>
+            </div>
+          </div>
+        </section>
+        <p class='preregis-confirmation-sub fs-12'>
+          ※メールが届かない場合は、メールアドレスが間違っている可能性がございます。
+          <br>
+          もう一度ご確認の上、再度お試しください。
+          <br>
+          ※パスワード再設定が完了した場合は、このページを閉じてもらってかまいません。
+        </p>
+        <p class='register-button'>
+          <%= link_to 'メールが届かない方はこちら', new_user_password_path, class: 'register-button-a' %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render partial: 'users/shared/footer_bottom' %>

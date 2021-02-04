@@ -1,0 +1,95 @@
+.preregis-page {
+  color: $black;
+  margin: 0 auto;
+  position: relative;
+  width: 960px;
+  height: 80vh;
+
+  .preregis-page-container {
+    position: relative;
+    top: 100px;
+
+    .preregis-header {
+      
+      .preregis-header-wrap {
+        margin: 0 auto ;
+        text-align: center;
+  
+        h1 {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  
+    .preregis-container {
+  
+      .preregis-main {
+  
+        section {
+  
+          .preregis-confirmation {
+            background: $gray;
+            border: 1px solid $border;
+            margin: 0 auto 20px;
+            padding: 25px 40px;
+            width: 570px;
+  
+            h1 {
+              margin-bottom: 40px;
+              text-align: center;
+            }
+  
+            .preregis-confirmation-email {
+              background: $white;
+              border: 1px solid $border;
+              margin-bottom: 20px;
+              padding: 30px 0;
+              text-align: center;
+              word-break: break-all;
+            }
+  
+            .preregis-confirmation-text {
+              color: $red;
+              line-height: 1.4;
+              text-align: center;
+  
+              br {
+                color: $red;
+                line-height: 1.4;
+                text-align: center;
+              }
+            }
+          }
+        }
+  
+        .preregis-confirmation-sub {
+          margin: 0 auto;
+          width: 650px;
+          text-align: center;
+        }
+
+        .register-button {
+          vertical-align: middle;
+          border: 1px solid $red;
+          border-radius: 4px;
+          background-color: $red;
+          text-align: center;
+          margin: 20px auto 40px;
+          width: 308px;
+  
+          .register-button-a {
+            color: $white;
+            display: block;
+            text-decoration: none;
+            width: 308px;
+            padding: 15px;
+
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}
