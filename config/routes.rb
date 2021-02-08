@@ -9,4 +9,9 @@ Rails.application.routes.draw do
   root 'users/home#index'
   get 'users/pre_registrations', to: 'users/pre_registrations#index'
   get 'users/pre_reset_passwords', to: 'users/pre_reset_passwords#index'
+
+  scope module: :users do
+    resources :cloth_stores
+    resources :reviews
+  end
 end

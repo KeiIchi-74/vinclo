@@ -1,0 +1,185 @@
+.cloth-stores-container {
+  width: 100%;
+  min-width: 980px;
+  box-sizing: border-box;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: $white;
+
+  .cloth-stores-wrap {
+    width: 980px;
+    margin: 0 auto;
+
+    h2 {
+      display: table;
+      border-top: 3px solid $beige;
+      border-bottom: 3px solid $beige;
+      width: 100%;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      color: $black;
+      font-weight: bold;
+      padding: 1rem 1rem 0.9rem 1.2rem;
+    }
+
+    div {
+      position: relative;
+       margin: 15px 12px;
+
+       p {
+         margin: 0 auto;
+         opacity: 0.7;
+       }
+    }
+
+    form {
+
+      .cloth-stores-contents {
+        margin-top: 18px;
+        
+        h3 {
+          margin-top: 30px;
+          color: $black;
+        }
+
+        h4 {
+          margin-top: 18px;
+          display: table;
+          width: 100%;
+          color: $black;
+          font-weight: bold;
+          border-top: 2px solid $beige;
+          background: $beige-bg;
+          padding: 1.1rem 1rem 0.9rem 1.2rem;
+          box-sizing: border-box;
+          box-shadow: 0 1px 0 $white inset;
+        }
+
+        table {
+          border-collapse: separate;
+          border-top: 1px solid $beige;
+          color: $black;
+          width: 100%;
+          background-color: $white;
+
+          tbody {
+
+            tr {
+
+              th {
+                border-top: 1px solid $white;
+                border-bottom: 1px solid $beige;
+                background-color: $beige-bg-2;
+                width: 20%;
+                vertical-align: top;
+                padding: 1.2rem 1rem;
+                text-align: left;
+
+                .required-icon {
+                  background-color: $red;
+                  float: right;
+                  color: $white;
+                  border-radius: 2px;
+                  padding: 0.1rem 0.5rem;
+                }
+
+                label {
+
+                  span {
+                    color: $black;
+                    font-weight: normal;
+                    opacity: 0.7;
+                  }
+                }
+              }
+
+              td {
+                padding: 1rem;
+                border-bottom: 1px solid $beige;
+                vertical-align: inherit;
+                
+                input {
+                  background: $white;
+                  width: 100%;
+                  border: 1px solid $border;
+                  height: 2.5em;
+                }
+
+                div {
+                  display: flex;
+                  margin: 0;
+
+                  .map-box {
+                    margin-right: 14px;
+                    width: 482px;
+                    height: 280px;
+                  }
+
+                  .map-box-support {
+                    width: calc(100% - 496px);
+
+                    .map-box-support-wrap {
+                      padding: 10px;
+                      background-color: $beige-bg-2;
+                      display: block;
+
+                      p {
+                        color: $black;
+
+                        span {
+                          color: $red;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+
+            }
+          }
+        }
+        
+        .cloth-stores-submit {
+          margin-top: 10px;
+          border-top: none;
+
+          tbody {
+            
+            tr {
+              
+              .cloth-stores-submit-td {
+                background-color: $beige-bg;
+                box-shadow: 0 3px 2px -2px $shadow-2 inset;
+      
+                div {
+                  margin: 0 auto;
+      
+                  div {
+      
+                    input {
+                      color: $white;
+                      background-color: $green;
+                      cursor: pointer;
+                      border-radius: 8px;
+                      text-align: center;
+      
+                      &:hover {
+                        opacity: 0.7;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        p {
+          margin-top: 10px;
+          color: $red;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
