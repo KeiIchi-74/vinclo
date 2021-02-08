@@ -105,6 +105,12 @@
                   height: 2.5em;
                 }
 
+                select {
+                  background: $white;
+                  border: 1px solid $border;
+                  height: 2.5em;
+                }
+
                 div {
                   display: flex;
                   margin: 0;
@@ -162,6 +168,7 @@
                       cursor: pointer;
                       border-radius: 8px;
                       text-align: center;
+                      width: 150px;
       
                       &:hover {
                         opacity: 0.7;

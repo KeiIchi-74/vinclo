@@ -65,6 +65,8 @@ gem 'active_hash'
 
 gem 'rails-i18n'
 
+gem 'jp_prefecture'
+
 gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection'
 gem 'devise', git: "https://github.com/heartcombo/devise.git",  branch: "ca-omniauth-2"
