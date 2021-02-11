@@ -9,6 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 require("../swiper/swiper.js")
 require("../history/user_histories.js")
+require("../map/map.js")
 require("jquery")
 require("../jpostal/address.auto")
 

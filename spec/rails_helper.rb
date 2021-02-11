@@ -9,6 +9,7 @@ require 'spec_helper'
 require 'devise'
 require 'capybara/rails'
 require 'capybara/rspec'
+Capybara.javascript_driver = :selenium_chrome_headless
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'Sign in by omniauth', type: :feature do
   background do
-    Rails.application.env_config["omniauth.auth"] = set_omniauth
+    Rails.application.env_config['omniauth.auth'] = omniauth
   end
 
   scenario 'omniauthに登録されているメールアドレスで会員登録していれば、omniauthを用いたログインが行える' do

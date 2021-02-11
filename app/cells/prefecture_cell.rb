@@ -1,6 +1,7 @@
 class PrefectureCell < Cell::ViewModel
+  include JpPrefecture
   def search_prefectures
-    @prefectures = Prefecture.where.not(id: 1)
+    @prefectures = JpPrefecture::Prefecture.all
     render
   end
 end

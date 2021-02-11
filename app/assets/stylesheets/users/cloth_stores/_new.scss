@@ -97,6 +97,10 @@
                 padding: 1rem;
                 border-bottom: 1px solid $beige;
                 vertical-align: inherit;
+
+                li {
+                  color: $red;
+                }
                 
                 input {
                   background: $white;
@@ -112,17 +116,29 @@
                 }
 
                 div {
-                  display: flex;
                   margin: 0;
 
                   .map-box {
                     margin-right: 14px;
                     width: 482px;
                     height: 280px;
+                    float: left;
+
+                    #map {
+                      height: 100%;
+                      width: 100%;
+
+                      .gm-style-pbt {
+                        color: $white;
+                      }
+                    }
                   }
 
                   .map-box-support {
                     width: calc(100% - 496px);
+                    float: right;
+                    display: flex;
+                    flex-direction: column;
 
                     .map-box-support-wrap {
                       padding: 10px;
@@ -134,6 +150,32 @@
 
                         span {
                           color: $red;
+                        }
+                      }
+                    }
+
+                    .map-box-input {
+                      margin-top: 10px;
+                      display: flex;
+
+                      #map-search {
+                        height: 30px;
+                        width: 75%;
+                        margin-right: 5px;
+                        border-radius: 4px;
+                      }
+
+                      #map-search-submit {
+                        height: 30px;
+                        width: 25%;
+                        border-radius: 4px;
+                        color: $white;
+                        background-color: $blue;
+                        border: none;
+
+                        &:hover {
+                          opacity: 0.7;
+                          cursor: pointer;
                         }
                       }
                     }
@@ -156,23 +198,21 @@
               .cloth-stores-submit-td {
                 background-color: $beige-bg;
                 box-shadow: 0 3px 2px -2px $shadow-2 inset;
+                margin: 0 auto;
       
                 div {
-                  margin: 0 auto;
-      
-                  div {
-      
-                    input {
-                      color: $white;
-                      background-color: $green;
-                      cursor: pointer;
-                      border-radius: 8px;
-                      text-align: center;
-                      width: 150px;
-      
-                      &:hover {
-                        opacity: 0.7;
-                      }
+                  text-align: center;
+
+                  input {
+                    color: $white;
+                    background-color: $green;
+                    cursor: pointer;
+                    border-radius: 8px;
+                    text-align: center;
+                    width: 150px;
+    
+                    &:hover {
+                      opacity: 0.7;
                     }
                   }
                 }

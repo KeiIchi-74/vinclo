@@ -16,6 +16,11 @@
                 <label class='fs-15'>店名</label>
               </th>
               <td>
+                <% if @cloth_store.errors.any? %>
+                  <% @cloth_store.errors.messages[:name].each do |message| %>
+                    <li><%= "店名#{message}" %></li>
+                  <% end %>
+                <% end %>
                 <%= f.text_field :name, placeholder: "例) Vinclo", maxlength: "50" %>
               </td>
             </tr>
@@ -25,6 +30,11 @@
                 <label class='fs-15'>フリガナ<br><span>(全角カナ)</span></label>
               </th>
               <td>
+                <% if @cloth_store.errors.any? %>
+                  <% @cloth_store.errors.messages[:name_kana].each do |message| %>
+                    <li><%= "フリガナ#{message}" %></li>
+                  <% end %>
+                <% end %>
                 <%= f.text_field :name_kana, placeholder: "例) ビンクロ", maxlength: "50" %>
               </td>
             </tr>
@@ -37,10 +47,15 @@
             <tr>
               <th>
                 <i class='required-icon fs-15'>必須</i>
-                <label class='fs-15'>郵便番号<br><span>(半角数字)</span></label>
+                <label class='fs-15'>郵便番号<br><span>(半角数字・ハイフン)</span></label>
               </th>
               <td>
-                <%= f.text_field :postcode, placeholder: "例) 123-4567, 1234567", maxlength:"8" %>
+                <% if @cloth_store.errors.any? %>
+                  <% @cloth_store.errors.messages[:postcode].each do |message| %>
+                    <li><%= "郵便番号#{message}" %></li>
+                  <% end %>
+                <% end %>
+                <%= f.text_field :postcode, placeholder: "例) 123-4567", maxlength:"8" %>
               </td>
             </tr>
             <tr>
@@ -71,7 +86,9 @@
               <th>地図</th>
               <td>
                 <div>
-                  <div class='map-box'></div>
+                  <div class='map-box'>
+                    <div id="map"></div>
+                  </div>
                   <div class='map-box-support'>
                     <div class='map-box-support-wrap'>
                       <p class='fs-12'>■地図の拡大縮小:<br><span>[左バーを上下 or マウスホイール上下]</span>
@@ -80,6 +97,12 @@
                       </p>
                       <p class='fs-12'>■地図の場所変更:<br><span>[地図をダブルクリック or マーカーをドラッグ]</span>
                       </p>
+                      <p class='fs-12'>■住所、郵便番号の確認:<br><span>[ピンをクリック]</span>
+                      </p>
+                    </div>
+                    <div class='map-box-input'>
+                      <input id='map-search' type='textbox' placeholder='店名や住所を入力して下さい' class='fs-12'>
+                      <input type='button' id='map-search-submit' value='検索'>
                     </div>
                   </div>
                 </div>
@@ -92,9 +115,7 @@
             <tr>
               <td class='cloth-stores-submit-td'>
                 <div>
-                  <div>
-                    <%= f.submit "登録する" %>
-                  </div>
+                  <%= f.submit "登録する" %>
                 </div>
               </td>
             </tr>

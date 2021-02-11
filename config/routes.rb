@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get 'users/pre_reset_passwords', to: 'users/pre_reset_passwords#index'
 
   scope module: :users do
-    resources :cloth_stores
+    resources :cloth_stores, only: [:new, :create]
     resources :reviews
   end
 end

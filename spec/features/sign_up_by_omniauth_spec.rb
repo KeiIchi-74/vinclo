@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature 'Sign up by omniauth', type: :feature do
   background do
     ActionMailer::Base.deliveries.clear
-    Rails.application.env_config["omniauth.auth"] = set_omniauth
+    Rails.application.env_config['omniauth.auth'] = omniauth
   end
   scenario 'omniauthを用いて、メールアドレスを入力して、正しい情報を入力すればメールが送信され、そのリンクを押せば会員登録が完了する' do
     visit root_path
@@ -22,14 +22,14 @@ RSpec.feature 'Sign up by omniauth', type: :feature do
 
     # グーグルから送信されたユーザーのメールアドレスが、入力されている
     expect(page).to have_field('user_email', with: 'sample@sample.com')
-    
+
     # 情報を正しく入力する
     select '1930', from: 'user_birth_date_1i'
     select '1', from: 'user_birth_date_2i'
     select '1', from: 'user_birth_date_3i'
     fill_in 'user_password', with: '00000a'
     fill_in 'user_password_confirmation', with: '00000a'
-    
+
     # メールが送信される
     expect { click_button 'regis-submit-1' }.to change { ActionMailer::Base.deliveries.size }.by(1)
     expect(User.count).to eq 1
