@@ -1,0 +1,399 @@
+.c-overlay {
+  overflow: auto;
+  overflow-y: scroll;
+  display: block;
+  position: fixed;
+  top: -20px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+  width: auto;
+  height: auto;
+  z-index: 998;
+  background: $rmw-black;
+
+  .rmw-form {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    width: 700px;
+    margin-left: -350px;
+    z-index: 999;
+    border-radius: 4px;
+    background-color: $white;
+
+    .rmw-header {
+      position: relative;
+      padding: 1.6rem 0 1.2rem;
+      border-bottom: solid 1px $beige-bg;
+
+      .rmw-header-inner {
+        margin: 0 auto;
+        width: 320px;
+        text-align: center;
+
+        a {
+          display: block;
+          position: absolute;
+          top: 10px;
+          right: 15px;
+          color: $times-color;
+          cursor: pointer;
+        }
+
+        .rmw-header-store-name {
+          display: inline-block;
+          max-width: 278px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          text-align: center;
+          vertical-align: middle;
+        }
+
+        .rmw-header-store-name-kana {
+          line-height: 1.2;
+        }
+      }
+    }
+
+    .rmw-main {
+      max-height: 547px;
+
+      .rmw-main-wrap {
+        position: relative;
+        overflow: hidden;
+        overflow-y: scroll;
+        max-width: 100%;
+        max-height: 547px;
+        outline: none;
+
+        .rmw-main-container {
+          margin-right: 0;
+
+          .rmw-main-contents {
+
+          .rmw-main-cloth-name, .rmw-main-price, .rmw-main-score, .rmw-main-title {
+              margin: 0 auto;
+              padding: 2rem 0 0;
+              border-top: 1px solid $beige-bg;
+              width: 650px;
+
+              p {
+                color: $times-color;
+                float: left;
+                padding: 15px 8px;
+              }
+
+              textarea {
+                border: none;
+                width: calc(100% - 2rem);
+                resize: none;
+                padding: 8px;
+                overflow-x: hidden;
+                overflow-wrap: break-word;
+
+                &::placeholder {
+                  color: $times-color;
+                } 
+              }
+            }
+
+            .rmw-main-cloth-name {
+              border-top: none;
+            }
+
+            .rmw-main-price {
+              display: flex;
+              padding-bottom: 29px;
+
+              textarea {
+                width: 80%;
+                text-align: right;
+
+                &::placeholder {
+                  text-align: left;
+                }
+              }
+
+              .price-text {
+                padding: 8px;
+                color: $times-color;
+              }
+            }
+
+            .rmw-main-score {
+              display: flex;
+              flex-direction: column;
+              padding: 2rem 0 29px;
+
+              p {
+                padding: 0px 8px 15px;
+              }
+
+              .score-box {
+                margin-left: 15px;
+
+                .score-wrap {
+                  display: flex;
+                  color: $times-color;
+
+                  .score-contents {
+
+                    .fas {
+                      color: $star;
+                      cursor: pointer;
+                    }
+                  }
+
+                  .score-value-display {
+                    margin-left: 15px;
+                  }
+                }
+              }
+            }
+
+            .rmw-main-title {
+
+              .title-count-wrap {
+                text-align: right;
+                color: $times-color;
+              }
+            }
+
+            .rmw-main-text {
+              width: 650px;
+              margin: 0 auto;
+              padding: 1rem 0;
+
+              textarea {
+                border: 1px solid transparent;
+                width: calc(100% - 2rem);
+                min-height: 120px;
+                overflow: hidden;
+                word-wrap: break-word;
+                resize: none;
+                padding: 8px;
+                overflow-x: hidden;
+                overflow-wrap: break-word;
+
+                &::placeholder {
+                  color: $times-color;
+                } 
+              }
+
+              .text-count-wrap {
+                text-align: right;
+                color: $times-color;
+              }
+            }
+
+            .rmw-main-pthoto-wrap {
+              display: block;
+              position: relative;
+              border-top: solid 1px $beige-bg;
+
+              .rmw-main-pthoto-inner {
+                display: flex;
+                flex-direction: row-reverse;
+                position: relative;
+                margin: 0 auto;
+                width: 700px;
+                justify-content: flex-end;
+                flex-wrap: wrap;
+
+                ul {
+                  position: relative;
+                  margin: 0;
+                  padding-left: 18px;
+                  order: 2;
+                  flex-shrink: 0;
+                  text-decoration: none;
+                  list-style: none;
+
+                  
+                  li {
+                    background-color: $photo-preview-bg;
+                    padding: 15px;
+                    
+                    p {
+                      width: 100%;
+                      height: 100%;
+                      
+                      a {
+                        display: block;
+                        appearance: none;
+                        outline: none;
+                        border: none;
+                        width: 100%;
+                        height: 100%;
+                        background: none;
+                        color: $photo-color;
+                        
+                        .fa-camera {
+                          margin-right: 5px;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              
+              .rmw-main-photo-option-container {
+                background-color: $photo-preview-bg;
+                
+                .rmw-main-photo-option-area {
+                  margin: 0 auto;
+                  width: 660px;
+                  height: 300px;
+                  box-sizing: border-box;
+                  
+                  .rmw-main-photo-preview-area {
+                    position: relative;
+                    display: flex;
+                    text-align: center;
+                    align-items: center;
+                    
+                    ul {
+                      margin: 0;
+                      padding: 0;
+                      
+                      .photo-preview {
+        
+                        .photo-preview-container {
+                          height: 180px;
+                          padding-top: 30px;
+
+                          .delete-icon {
+                            cursor: pointer;
+                            position: absolute;
+                            width: 20px;
+                            right: 6px;
+                            z-index: 1;
+                            color: $white;
+                            background-color: $photo-times-bg;
+                            font-size: 14px;
+                            padding: 0;
+
+                            &:hover {
+                              color: rgba(255, 255, 255, 0.5); 
+                            }
+                          }
+
+                          .edit-icon {
+                            cursor: pointer;
+                            position: absolute;
+                            left: 6px;
+                            z-index: 1;
+                            color: white;
+                            background-color: #bcb08a;
+                            padding: 2px;
+                            font-size: 14px;
+
+                            &:hover {
+                              color: rgba(255, 255, 255, 0.5);
+                            }
+                          }
+        
+                          .photo-preview-wrap {
+                            position: relative;
+                            margin: auto;
+                            width: 150px;
+                            height: 150px;
+                            padding-top: 0;
+        
+                            img {
+                              width: 150px;
+                              height: 150px;
+                            }
+                          }
+                        }
+                      }
+
+                      li {
+                        cursor: pointer;
+                        list-style: none;
+                        position: relative;
+                        float: left;
+                        border: 1px solid transparent;
+                        width: 164px;
+                        height: 202px;
+                        box-sizing: border-box;
+                        background-color: transparent;
+
+                        .photo-add-box-wrap {
+                          padding-top: 30px;
+                          pointer-events: none;
+
+                          button {
+                            width: 150px;
+                            height: 150px;
+                            cursor: pointer;
+                            padding: 15px;
+                            outline: none;
+                            border: dashed 2px $photo-btn-border;
+                            box-sizing: border-box;
+                            overflow: hidden;
+                            color: $photo-btn-color;
+                            background-color: $white;
+
+                            p {
+                              margin-top: 5px;
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+
+                  .rmw-main-photo-preview-info {
+                    margin-left: 50px;
+
+                    p {
+                      color: $photo-color;
+                    }
+                  }
+                }
+              }
+            } 
+          }
+        }
+      }
+
+      .rmw-footer {
+        padding: 15px;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-color: $rmw-footer-bg;
+        box-shadow: none;
+        z-index: 2;
+
+        .rmw-footer-contents {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .rmw-footer-button {
+            display: inline-block;
+
+            button {
+              border: 1px solid $review-btn-border;
+              box-shadow: 0 0 1px $black;
+              color: $white;
+              background-color: $review-btn-bg;
+              padding: 10px;
+              border-radius: 4px;
+
+              &:hover {
+                cursor: pointer;
+                opacity: 0.7;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

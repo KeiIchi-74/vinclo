@@ -1,5 +1,6 @@
 class Users::ClothStoresController < Users::ApplicationController
   def new
+    @review = Review.new
     @cloth_store = ClothStore.new
   end
 
@@ -10,6 +11,13 @@ class Users::ClothStoresController < Users::ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @review = Review.new
+    @cloth_store = ClothStore.find(params[:id])
+    @address = @cloth_store.address_display
+    gon.cloth_store = @cloth_store
   end
 
   private

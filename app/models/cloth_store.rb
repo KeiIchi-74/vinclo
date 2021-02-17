@@ -28,4 +28,9 @@ class ClothStore < ApplicationRecord
     prefecture = prefecture_name
     [name, prefecture, address_city, address_street].compact.join(', ')
   end
+
+  def address_display
+    prefecture = prefecture_name
+    [prefecture, address_city, address_street].compact.join('')
+  end
 end
