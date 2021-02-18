@@ -74,3 +74,4 @@ gem 'omniauth-rails_csrf_protection'
 gem 'devise', git: "https://github.com/heartcombo/devise.git",  branch: "ca-omniauth-2"
 
 gem 'gon'
+gem 'dotenv-rails'

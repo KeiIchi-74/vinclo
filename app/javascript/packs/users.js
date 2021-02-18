@@ -4,8 +4,9 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-// require("turbolinks").start()
+require("turbolinks").start()
 require("@rails/activestorage").start()
+require('dotenv').config()
 require("channels")
 require("../swiper/swiper.js")
 require("../swiper/swiper_thumbnail")

@@ -67,7 +67,9 @@
       <div class='cloth-store-show-review'>
         <div class='cloth-store-show-review-contents'>
           <p class='cloth-store-show-review-button'>
-            <a><i class="fas fa-pen"></i>レビューを投稿する</a>
+            <%= link_to new_review_path(@cloth_store.id), remote: true do %>
+              <i class="fas fa-pen"></i>レビューを投稿する
+            <% end %>
           </p>
         </div>
       </div>
@@ -77,6 +79,4 @@
     </div>
   </div>
 </div>
-<%= render partial: 'users/cloth_stores/rmw_form', locals: {review: @review, cloth_store: @cloth_store} %>
-
-
+<div class='c-overlay hidden' id='c-overlay'></div>

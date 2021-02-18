@@ -1,5 +1,8 @@
 let markers = [];
 if (document.URL.match(/\/cloth_stores\/new/) || document.URL.match(/\/cloth_stores\/create/)) {
+  const script = document.createElement("script");
+  script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_MAP_API_KEY}&callback=initMap&libraries=&v=weekly`;
+  script.async = true;
   window.initMap = function () {
     const map = new google.maps.Map(document.getElementById("map"), {
       zoom: 5,
@@ -26,6 +29,7 @@ if (document.URL.match(/\/cloth_stores\/new/) || document.URL.match(/\/cloth_sto
       geocoderAddressSearch(geocoder, map);
     });
   }
+  document.head.appendChild(script);
   function geocoderAddressSearch(geocoder, resultMap) {
     const address = document.getElementById("map-search").value;
     geocoder.geocode({ address: address }, (results, status) => {

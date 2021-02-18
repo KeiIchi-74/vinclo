@@ -8,6 +8,7 @@ class Users::ClothStoresController < Users::ApplicationController
     @cloth_store = ClothStore.new(cloth_store_params)
     if @cloth_store.save
       redirect_to root_path
+      flash[:notice] = '店舗情報を登録しました。'
     else
       render :new
     end
@@ -17,7 +18,8 @@ class Users::ClothStoresController < Users::ApplicationController
     @review = Review.new
     @cloth_store = ClothStore.find(params[:id])
     @address = @cloth_store.address_display
-    gon.cloth_store = @cloth_store
+    gon.latitude = @cloth_store.latitude
+    gon.longitude = @cloth_store.longitude
   end
 
   private

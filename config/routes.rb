@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   post 'cloth_stores/create', to: 'users/cloth_stores#create'
   post 'reviews/create', to: 'users/reviews#create'
   post 'reviews/upload_image', to: 'users/reviews#upload_image'
+  get 'reviews/close', to: 'users/reviews#close'
 end

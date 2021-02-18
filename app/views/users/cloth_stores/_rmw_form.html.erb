@@ -1,110 +1,110 @@
-<div class='c-overlay'>
-  <%= form_with model: review, url: reviews_create_path(cloth_store.id), class: 'rmw-form', local: true do |f| %>
-    <div class='rmw-header'>
-      <div class='rmw-header-inner'>
-        <a><i class="fas fa-times"></i></a>
-        <p class='rmw-header-store-name'>
-          <span class='fw-bold fs-20'><%= cloth_store.name %></span>
-        </p>
-        <p class='rmw-header-store-name-kana fs-11'><%= cloth_store.name_kana %></p>
-      </div>
+<%= form_with model: review, url: reviews_create_path(cloth_store.id), class: 'rmw-form', id: 'rmw-form', remote: true do |f| %>
+  <div class='rmw-header'>
+    <div class='rmw-header-inner'>
+      <%= link_to reviews_close_path, remote: true, data: { confirm: 'このフォームを閉じると、レビュー内容は削除されますがよろしいですか？' } do %>
+        <i class="fas fa-times"></i>
+      <% end %>
+      <p class='rmw-header-store-name'>
+        <span class='fw-bold fs-20'><%= cloth_store.name %></span>
+      </p>
+      <p class='rmw-header-store-name-kana fs-11'><%= cloth_store.name_kana %></p>
     </div>
-    <div class='rmw-main'>
-      <div class='rmw-main-wrap'>
-        <div class='rmw-main-container'>
-          <div class='rmw-main-contents'>
-            <div class='rmw-main-cloth-name'>
-              <%= f.text_area :cloth_name, class: 'fs-16 fw-bold', placeholder: '購入したアイテム等あれば、その種類、名称を入力して下さい' %>
-            </div>
-            <div class='rmw-main-price'>
-              <%= f.text_area :price, class: 'fs-16 fw-bold', rows: '1', placeholder: 'アイテムの値段を入力して下さい' %>
-              <div class='price-text fs-16 fw-bold'>円</div>
-            </div>
-            <div class='rmw-main-score'>
-              <% if review.errors.any? %>
-                <% review.errors.messages[:score].each do |message| %>
-                  <li class='red' style='margin-bottom: 15px;'><%= "評価#{message}" %></li>
-                <% end %>
+  </div>
+  <div class='rmw-main'>
+    <div class='rmw-main-wrap'>
+      <div class='rmw-main-container'>
+        <div class='rmw-main-contents'>
+          <div class='rmw-main-cloth-name'>
+            <%= f.text_area :cloth_name, class: 'fs-16 fw-bold', placeholder: '購入したアイテム等あれば、その種類、名称を入力して下さい' %>
+          </div>
+          <div class='rmw-main-price'>
+            <%= f.text_area :price, class: 'fs-16 fw-bold', rows: '1', placeholder: 'アイテムの値段を入力して下さい' %>
+            <div class='price-text fs-16 fw-bold'>円</div>
+          </div>
+          <div class='rmw-main-score'>
+            <% if review.errors.any? %>
+              <% review.errors.messages[:score].each do |message| %>
+                <li class='red' style='margin-bottom: 15px;'><%= "評価#{message}" %></li>
               <% end %>
-              <p class='fs-16 fw-bold'>店舗評価を5段階評価で入力して下さい（この項目は必須です）</p>
-              <div class='score-box'>
-                <div class='score-wrap'>
-                  <div class='score-contents'>
-                    <i class="far fa-star fs-30"></i>
-                    <i class="far fa-star fs-30"></i>
-                    <i class="far fa-star fs-30"></i>
-                    <i class="far fa-star fs-30"></i>
-                    <i class="far fa-star fs-30"></i>
-                  </div>
-                  <div class="score-value-display fs-20"><span id="score-value-display">0</span>/5</div>
-                  <%= f.hidden_field :score, id: 'score-value' %>
+            <% end %>
+            <p class='fs-16 fw-bold'>店舗評価を5段階評価で入力して下さい（この項目は必須です）</p>
+            <div class='score-box'>
+              <div class='score-wrap'>
+                <div class='score-contents'>
+                  <i class="far fa-star fs-30"></i>
+                  <i class="far fa-star fs-30"></i>
+                  <i class="far fa-star fs-30"></i>
+                  <i class="far fa-star fs-30"></i>
+                  <i class="far fa-star fs-30"></i>
                 </div>
+                <div class="score-value-display fs-20"><span id="score-value-display">0</span>/5</div>
+                <%= f.hidden_field :score, id: 'score-value' %>
               </div>
             </div>
-            <div class='rmw-main-title'>
-              <% if review.errors.any? %>
-                <% review.errors.messages[:title].each do |message| %>
-                  <li class='red'><%= "レビュータイトル#{message}" %></li>
-                <% end %>
+          </div>
+          <div class='rmw-main-title'>
+            <% if review.errors.any? %>
+              <% review.errors.messages[:title].each do |message| %>
+                <li class='red'><%= "レビュータイトル#{message}" %></li>
               <% end %>
-              <%= f.text_area :title, class: 'fs-16 fw-bold', id: 'rmw-main-title-textarea', maxlength: '50', placeholder: 'レビュータイトルを入力して下さい（この項目は必須です、50文字まで）' %>
-              <div class='title-count-wrap fs-16 fw-bold'><span id='title-count'>0</span>/50</div>
-            </div>
-            <div class='rmw-main-text'>
-              <% if review.errors.any? %>
-                <% review.errors.messages[:text].each do |message| %>
-                  <li class='red'><%= "レビュー本文#{message}" %></li>
-                <% end %>
+            <% end %>
+            <%= f.text_area :title, class: 'fs-16 fw-bold', id: 'rmw-main-title-textarea', maxlength: '50', placeholder: 'レビュータイトルを入力して下さい（この項目は必須です、50文字まで）' %>
+            <div class='title-count-wrap fs-16 fw-bold'><span id='title-count'>0</span>/50</div>
+          </div>
+          <div class='rmw-main-text'>
+            <% if review.errors.any? %>
+              <% review.errors.messages[:text].each do |message| %>
+                <li class='red'><%= "レビュー本文#{message}" %></li>
               <% end %>
-              <%= f.text_area :text, class: 'fs-14', id: 'rmw-main-text-textarea', maxlength: '5000', placeholder: 'レビュー本文を入力して下さい（この項目は必須です、5000文字まで）' %>
-              <div class='text-count-wrap fs-14'><span id='text-count'>0</span>/5000</div>
+            <% end %>
+            <%= f.text_area :text, class: 'fs-14', id: 'rmw-main-text-textarea', maxlength: '5000', placeholder: 'レビュー本文を入力して下さい（この項目は必須です、5000文字まで）' %>
+            <div class='text-count-wrap fs-14'><span id='text-count'>0</span>/5000</div>
+          </div>
+          <div class='rmw-main-pthoto-wrap'>
+            <div class='rmw-main-pthoto-inner'>
+              <ul>
+                <li>
+                  <p>
+                    <a class='fs-12'><i class="fas fa-camera"></i>写真追加（4枚まで）</a>
+                  </p>
+                </li>
+              </ul>
             </div>
-            <div class='rmw-main-pthoto-wrap'>
-              <div class='rmw-main-pthoto-inner'>
-                <ul>
-                  <li>
-                    <p>
-                      <a class='fs-12'><i class="fas fa-camera"></i>写真追加（4枚まで）</a>
-                    </p>
-                  </li>
-                </ul>
-              </div>
-              <div class='rmw-main-photo-option-container'>
-                <div class='rmw-main-photo-option-area'>
-                  <%= f.file_field :images, multiple: true, class: "file-input hidden", accept: "image/*" %>
-                  <div class='rmw-main-photo-preview-area'>
-                    <ul id='photo-preview-area'>
-                      <% if review.images.attached? %>
-                        <% review.images.each do |image| %>
-                          <li class='photo-preview'>
-                            <div class='photo-preview-container'>
-                              <div class='delete-icon'>✕</div>
-                              <div class='edit-icon'>編集</div>
-                              <input class='edit-image-file-input hidden' type='file' accept="image/*">
-                              <%= f.hidden_field :images, name: 'review[images][]', class: 'image-id-input', value: image.blob.id %>
-                              <div class='photo-preview-wrap'>
-                                <%= image_tag image %>
-                              </div>
+            <div class='rmw-main-photo-option-container'>
+              <div class='rmw-main-photo-option-area'>
+                <%= f.file_field :images, multiple: true, class: "file-input hidden", accept: "image/*" %>
+                <div class='rmw-main-photo-preview-area'>
+                  <ul id='photo-preview-area'>
+                    <% if review.images.attached? %>
+                      <% review.images.each do |image| %>
+                        <li class='photo-preview'>
+                          <div class='photo-preview-container'>
+                            <div class='delete-icon'>✕</div>
+                            <div class='edit-icon'>編集</div>
+                            <input class='edit-image-file-input hidden' type='file' accept="image/*">
+                            <%= f.hidden_field :images, name: 'review[images][]', class: 'image-id-input', value: image.blob.id %>
+                            <div class='photo-preview-wrap'>
+                              <%= image_tag image %>
                             </div>
-                          </li>
-                        <% end %>
+                          </div>
+                        </li>
                       <% end %>
-                      <li id='photo-add-box'>
-                        <div class='photo-add-box-wrap'>
-                          <button disabled>
-                            <div class='image-btn'>
-                              <i class="fas fa-plus fs-30"></i>
-                              <p>写真追加</p>
-                            </div>
-                          </button>
-                        </div>
-                      </li>
-                    </ul>
-                    <div class='rmw-main-photo-preview-info fs-18' id='photo-preview-info'>
-                      <p>左のアイコンをクリックして</p>
-                      <p>購入したアイテムの画像などを</p>
-                      <p>アップロード（4枚まで）することができます</p>
-                    </div>
+                    <% end %>
+                    <li id='photo-add-box'>
+                      <div class='photo-add-box-wrap'>
+                        <button disabled>
+                          <div class='image-btn'>
+                            <i class="fas fa-plus fs-30"></i>
+                            <p>写真追加</p>
+                          </div>
+                        </button>
+                      </div>
+                    </li>
+                  </ul>
+                  <div class='rmw-main-photo-preview-info fs-18' id='photo-preview-info'>
+                    <p>左のアイコンをクリックして</p>
+                    <p>購入したアイテムの画像などを</p>
+                    <p>アップロード（4枚まで）することができます</p>
                   </div>
                 </div>
               </div>
@@ -112,13 +112,15 @@
           </div>
         </div>
       </div>
-      <div  class='rmw-footer'>
-        <div class='rmw-footer-contents'>
-          <p class='rmw-footer-button'>
-            <%= f.button type: "submit" do %><i class="fas fa-pen"></i>レビューを投稿する<% end %>
-          </p>
-        </div>
+    </div>
+    <div  class='rmw-footer'>
+      <div class='rmw-footer-contents'>
+        <p class='rmw-footer-button'>
+          <%= f.button type: "submit" do %>
+            <i class="fas fa-pen"></i>レビューを投稿する
+          <% end %>
+        </p>
       </div>
     </div>
-  <% end %>
-</div>
+  </div>
+<% end %>
