@@ -22,7 +22,7 @@ FactoryBot.define do
     email                 { 'sample@sample.com' }
     password              { '00000d' }
     password_confirmation { password }
-    birth_date            { '1930-01-04'}
+    birth_date            { '1930-01-04' }
     confirmed_at          { Time.now }
   end
 end

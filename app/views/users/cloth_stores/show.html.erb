@@ -1,0 +1,82 @@
+<div class='cloth-store-show-container'>
+  <div class='cloth-store-show-header-wrap'>
+    <div class='cloth-store-show-header'>
+      <section class='cloth-store-show-info-wrap'>
+        <div class='cloth-store-show-title'>
+          <div class='cloth-store-show-title-wrap'>
+            <div class='cloth-store-show-title-name'>
+              <h2>
+                <span><%= @cloth_store.name %></span>
+              </h2>
+              <span class='cloth-store-show-name-kana fs-12'><%= "（#{@cloth_store.name_kana}）" %></span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <div class='cloth-store-show-contents'>
+    <div class='cloth-store-show-column-main'>
+      <div class='cloth-store-show-image'>
+        <div class="gallery-top">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><%= image_tag 'store1.jpg' %></div>
+            <div class="swiper-slide"><%= image_tag 'store2.jpg' %></div>
+            <div class="swiper-slide"><%= image_tag 'store3.jpg' %></div>
+            <div class="swiper-slide"><%= image_tag 'store4.jpg' %></div>
+            <div class="swiper-slide"><%= image_tag 'store5.jpg' %></div>
+          </div>
+          <div class="swiper-button-next swiper-button-white"><i class="fas fa-chevron-right fs-30"></i></div>
+          <div class="swiper-button-prev swiper-button-white fs-30"><i class="fas fa-chevron-left"></i></div>
+        </div>
+        <div class="gallery-thumbs">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><%= image_tag 'store1.jpg' %></div>
+            <div class="swiper-slide"><%= image_tag 'store2.jpg' %></div>
+            <div class="swiper-slide"><%= image_tag 'store3.jpg' %></div>
+            <div class="swiper-slide"><%= image_tag 'store4.jpg' %></div>
+            <div class="swiper-slide"><%= image_tag 'store5.jpg' %></div>
+          </div>
+        </div>
+      </div>
+      <div class='cloth-store-show-data'>
+        <div class='cloth-store-show-data-head fs-15'>
+          <h3>店舗情報（詳細）</h3>
+        </div>
+        <div class='cloth-store-show-data-main fs-14'>
+          <h4>店舗基本情報</h4>
+          <table class='cloth-store-show-data-info fs-13'>
+            <tbody>
+              <tr>
+                <th>店名</th>
+                <td><%= "#{@cloth_store.name}（#{@cloth_store.name_kana}）" %></td>
+              </tr>
+              <tr>
+                <th>住所</th>
+                <td>
+                  <p><%= @address %></p>
+                  <div class='map-box'>
+                    <div id='map'></div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class='cloth-store-show-review'>
+        <div class='cloth-store-show-review-contents'>
+          <p class='cloth-store-show-review-button'>
+            <%= link_to new_review_path(@cloth_store.id), remote: true do %>
+              <i class="fas fa-pen"></i>レビューを投稿する
+            <% end %>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class='cloth-store-show-column-side'>
+      <div class='cloth-store-show-column-side-wrap'></div>
+    </div>
+  </div>
+</div>
+<div class='c-overlay hidden' id='c-overlay'></div>

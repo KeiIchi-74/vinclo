@@ -4,8 +4,25 @@ $gray: #eee;
 $red: rgb(234, 53, 45);
 $blue: rgb(0, 149, 238);
 $green: rgb(8, 117, 8);
-
+$beige: #d6ceb4;
+$beige-bg: #eeece4;
+$beige-bg-2: #faf8f5;
 $shadow: rgb(0, 0, 0);
+$shadow-2: rgb(188, 176, 138);
+$review-border: #bacbdc;
+$review-bg: #f1f4f8;
+$review-btn-border: #82ad24;
+$review-btn-bg: #9c0;
+$thumbnail-bg: #f4f4f4;
+$rmw-black: rgba(0,0,0,0.5);
+$photo-preview-bg: #faf8f5;
+$photo-color: #797152;
+$photo-btn-border: #e1e1e1;
+$photo-btn-color: #d2d2d2;
+$rmw-footer-bg: rgba(238,236,228,0.8);
+$times-color: #999;
+$star: #ffcc00;
+$photo-times-bg: #bcb08a;
 
 $input-bg:  rgb(245, 245, 245);
 
@@ -15,3 +32,7 @@ $border: rgb(204, 204, 204);
 
 $Line: rgb(35, 196, 29);
 $Twitter: rgb(7, 156, 224);
+
+.red {
+  color: $red;
+}

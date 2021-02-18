@@ -4,11 +4,12 @@
     <title>Vinclo</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= include_gon %>
 
-    <%= stylesheet_link_tag 'css/reset.css', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag 'users', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'css/reset.css', media: 'all' %>
+    <%= stylesheet_link_tag 'users', media: 'all' %>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <%= javascript_pack_tag 'users', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'users' %>
   </head>
 
   <body>
@@ -23,5 +24,6 @@
     </footer>
     <script src="https://kit.fontawesome.com/fb52d9c8d6.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="//jpostal-1006.appspot.com/jquery.jpostal.js"></script>
   </body>
 </html>

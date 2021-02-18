@@ -36,5 +36,5 @@ RSpec.feature 'Sign up', type: :feature do
     # 登録が完了したユーザーが、再びメールのリンクをクリックした場合に、登録完了を知らせるページに遷移する
     visit url
     expect(page).to have_content('メールアドレスは既に登録済みです。ログインしてください。')
-  end 
+  end
 end

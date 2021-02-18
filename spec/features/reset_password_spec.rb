@@ -24,7 +24,7 @@ RSpec.feature 'Reset Password', type: :feature do
     fill_in 'user_email', with: 'sample@sample.com'
     expect { click_button 'パスワード再設定用確認メールを送る' }.to change { ActionMailer::Base.deliveries.size }.by(0)
     expect(page).to have_content('メールアドレスは見つかりませんでした')
-    
+
     # メールが送信される
     fill_in 'user_email', with: @user.email
     expect { click_button 'パスワード再設定用確認メールを送る' }.to change { ActionMailer::Base.deliveries.size }.by(1)

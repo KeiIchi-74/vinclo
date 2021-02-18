@@ -50,6 +50,7 @@ end
 
 group :test do
   gem 'capybara', '>= 2.15'
+  gem 'webdrivers'
   gem 'factory_bot_rails'
   gem 'database_rewinder'
   gem 'launchy'
@@ -65,6 +66,12 @@ gem 'active_hash'
 
 gem 'rails-i18n'
 
+gem 'jp_prefecture'
+gem 'geocoder'
+
 gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection'
 gem 'devise', git: "https://github.com/heartcombo/devise.git",  branch: "ca-omniauth-2"
+
+gem 'gon'
+gem 'dotenv-rails'

@@ -8,6 +8,11 @@
     display: flex;
     height: 40px;
     margin-right: 45px;
+
+    .site-name-a {
+      text-decoration: none;
+      color: $black;
+    }
   }
 
   .store-search-container {

@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('turbolinks:load', () => {
   var swiper = new Swiper('.swiper-container', {
     effect: 'fade',
     spaceBetween: 30,
