@@ -31,6 +31,6 @@ class ClothStore < ApplicationRecord
 
   def address_display
     prefecture = prefecture_name
-    [prefecture, address_city, address_street].compact.join('')
+    [prefecture, address_city, address_street].compact.join
   end
 end
