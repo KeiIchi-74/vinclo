@@ -32,10 +32,6 @@ document.addEventListener('turbolinks:load', () => {
             scoreValueDisplay.textContent = scoreValue.value;
           }
         })
-        stars[i].addEventListener("click", () => {
-          scoreValue.value = i + 1;
-          scoreValueDisplay.textContent = scoreValue.value;
-        })
         stars[i].addEventListener("mouseout", () => {
           for(let j = 0; j < stars.length; j++) {
             stars[j].classList.remove("fas");
