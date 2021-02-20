@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'Sign in', type: :feature do
   background do
-    @user = FactoryBot.create(:authenticated_user)
+    @user = FactoryBot.create(:user, :authenticated_user)
   end
 
   scenario '登録したユーザー情報を正しく入力すれば、ログインできる' do

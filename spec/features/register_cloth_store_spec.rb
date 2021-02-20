@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'Register Cloth Store', type: :feature do
   background do
-    @user = FactoryBot.create(:authenticated_user)
+    @user = FactoryBot.create(:user, :authenticated_user)
     sign_in(@user)
   end
 

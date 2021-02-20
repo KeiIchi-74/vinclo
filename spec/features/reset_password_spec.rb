@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature 'Reset Password', type: :feature do
   background do
     ActionMailer::Base.deliveries.clear
-    @user = FactoryBot.create(:authenticated_user)
+    @user = FactoryBot.create(:user, :authenticated_user)
   end
 
   def extract_confirmation_url(mail)
