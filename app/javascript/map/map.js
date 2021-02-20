@@ -28,6 +28,14 @@ if (document.URL.match(/\/cloth_stores\/new/) || document.URL.match(/\/cloth_sto
       deleteMarker();
       geocoderAddressSearch(geocoder, map);
     });
+    // 検索ボタンクリックに加えて、入力後にEnterキーを押しても、検索が発火するようにした。
+    document.getElementById("map-search").addEventListener("keydown", (e) => {
+      const key = e.key;
+      if (key == 'Enter') {
+        deleteMarker();
+        geocoderAddressSearch(geocoder, map);
+      }
+    });
   }
   document.head.appendChild(script);
   function geocoderAddressSearch(geocoder, resultMap) {
