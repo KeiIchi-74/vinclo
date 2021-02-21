@@ -20,7 +20,7 @@ RSpec.describe User, type: :model do
       end
       it '重複したemailが存在した場合送信できない' do
         @user.save
-        another_user = FactoryBot.build(:another_user)
+        another_user = FactoryBot.build(:user, :another_user)
         another_user.email = @user.email
         another_user.valid?
         expect(another_user.errors.full_messages).to include('メールアドレスはすでに存在します')
