@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Review, type: :model do
-  before do 
+  before do
     @review = FactoryBot.build(:review)
   end
 
