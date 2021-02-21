@@ -5,5 +5,9 @@ FactoryBot.define do
     text     { 'サンプルレビューのテキストです。'}
     association :cloth_store
     association :user, :authenticated_user
+    trait :over_count do
+      title  { Faker::Lorem.characters(number: 51) }
+      text   { Faker::Lorem.characters(number: 5001) }
+    end
   end
 end
