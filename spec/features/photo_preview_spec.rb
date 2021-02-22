@@ -18,7 +18,7 @@ RSpec.feature 'Photo Preview', type: :feature do
     click_link 'レビューを投稿する'
     expect(page).to have_selector('#photo-preview-area')
     # 最初はプレビュー描画されたときに存在する要素はない
-    expect(page).to_not have_selector('photo-preview') 
+    expect(page).to_not have_selector('photo-preview')
     # テスト用の3枚の画像へのパスを定義
     image1_path = Rails.root.join('spec/files/test1.jpg')
     image2_path = Rails.root.join('spec/files/test2.jpg')
@@ -28,10 +28,10 @@ RSpec.feature 'Photo Preview', type: :feature do
     sleep 0.2
     expect(all('.photo-preview').length).to eq 3
     # 削除ボタン（✕）ボタンをクリックするとプレビュー描画がなくなる
-    find(".delete-icon", match: :first).click
+    find('.delete-icon', match: :first).click
     expect(all('.photo-preview').length).to eq 2
     # 編集ボタンに対応した、編集用のinput要素に画像を添付すると、プレビュー画像の全枚数は変化しない
-    page.attach_file( image1_path, make_visible: true, class: 'edit-image-file-input', match: :first)
+    page.attach_file(image1_path, make_visible: true, class: 'edit-image-file-input', match: :first)
     sleep 0.2
     expect(all('.photo-preview').length).to eq 2
     # エラーによって再レンダリングされると、入力した画像が描画されている
