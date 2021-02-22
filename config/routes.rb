@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   scope module: :users do
     resources :cloth_stores, only: [:new, :show]
     resources :reviews, only: [:new]
+    resources :prefectures, only: [:show]
   end
   post 'reviews/create', to: 'users/reviews#create'
   post 'reviews/upload_image', to: 'users/reviews#upload_image'
