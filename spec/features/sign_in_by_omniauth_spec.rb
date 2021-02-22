@@ -6,7 +6,7 @@ RSpec.feature 'Sign in by omniauth', type: :feature do
   end
 
   scenario 'omniauthに登録されているメールアドレスで会員登録していれば、omniauthを用いたログインが行える' do
-    FactoryBot.create(:authenticated_user_have_omniauth_email)
+    FactoryBot.create(:user, :authenticated_user_have_omniauth_email)
     visit root_path
     click_link 'ログイン'
     expect(page).to have_content('他のサービスでログイン')
@@ -15,7 +15,7 @@ RSpec.feature 'Sign in by omniauth', type: :feature do
     expect(page).to have_content('ログアウト')
   end
   scenario 'omniauthに登録されていないメールアドレスで会員登録していれば、omniauthを用いたログインは行えず、新規会員登録ページに遷移する' do
-    FactoryBot.create(:authenticated_user)
+    FactoryBot.create(:user, :authenticated_user)
     visit root_path
     click_link 'ログイン'
     expect(page).to have_content('他のサービスでログイン')

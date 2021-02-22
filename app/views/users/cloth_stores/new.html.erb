@@ -4,7 +4,7 @@
     <div>
       <p class='fs-13'>古着屋を追加する際には、古着屋情報が最新のものであることをご確認の上で、入力してください。<br>また、当サイトの趣旨にあわないお店は管理側で判断し、削除する場合がございますので、ご了承下さい。</p>
     </div>
-    <%= form_with model: @cloth_store, url: cloth_stores_create_path, local: true do |f| %>
+    <%= form_with model: @cloth_store, url: cloth_stores_create_path, id: 'cloth-store-create-form', local: true do |f| %>
       <div class='cloth-stores-contents'>
         <h3 class='fs-18'>基本情報入力</h3>
         <h4 class='fs-17'>店名</h4>
@@ -101,7 +101,7 @@
                       </p>
                     </div>
                     <div class='map-box-input'>
-                      <input id='map-search' type='textbox' placeholder='店名や住所を入力して下さい' class='fs-12'>
+                      <input id='map-search' type='search' placeholder='店名や住所を入力して下さい' class='fs-12'>
                       <input type='button' id='map-search-submit' value='検索'>
                     </div>
                   </div>

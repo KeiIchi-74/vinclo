@@ -15,7 +15,7 @@ document.addEventListener('turbolinks:load', () => {
       const photoPreviewCount = document.querySelectorAll(".photo-preview").length;
       const photoPreviewInfo = document.getElementById("photo-preview-info");
       addHiddenOfImageAddBtn(photoPreviewCount);
-      addHiddenOfPhotoPreviewInfo(photoPreviewInfo);
+      addHiddenOfPhotoPreviewInfo(photoPreviewInfo, photoPreviewCount);
       inputFile.addEventListener("change", e => {
         const photoPreviewCount = document.querySelectorAll(".photo-preview").length;
         createImages(e, photoPreviewCount);
@@ -48,14 +48,18 @@ document.addEventListener('turbolinks:load', () => {
           alert("添付できる画像は合計で4枚までです。");
           return;
         } 
-        Object.keys(files).forEach((key) => {
+        Object.keys(files).forEach((key, index) => {
           const blob = window.URL.createObjectURL(files[key]);
           const img = createImageHTML(blob);
           uploadFile(files[key]).then(
             (image_id) => {
               createHTML(img, image_id);
               addHiddenOfImageAddBtn(totalImageCount);
-              addHiddenOfPhotoPreviewInfo(photoPreviewInfo);
+              // photo-preview-infoにhiddenをつける関数を、プレビュー描画が行われる最初の一回だけ実行するための条件
+              if (index == 0 && imageCount == 0) {
+                const photoPreviewCount = document.querySelectorAll(".photo-preview").length;
+                addHiddenOfPhotoPreviewInfo(photoPreviewInfo, photoPreviewCount);
+              }
             }
           );
         });
@@ -96,8 +100,10 @@ document.addEventListener('turbolinks:load', () => {
           imageAddBtn.classList.add("hidden");
         }
       }
-      function addHiddenOfPhotoPreviewInfo(element) {
-        element.classList.add("hidden");
+      function addHiddenOfPhotoPreviewInfo(element, count) {
+        if (count) {
+          element.classList.add("hidden");
+        }
       }
       function removeHiddenOfImageAddBtn() {
         const imageAddBtn = document.getElementById("photo-add-box");

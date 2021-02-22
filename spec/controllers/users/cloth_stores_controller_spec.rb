@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Users::ClothStoresController, type: :controller do
   before do
-    @user = FactoryBot.build(:authenticated_user)
+    @user = FactoryBot.build(:user, :authenticated_user)
     sign_in(@user)
   end
   describe '#new' do

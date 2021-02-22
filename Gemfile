@@ -54,6 +54,8 @@ group :test do
   gem 'factory_bot_rails'
   gem 'database_rewinder'
   gem 'launchy'
+  gem 'faker'
+  gem 'rubocop-faker'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

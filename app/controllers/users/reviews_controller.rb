@@ -7,17 +7,17 @@ class Users::ReviewsController < Users::ApplicationController
   def create
     @cloth_store = ClothStore.find_by(id: params[:format])
     @review = Review.new(review_params)
-    if @review.save
-      ActiveStorage::Blob.unattached.find_each(&:purge)
-      flash[:notice] = "レビューを投稿しました。"
-      redirect_to cloth_store_path(@cloth_store.id) 
-    end
+    return unless @review.save
+
+    ActiveStorage::Blob.unattached.find_each(&:purge)
+    flash[:notice] = 'レビューを投稿しました。'
+    redirect_to cloth_store_path(@cloth_store.id)
   end
 
   def upload_image
     image_blob = create_blob(params[:image])
     respond_to do |format|
-      format.json { render json:{ image_id: image_blob.id } }
+      format.json { render json: { image_id: image_blob.id } }
     end
   end
 
@@ -25,7 +25,7 @@ class Users::ReviewsController < Users::ApplicationController
     ActiveStorage::Blob.unattached.find_each(&:purge)
   end
 
-  private 
+  private
 
   def review_params
     params.require(:review).permit(
@@ -38,7 +38,7 @@ class Users::ReviewsController < Users::ApplicationController
   end
 
   def uploaded_images
-    params[:review][:images].map{|id| ActiveStorage::Blob.find(id)} if params[:review][:images]
+    params[:review][:images]&.map { |id| ActiveStorage::Blob.find(id) }
   end
 
   def create_blob(uploading_file)

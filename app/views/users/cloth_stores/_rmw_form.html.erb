@@ -31,11 +31,11 @@
             <div class='score-box'>
               <div class='score-wrap'>
                 <div class='score-contents'>
-                  <i class="far fa-star fs-30"></i>
-                  <i class="far fa-star fs-30"></i>
-                  <i class="far fa-star fs-30"></i>
-                  <i class="far fa-star fs-30"></i>
-                  <i class="far fa-star fs-30"></i>
+                  <i class="far fa-star fs-30" id='star-score-1'></i>
+                  <i class="far fa-star fs-30" id='star-score-2'></i>
+                  <i class="far fa-star fs-30" id='star-score-3'></i>
+                  <i class="far fa-star fs-30" id='star-score-4'></i>
+                  <i class="far fa-star fs-30" id='star-score-5'></i>
                 </div>
                 <div class="score-value-display fs-20"><span id="score-value-display">0</span>/5</div>
                 <%= f.hidden_field :score, id: 'score-value' %>
@@ -54,7 +54,7 @@
           <div class='rmw-main-text'>
             <% if review.errors.any? %>
               <% review.errors.messages[:text].each do |message| %>
-                <li class='red'><%= "レビュー本文#{message}" %></li>
+                <li class='red review-text-error'><%= "レビュー本文#{message}" %></li>
               <% end %>
             <% end %>
             <%= f.text_area :text, class: 'fs-14', id: 'rmw-main-text-textarea', maxlength: '5000', placeholder: 'レビュー本文を入力して下さい（この項目は必須です、5000文字まで）' %>
@@ -116,7 +116,7 @@
     <div  class='rmw-footer'>
       <div class='rmw-footer-contents'>
         <p class='rmw-footer-button'>
-          <%= f.button type: "submit" do %>
+          <%= f.button type: "submit", id: 'rmw-footer-button' do %>
             <i class="fas fa-pen"></i>レビューを投稿する
           <% end %>
         </p>

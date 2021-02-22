@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('turbolinks:load', () => {
   const UserHistoriesTitleItems = document.querySelectorAll('.user-histories-title');
   const UserHistoriesContainers = document.querySelectorAll('.user-histories-container');
 
