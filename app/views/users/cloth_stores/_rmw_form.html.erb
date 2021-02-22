@@ -54,7 +54,7 @@
           <div class='rmw-main-text'>
             <% if review.errors.any? %>
               <% review.errors.messages[:text].each do |message| %>
-                <li class='red'><%= "レビュー本文#{message}" %></li>
+                <li class='red review-text-error'><%= "レビュー本文#{message}" %></li>
               <% end %>
             <% end %>
             <%= f.text_area :text, class: 'fs-14', id: 'rmw-main-text-textarea', maxlength: '5000', placeholder: 'レビュー本文を入力して下さい（この項目は必須です、5000文字まで）' %>

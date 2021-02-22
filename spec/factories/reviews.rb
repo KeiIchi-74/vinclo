@@ -9,5 +9,9 @@ FactoryBot.define do
       title  { Faker::Lorem.characters(number: 51) }
       text   { Faker::Lorem.characters(number: 5001) }
     end
+    trait :data_when_post_review do
+      cloth_name { 'Sample' }
+      price      { 1234 }
+    end
   end
 end
