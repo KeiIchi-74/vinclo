@@ -1,0 +1,59 @@
+<div class='ps-info-wrap'>
+  <div class='ps-info-store-container'>
+    <div class='ps-info-store-body'>
+      <div class='ps-info-store-contents'>
+        <div class='ps-info-store-container'>
+          <div class='ps-info-store-name'>
+            <h4 class='fs-20'> 店名</h4>
+            <div class='ps-info-store-name-kana'>
+              フリガナ
+            </div>
+          </div>
+        </div>
+        <div class='ps-info-star-container'>
+          <div class="ps-info-average-score">
+            <div class="star-rating">
+              <div class="star-rating-front" style="width: <%= cloth_store.review_score_percentage %>%">★★★★★</div>
+              <div class="star-rating-back">★★★★★</div>
+            </div>
+            <div class="average-score-display">
+              <%= cloth_store.avg_score %>（<%= cloth_store.reviews.count %>件のレビュー）
+            </div>
+          </div>
+        </div>
+        <div class='ps-info-average-price-container'>
+          <p class='fs-15'>平均価格を表示させる</p>
+        </div>
+        <div class='ps-info-address-container'>
+          <p class='fs-13'>住所を表示させる</p>
+        </div>
+        <div class='ps-latest-review'>
+          <a class='ps-review-title fw-600'>レビュータイトル</a>
+          <span class='ps-review-text fs-13'>レビュー本文</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='ps-info-image-container'>
+    <div class="gallery-top">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><%= image_tag 'store1.jpg' %></div>
+        <div class="swiper-slide"><%= image_tag 'store2.jpg' %></div>
+        <div class="swiper-slide"><%= image_tag 'store3.jpg' %></div>
+        <div class="swiper-slide"><%= image_tag 'store4.jpg' %></div>
+        <div class="swiper-slide"><%= image_tag 'store5.jpg' %></div>
+      </div>
+      <div class="swiper-button-next swiper-button-white"><i class="fas fa-chevron-right fs-18"></i></div>
+      <div class="swiper-button-prev swiper-button-white fs-18"><i class="fas fa-chevron-left"></i></div>
+    </div>
+    <div class="gallery-thumbs">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><%= image_tag 'store1.jpg' %></div>
+        <div class="swiper-slide"><%= image_tag 'store2.jpg' %></div>
+        <div class="swiper-slide"><%= image_tag 'store3.jpg' %></div>
+        <div class="swiper-slide"><%= image_tag 'store4.jpg' %></div>
+        <div class="swiper-slide"><%= image_tag 'store5.jpg' %></div>
+      </div>
+    </div>
+  </div>
+</div>

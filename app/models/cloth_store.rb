@@ -26,11 +26,27 @@ class ClothStore < ApplicationRecord
 
   def address
     prefecture = prefecture_name
-    [name, prefecture, address_city, address_street].compact.join(', ')
+    [name, prefecture, address_city, address_street].compact.join
   end
 
   def address_display
     prefecture = prefecture_name
     [prefecture, address_city, address_street].compact.join
+  end
+
+  def avg_score
+    if reviews.empty?
+      0.0
+    else
+      reviews.average(:score).round(1).to_f
+    end
+  end
+
+  def review_score_percentage
+    if reviews.empty?
+      0.0
+    else
+      reviews.average(:score).round(1).to_f * 100 / 5
+    end
   end
 end
