@@ -1,0 +1,94 @@
+<div class='ps-show-container'>
+  <div class='ps-side-wrap'></div>
+  <div class='ps-wrap'>
+    <div class='ps-main'>
+      <div class='ps-main-head'>
+        <div class='ps-main-head-title'>
+          <h2>都道府県のお店</h2>
+        </div>
+      </div>
+    </div>
+    <div class='ps-main-nav-container'>
+      <ul class='ps-main-nav-wrap'>
+        <li class='is-active'>
+          <strong>
+            <i class="fas fa-store-alt"></i>
+            <span>店舗一覧</span>
+          </strong>
+        </li>
+        <li>
+          <i class="fas fa-pen"></i>
+          <span>レビュー一覧</span>
+        </li>
+      </ul>
+    </div>
+    <div class='ps-info-container'>
+      <div class='ps-info-wrap'>
+        <div class='ps-info-store-container'>
+          <div class='ps-info-store-body'>
+            <div class='ps-info-store-contents'>
+              <div class='ps-info-store-container'>
+                <div class='ps-info-store-name'>
+                  <h4 class='fs-20'> 店名</h4>
+                  <div class='ps-info-store-name-kana'>
+                    フリガナ
+                  </div>
+                </div>
+              </div>
+              <div class='ps-info-star-container'>
+                <p>
+                  <i class="far fa-star fs-25" id='star-score-1'></i>
+                  <i class="far fa-star fs-25" id='star-score-2'></i>
+                  <i class="far fa-star fs-25" id='star-score-3'></i>
+                  <i class="far fa-star fs-25" id='star-score-4'></i>
+                  <i class="far fa-star fs-25" id='star-score-5'></i>
+                  <span class="store-average-score fs-25">0</span>
+                </p>
+              </div>
+              <div class='ps-info-average-price-container'>
+                <p class='fs-15'>平均価格を表示させる</p>
+              </div>
+              <div class='ps-info-address-container'>
+                <p class='fs-13'>住所を表示させる</p>
+              </div>
+              <div class='ps-latest-review'>
+                <a class='ps-review-title fw-600'>レビュータイトル</a>
+                <span class='ps-review-text fs-13'>レビュー本文</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='ps-info-image-container'>
+          <div class="gallery-top">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><%= image_tag 'store1.jpg' %></div>
+              <div class="swiper-slide"><%= image_tag 'store2.jpg' %></div>
+              <div class="swiper-slide"><%= image_tag 'store3.jpg' %></div>
+            </div>
+          </div>
+          <div class="gallery-thumbs">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><%= image_tag 'store1.jpg' %></div>
+              <div class="swiper-slide"><%= image_tag 'store2.jpg' %></div>
+              <div class="swiper-slide"><%= image_tag 'store3.jpg' %></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='ps-pagenation-container'>
+    </div>
+    <div class='ps-notice-container'>
+      <p>
+        <i class="fas fa-bullhorn"></i>
+        お探しのお店が登録されていない場合は
+        <a>古着屋の新規登録ページ</a>
+        から新規登録を行うことができます
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+

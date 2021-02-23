@@ -7,6 +7,7 @@
 @import 'users/notifications/recent_notifications';
 @import 'users/histories/user_histories';
 @import 'users/prefectures/search_prefectures';
+@import 'users/prefectures/show';
 @import 'users/stores/many_reviews';
 @import 'users/reviews/recent_reviews';
 @import 'users/cloth_stores/new';
@@ -16,8 +17,6 @@
 @import 'users/shared/display';
 
 @import 'devise/registrations/new';
-
-/* universal */
 
 body {
   background-color: $gray;

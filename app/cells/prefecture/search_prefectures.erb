@@ -5,9 +5,9 @@
       <ul class='search-prefectures-button-ul'>
         <% @prefectures.each do | prefecture | %>
           <li>
-            <a class='search-prefectures-button-a'>
+            <%= link_to prefecture_path(prefecture.code), class: 'search-prefectures-button-a' do %>
               <span class='search-prefectures-button-span'><%= prefecture.name %></span>
-            </a>
+            <% end %>
           </li>
         <% end %>
       </ul>
