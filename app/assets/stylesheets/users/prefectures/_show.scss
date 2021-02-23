@@ -1,0 +1,186 @@
+.ps-show-container {
+  padding: 0;
+  width: 980px;
+  min-width: 980px;
+  max-width: 980px;
+  margin: 0 auto;
+  background-color: $white;
+  display: flex;
+
+  .ps-side-wrap {
+    width: 220px;
+    min-width: 220px;
+    max-width: 220px;
+  }
+
+  .ps-wrap {
+    width: 760px;
+    min-width: 760px;
+    max-width: 760px;
+
+    .ps-main {
+      position: relative;
+      padding: 18px 20px 20px;
+      background-color: $photo-preview-bg;
+    }
+    
+    .ps-main-nav-container {
+      
+      .ps-main-nav-wrap {
+        padding: 0;
+        border-bottom: 0 solid $nav-border;
+        display: table;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        table-layout: fixed;
+        background-color: $photo-preview-bg;
+        margin: 0;
+        
+        li {
+          display: table-cell;
+          position: relative;
+          border-bottom: 1px solid $nav-border;
+
+          strong {
+            display: block;
+            border-top: 1px solid $red;
+            color: $red;
+            padding: 15px 0;
+          }
+        }
+
+        .is-active {
+          background-color: $white;
+          border-right: 1px solid $nav-border;
+          border-bottom: 1px solid $white;
+        }
+      }
+    }
+
+    .ps-info-container {
+      margin-top: 15px;
+
+      .ps-info-wrap {
+        border-top: solid 1px $photo-btn-border;
+        position: relative;
+
+        .ps-info-store-container {
+
+          .ps-info-store-body {
+            padding: 0 0 0 240px;
+            min-height: 320px;
+
+            .ps-info-store-contents {
+              display: block;
+              padding-top: 20px;
+              table-layout: inherit;
+              margin-bottom: 10px;
+              width: 100%;
+              box-sizing: border-box;
+
+              .ps-info-store-container {
+
+                .ps-info-store-name {
+                  display: table;
+                  width: 100%;
+                  box-sizing: border-box;
+
+                  .ps-info-store-name-kana {
+                    margin: 15px 0 0 0;
+                    padding-bottom: 15px;
+                    text-indent: 0;
+                    border-bottom: 1px solid $name-kana-border;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .ps-info-star-container {
+          margin-top: 10px;
+
+          .store-average-score {
+            margin-left: 5px;
+          }
+        }
+
+        .ps-info-average-price-container {
+          margin-top: 10px;
+        }
+
+        .ps-info-address-container {
+          margin-top: 10px;
+        }
+
+        .ps-latest-review {
+          margin-top: 15px;
+          border-radius: 3px;
+          box-sizing: border-box;
+          background-color: $beige-bg-2;
+          padding: 8px;
+
+          .ps-review-title {
+            text-decoration: none;
+          }
+
+          .ps-review-text {
+            display: block;
+          }
+        }
+
+        .ps-info-image-container {
+          position: absolute;
+          top: 20px;
+          left: 0;
+          width: 220px;
+
+          .gallery-top {
+            height: 220px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+  
+            .swiper-wrapper {
+  
+              .swiper-slide {
+  
+                img {
+                  height: 100%;
+                  width: 100%;
+                }
+              }
+            }
+          }
+  
+          .gallery-thumbs {
+            height: 70px;
+            display: block;
+            padding: 3px;
+            width: 100%;
+            box-sizing: border-box;
+            background-color: $thumbnail-bg;
+  
+            .swiper-wrapper {
+  
+              .swiper-slide {
+                height: 100%;
+                opacity: 0.4;
+  
+                img {
+                  height: 100%;
+                  width: 100%;
+                }
+              }
+  
+              .swiper-slide-thumb-active {
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
