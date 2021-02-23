@@ -37,6 +37,46 @@ RSpec.describe Review, type: :model do
         @review.valid?
         expect(@review.errors[:cloth_store]).to include('を入力してください')
       end
+      it 'priceが全角(漢字）だと投稿できない' do
+        @review.price = '漢字'
+        @review.valid?
+        expect(@review.errors[:price]).to include('を半角数字で入力してください。')
+      end
+      it 'priceが全角(ひらがな）だと投稿できない' do
+        @review.price = 'ひらがな'
+        @review.valid?
+        expect(@review.errors[:price]).to include('を半角数字で入力してください。')
+      end
+      it 'priceが全角(カタカナ）だと投稿できない' do
+        @review.price = '漢字'
+        @review.valid?
+        expect(@review.errors[:price]).to include('を半角数字で入力してください。')
+      end
+      it 'priceが全角(カタカナ）だと投稿できない' do
+        @review.price = '漢字'
+        @review.valid?
+        expect(@review.errors[:price]).to include('を半角数字で入力してください。')
+      end
+      it 'priceが全角数字だと投稿できない' do
+        @review.price = '１１１１'
+        @review.valid?
+        expect(@review.errors[:price]).to include('を半角数字で入力してください。')
+      end
+      it 'priceが全角記号だと投稿できない' do
+        @review.price = '＠＠＠＠'
+        @review.valid?
+        expect(@review.errors[:price]).to include('を半角数字で入力してください。')
+      end
+      it 'priceが半角英字だと投稿できない' do
+        @review.price = 'aaaa'
+        @review.valid?
+        expect(@review.errors[:price]).to include('を半角数字で入力してください。')
+      end
+      it 'priceが半角記号だと投稿できない' do
+        @review.price = '@@@@'
+        @review.valid?
+        expect(@review.errors[:price]).to include('を半角数字で入力してください。')
+      end
     end
   end
 end

@@ -66,42 +66,42 @@ RSpec.describe ClothStore, type: :model do
       it 'postcodeが半角のハイフンを含んでいないと登録できない' do
         @cloth_store.postcode = '1234567'
         @cloth_store.valid?
-        expect(@cloth_store.errors.messages[:postcode]).to include('を半角数字で、ハイフンを含めて入力して下さい。')
+        expect(@cloth_store.errors.messages[:postcode]).to include('を半角数字で、ハイフンを含めて入力してください。')
       end
       it 'postcodeが全角（漢字）だと登録できない' do
         @cloth_store.postcode = '壱'
         @cloth_store.valid?
-        expect(@cloth_store.errors.messages[:postcode]).to include('を半角数字で、ハイフンを含めて入力して下さい。')
+        expect(@cloth_store.errors.messages[:postcode]).to include('を半角数字で、ハイフンを含めて入力してください。')
       end
       it 'postcodeが全角（ひらがな）だと登録できない' do
         @cloth_store.postcode = 'いち'
         @cloth_store.valid?
-        expect(@cloth_store.errors.messages[:postcode]).to include('を半角数字で、ハイフンを含めて入力して下さい。')
+        expect(@cloth_store.errors.messages[:postcode]).to include('を半角数字で、ハイフンを含めて入力してください。')
       end
       it 'postcodeが全角（カタカナ）だと登録できない' do
         @cloth_store.postcode = 'イチ'
         @cloth_store.valid?
-        expect(@cloth_store.errors.messages[:postcode]).to include('を半角数字で、ハイフンを含めて入力して下さい。')
+        expect(@cloth_store.errors.messages[:postcode]).to include('を半角数字で、ハイフンを含めて入力してください。')
       end
       it 'postcodeが全角（数字）だと登録できない' do
         @cloth_store.postcode = '１２３４５６７'
         @cloth_store.valid?
-        expect(@cloth_store.errors.messages[:postcode]).to include('を半角数字で、ハイフンを含めて入力して下さい。')
+        expect(@cloth_store.errors.messages[:postcode]).to include('を半角数字で、ハイフンを含めて入力してください。')
       end
       it 'postcodeが全角（記号）だと登録できない' do
         @cloth_store.postcode = '＠＠'
         @cloth_store.valid?
-        expect(@cloth_store.errors.messages[:postcode]).to include('を半角数字で、ハイフンを含めて入力して下さい。')
+        expect(@cloth_store.errors.messages[:postcode]).to include('を半角数字で、ハイフンを含めて入力してください。')
       end
       it 'postcodeが半角（英字）だと登録できない' do
         @cloth_store.postcode = 'aa'
         @cloth_store.valid?
-        expect(@cloth_store.errors.messages[:postcode]).to include('を半角数字で、ハイフンを含めて入力して下さい。')
+        expect(@cloth_store.errors.messages[:postcode]).to include('を半角数字で、ハイフンを含めて入力してください。')
       end
       it 'postcodeが半角（記号）だと登録できない' do
         @cloth_store.postcode = '@@'
         @cloth_store.valid?
-        expect(@cloth_store.errors.messages[:postcode]).to include('を半角数字で、ハイフンを含めて入力して下さい。')
+        expect(@cloth_store.errors.messages[:postcode]).to include('を半角数字で、ハイフンを含めて入力してください。')
       end
     end
   end

@@ -18,7 +18,12 @@
             <%= f.text_area :cloth_name, class: 'fs-16 fw-bold', placeholder: '購入したアイテム等あれば、その種類、名称を入力して下さい' %>
           </div>
           <div class='rmw-main-price'>
-            <%= f.text_area :price, class: 'fs-16 fw-bold', rows: '1', placeholder: 'アイテムの値段を入力して下さい' %>
+            <% if review.errors.any? %>
+              <% review.errors.messages[:price].each do |message| %>
+                <li class='red'><%= "値段#{message}" %></li>
+              <% end %>
+            <% end %>
+            <%= f.text_area :price, class: 'fs-16 fw-bold', rows: '1', placeholder: 'アイテムの値段を入力して下さい（半角数字）' %>
             <div class='price-text fs-16 fw-bold'>円</div>
           </div>
           <div class='rmw-main-score'>

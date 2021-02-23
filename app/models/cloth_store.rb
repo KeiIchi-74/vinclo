@@ -5,11 +5,11 @@ class ClothStore < ApplicationRecord
     validates :name
     validates :name_kana, format: {
       with: /\A[ァ-ン]+\z/,
-      message: 'を全角カタカナで入力して下さい。'
+      message: 'を全角カタカナで入力してください。'
     }
     validates :postcode, format: {
       with: /\A[0-9]{3}-[0-9]{4}\z/,
-      message: 'を半角数字で、ハイフンを含めて入力して下さい。'
+      message: 'を半角数字で、ハイフンを含めて入力してください。'
     }
   end
   jp_prefecture :prefecture_code
