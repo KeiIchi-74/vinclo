@@ -42,6 +42,14 @@ class ClothStore < ApplicationRecord
     end
   end
 
+  def avg_price
+    if reviews.average(:price).nil?
+      '価格は登録されていません'
+    else
+      "#{reviews.average(:price).floor}円"
+    end
+  end
+
   def review_score_percentage
     if reviews.empty?
       0.0
