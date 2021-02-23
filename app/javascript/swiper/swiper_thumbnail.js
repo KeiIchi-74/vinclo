@@ -28,6 +28,10 @@ document.addEventListener('turbolinks:load', () => {
     });
     var galleryTop = new Swiper('.gallery-top', {
       spaceBetween: 10,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
       thumbs: {
         swiper: galleryThumbs
       }
