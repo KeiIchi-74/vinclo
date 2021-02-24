@@ -17,10 +17,12 @@
           </div>
         </li>
         <li class='reviews-list' id='reviews-list'>
-          <div>
-            <i class="fas fa-pen"></i>
-            <span>レビュー一覧</span>
-          </div>
+          <%= link_to reviews_path(@prefecture.code) do %>
+            <div>
+              <i class="fas fa-pen"></i>
+              <span>レビュー一覧</span>
+            </div>
+          <% end %>
         </li>
       </ul>
     </div>

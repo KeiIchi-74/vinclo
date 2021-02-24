@@ -1,4 +1,7 @@
 class Users::ReviewsController < Users::ApplicationController
+  def index
+  end
+  
   def new
     @review = Review.new
     @cloth_store = ClothStore.find_by(id: params[:format])
