@@ -77,3 +77,5 @@ gem 'devise', git: "https://github.com/heartcombo/devise.git",  branch: "ca-omni
 
 gem 'gon'
 gem 'dotenv-rails'
+
+gem 'activerecord-import'
