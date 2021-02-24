@@ -50,7 +50,7 @@ class ClothStore < ApplicationRecord
     end
   end
 
-  def review_score_percentage
+  def reviews_score_percentage
     if reviews.empty?
       0.0
     else

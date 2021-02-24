@@ -64,8 +64,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'cells-rails'
 gem 'cells-erb'
 
-gem 'active_hash'
-
 gem 'rails-i18n'
 
 gem 'jp_prefecture'

@@ -17,7 +17,6 @@ class Users::ClothStoresController < Users::ApplicationController
   def show
     @review = Review.new
     @cloth_store = ClothStore.find(params[:id])
-    @address = @cloth_store.address_display
     gon.latitude = @cloth_store.latitude
     gon.longitude = @cloth_store.longitude
   end
