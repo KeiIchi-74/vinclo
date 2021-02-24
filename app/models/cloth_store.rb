@@ -57,4 +57,12 @@ class ClothStore < ApplicationRecord
       reviews.average(:score).round(1).to_f * 100 / 5
     end
   end
+
+  def latest_review_title
+    reviews.last.title
+  end
+
+  def latest_review_text
+    reviews.last.text.truncate(40)
+  end
 end
