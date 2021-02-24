@@ -43,7 +43,7 @@ class ClothStore < ApplicationRecord
   end
 
   def avg_price
-    if reviews.average(:price).nil?
+    if reviews.pluck(:price).empty?
       '価格は登録されていません'
     else
       "#{reviews.average(:price).floor}円"
@@ -68,5 +68,9 @@ class ClothStore < ApplicationRecord
 
   def latest_review_text
     reviews.last.text.truncate(40) unless reviews.empty?
+  end
+
+  def reviews_count
+    reviews.length
   end
 end
