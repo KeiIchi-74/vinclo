@@ -42,11 +42,25 @@
           position: relative;
           border-bottom: 1px solid $nav-border;
 
-          strong {
+          div {
             display: block;
-            border-top: 1px solid $red;
-            color: $red;
             padding: 15px 0;
+          }
+        }
+
+        .cloth-stores-list {
+
+          &:hover {
+            color: $red;
+            border-top: 1px solid $red;
+          }
+        }
+
+        .reviews-list {
+
+          &:hover {
+            color: $reviews-list;
+            border-top: 1px solid $reviews-list;
           }
         }
 
@@ -54,6 +68,16 @@
           background-color: $white;
           border-right: 1px solid $nav-border;
           border-bottom: 1px solid $white;
+
+          &.cloth-stores-list {
+            color: $red;
+            border-top: 1px solid $red;
+          }
+
+          &.reviews-list {
+            color: $reviews-list;
+            border-top: 1px solid $reviews-list;
+          }
         }
       }
     }
@@ -199,6 +223,87 @@
                 opacity: 1;
               }
             }
+          }
+        }
+      }
+    }
+
+    .ps-pagenation-container {
+      margin: 30px 0;
+
+      .pagination-wrap {
+        padding: 20px 0;
+        border-top: 1px solid $beige-bg;
+        border-bottom: 1px solid $beige-bg;
+        width: 100%;
+        background-color: $beige-bg-2;
+
+        .pagination-list {
+          display: table;
+          margin: 0 auto;
+
+          .pagination-item {
+            display: table-cell;
+
+            .is-current {
+              border-bottom: 2px solid $beige;
+              padding: 0 0.9rem;
+              line-height: 2rem;
+              font-weight: bold;
+              display: block;
+            }
+
+            .pagenation-num {
+              display: inline-block;
+              color: #13131e;
+              text-align: center;
+              box-sizing: border-box;
+              min-width: 2.2rem;
+              height: 2.2rem;
+
+              &:not(.is-current) {
+                position: relative;
+                border-top: 1px solid $beige-bg;
+                border-bottom: 1px solid $beige-bg;
+                background-color: $white;
+                padding: 0 0.7rem;
+                line-height: 2rem;
+                text-decoration: none;
+
+                &:hover {
+                  background-color: $pagenation-hover-btn;
+                  color: $white;
+                }
+              }
+            }
+          }
+
+          .arrow-btn {
+            
+            a {
+              text-decoration: none;
+              color: $beige;
+
+              &:hover {
+                color: $star;
+              }
+            }
+          }
+
+          .first {
+            padding-right: 10px;
+          }
+
+          .prev {
+            padding-right: 10px;
+          }
+
+          .next {
+            padding-left: 10px;
+          }
+
+          .last {
+            padding-left: 10px;
           }
         }
       }

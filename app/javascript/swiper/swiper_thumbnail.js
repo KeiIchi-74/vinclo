@@ -19,8 +19,7 @@ document.addEventListener('turbolinks:load', () => {
     });
   }
   if (document.URL.match(/\/prefectures\/\d+/)) {
-    const count = document.querySelectorAll('.ps-info-wrap').length - 1;
-    console.log(count);
+    const count = document.querySelectorAll('.ps-info-wrap').length;
     for (let i = 0; i < count; i++) {
       var galleryThumbs = new Swiper(`#gallery-thumbs-${i}`, {
         spaceBetween: 5,

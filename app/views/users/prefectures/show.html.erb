@@ -10,15 +10,17 @@
     </div>
     <div class='ps-main-nav-container'>
       <ul class='ps-main-nav-wrap'>
-        <li class='is-active'>
-          <strong>
+        <li class='cloth-stores-list is-active' id='cloth-stores-list'>
+          <div>
             <i class="fas fa-store-alt"></i>
             <span>店舗一覧</span>
-          </strong>
+          </div>
         </li>
-        <li>
-          <i class="fas fa-pen"></i>
-          <span>レビュー一覧</span>
+        <li class='reviews-list' id='reviews-list'>
+          <div>
+            <i class="fas fa-pen"></i>
+            <span>レビュー一覧</span>
+          </div>
         </li>
       </ul>
     </div>
@@ -26,6 +28,7 @@
       <%= render partial: "ps-info-wrap", collection: @cloth_stores, as: :cloth_store %>
     </div>
     <div class='ps-pagenation-container'>
+      <%= paginate @cloth_stores %>
     </div>
     <div class='ps-notice-container fs-14'>
       <p>
