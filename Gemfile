@@ -79,3 +79,5 @@ gem 'gon'
 gem 'dotenv-rails'
 
 gem 'activerecord-import'
+
+gem 'kaminari'
