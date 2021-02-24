@@ -33,7 +33,7 @@
     </div>
   </div>
   <div class='ps-info-image-container'>
-    <div class="gallery-top">
+    <div class="gallery-top" id="gallery-top-<%= cloth_store_counter %>">
       <div class="swiper-wrapper">
         <div class="swiper-slide"><%= image_tag 'store1.jpg' %></div>
         <div class="swiper-slide"><%= image_tag 'store2.jpg' %></div>
@@ -44,7 +44,7 @@
       <div class="swiper-button-next swiper-button-white"><i class="fas fa-chevron-right fs-18"></i></div>
       <div class="swiper-button-prev swiper-button-white fs-18"><i class="fas fa-chevron-left"></i></div>
     </div>
-    <div class="gallery-thumbs">
+    <div class="gallery-thumbs" id="gallery-thumbs-<%= cloth_store_counter %>">
       <div class="swiper-wrapper">
         <div class="swiper-slide"><%= image_tag 'store1.jpg' %></div>
         <div class="swiper-slide"><%= image_tag 'store2.jpg' %></div>
