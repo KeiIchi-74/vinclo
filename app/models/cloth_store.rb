@@ -59,10 +59,14 @@ class ClothStore < ApplicationRecord
   end
 
   def latest_review_title
-    reviews.last.title
+    if reviews.empty?
+      "レビューは投稿されていません"
+    else
+      reviews&.last&.title
+    end
   end
 
   def latest_review_text
-    reviews.last.text.truncate(40)
+    reviews.last.text.truncate(40) unless reviews.empty?
   end
 end
