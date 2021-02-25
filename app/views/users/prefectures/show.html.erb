@@ -1,44 +1,46 @@
-<div class='ps-show-container'>
-  <div class='ps-side-wrap'></div>
-  <div class='ps-wrap'>
-    <div class='ps-main'>
-      <div class='ps-main-head'>
-        <div class='ps-main-head-title'>
-          <h2><%= "#{@prefecture.name}のお店" %></h2>
+<div class='ps-main'>
+  <div class='ps-show-container'>
+    <div class='ps-side-wrap'></div>
+    <div class='ps-wrap'>
+      <div class='ps-main'>
+        <div class='ps-main-head'>
+          <div class='ps-main-head-title'>
+            <h2><%= "#{@prefecture.name}のお店" %></h2>
+          </div>
         </div>
       </div>
-    </div>
-    <div class='ps-main-nav-container'>
-      <ul class='ps-main-nav-wrap'>
-        <li class='cloth-stores-list is-active' id='cloth-stores-list'>
-          <div>
-            <i class="fas fa-store-alt"></i>
-            <span>店舗一覧</span>
-          </div>
-        </li>
-        <li class='reviews-list' id='reviews-list'>
-          <%= link_to reviews_path(@prefecture.code) do %>
+      <div class='ps-main-nav-container'>
+        <ul class='ps-main-nav-wrap'>
+          <li class='cloth-stores-list is-active' id='cloth-stores-list'>
             <div>
-              <i class="fas fa-pen"></i>
-              <span>レビュー一覧</span>
+              <i class="fas fa-store-alt"></i>
+              <span>店舗一覧</span>
             </div>
-          <% end %>
-        </li>
-      </ul>
-    </div>
-    <div class='ps-info-container'>
-      <%= render partial: "ps-info-wrap", collection: @cloth_stores, as: :cloth_store %>
-    </div>
-    <div class='ps-pagenation-container'>
-      <%= paginate @cloth_stores %>
-    </div>
-    <div class='ps-notice-container fs-14'>
-      <p>
-        <i class="fas fa-bullhorn"></i>
-        お探しのお店が登録されていない場合は
-        <%= link_to "古着屋の新規登録ページ", new_cloth_store_path %>
-        から新規登録を行うことができます
-      </p>
+          </li>
+          <li class='reviews-list' id='reviews-list'>
+            <%= link_to reviews_path(@prefecture.code) do %>
+              <div>
+                <i class="fas fa-pen"></i>
+                <span>レビュー一覧</span>
+              </div>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+      <div class='ps-info-container'>
+        <%= render partial: "ps-info-wrap", collection: @cloth_stores, as: :cloth_store %>
+      </div>
+      <div class='ps-pagenation-container'>
+        <%= paginate @cloth_stores %>
+      </div>
+      <div class='ps-notice-container fs-14'>
+        <p>
+          <i class="fas fa-bullhorn"></i>
+          お探しのお店が登録されていない場合は
+          <%= link_to "古着屋の新規登録ページ", new_cloth_store_path %>
+          から新規登録を行うことができます
+        </p>
+      </div>
     </div>
   </div>
 </div>

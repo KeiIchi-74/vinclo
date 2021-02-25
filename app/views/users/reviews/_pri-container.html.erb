@@ -1,0 +1,61 @@
+<div class='pri-container'>
+  <div class='pri-user-container'>
+    <div class='pri-user-wrap'>
+      <p class='pri-user-nickname'>
+        <a class='fs-16 fw-bold'><span>名無しさん</span></a>
+        <span>のレビュー</span>
+      </p>
+    </div>
+  </div>
+  <div class='pri-review-cloth-store'>
+    <%= link_to cloth_store_path(review.cloth_store), class: 'pri-review-cloth-store-link' do %>
+      <h4 class='fs-20'>Vinclo<span class='ps-info-store-name-kana fs-15'>（ビンクロ）</span></h4>
+    <% end %>
+  </div>
+  <div class='pri-review-score'>
+    <ul class='pri-review-score-container'>
+      <div class="star-rating">
+        <div class="star-rating-front">★★★★★</div>
+        <div class="star-rating-back">★★★★★</div>
+        <div class='pri-review-score-text fs-20 fw-bold'><%= review.score %></div>
+      </div>
+    </ul>
+  </div>  
+  <div class='pri-review-info-container'>
+    <div class='pri-review-info-wrap'>
+      <p class='pri-review-title'>
+        <a href=#><strong class='fs-20'><%= review.title %></strong></a>
+      </p>
+      <div class='pri-review-text fs-15'>
+        <p><%= review.text %></p>
+      </div>
+      <a class='pri-review-all-text fw-bold fs-15' href=#>もっと見る</a>
+      <div class='pri-review-img-container'>
+        <div class='pri-review-img-wrap'>
+          <ul class='pri-review-img-ul'>
+            <li class='pri-review-img-item'>
+              <p class='pri-review-img-item-p'>
+                <a><%= image_tag 'store1.jpg' %></a>
+              </p>
+            </li>
+            <li class='pri-review-img-item'>
+              <p class='pri-review-img-item-p'>
+                <a><%= image_tag 'store1.jpg' %></a>
+              </p>
+            </li>
+            <li class='pri-review-img-item'>
+              <p class='pri-review-img-item-p'>
+                <a><%= image_tag 'store1.jpg' %></a>
+              </p>
+            </li>
+            <li class='pri-review-img-item'>
+              <p class='pri-review-img-item-p'>
+                <a><%= image_tag 'store1.jpg' %></a>
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 

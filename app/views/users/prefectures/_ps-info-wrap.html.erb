@@ -4,8 +4,10 @@
       <div class='ps-info-store-contents'>
         <div class='ps-info-store-container'>
           <div class='ps-info-store-name'>
-            <h4 class='fs-20'><%= cloth_store.name %></h4>
-            <div class='ps-info-store-name-kana fs-15'><%= "（#{cloth_store.name_kana}）" %></div>
+            <%= link_to cloth_store_path(cloth_store), class: 'cloth-store-link' do %>
+              <h4 class='fs-20'><%= cloth_store.name %></h4>
+              <div class='ps-info-store-name-kana fs-15'><%= "（#{cloth_store.name_kana}）" %></div>
+            <% end %>
           </div>
         </div>
         <div class='ps-info-star-container'>

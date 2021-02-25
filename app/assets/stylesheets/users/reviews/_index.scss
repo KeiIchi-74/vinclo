@@ -1,0 +1,159 @@
+// 下記以外はprefectures/show.scssのデザインを用いる
+.ps-info-container {
+  text-align: center;
+
+  .pri-container {
+    margin: 20px 0;
+    border: 1px solid $nav-border;
+    border-radius: 5px;
+    background-color: $white;
+    display: inline-block;
+    text-align: left;
+
+    .pri-user-container {
+      position: relative;
+      padding: 12px 10px 10px;
+
+      .pri-user-wrap {
+        border-bottom: solid 1px #e0dccc;
+        margin: 0 auto;
+        display: inline-block;
+        width: 100%;
+        padding-bottom: 10px;
+
+        .pri-user-nickname {
+          float: left;
+          margin: 2px 0 0 8px;
+          line-height: 1;
+
+          a {
+            text-decoration: none;
+          }
+
+          span {
+            margin-left: 2px;
+          }
+        }
+      }
+    }
+
+    .pri-review-cloth-store {
+      padding-left: 14px;
+
+      .pri-review-cloth-store-link {
+        text-decoration: none;
+        color: $black;
+      }
+    }
+
+    .pri-review-score {
+      display: flex;
+      margin-bottom: -1px;
+      padding: 0 14px;
+
+      .pri-review-score-container {
+        padding: 0;
+
+        .star-rating {
+          position: relative;
+          width: 5em;
+          font-size: 20px;
+          display: flex;
+          line-height: 1;
+
+          .star-rating-front {
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            color: $star;
+          }
+
+          .star-rating-back {
+            color: $nav-border;
+          }
+
+          .pri-review-score-text {
+            margin-left: 5px;
+            color: $red;
+          }
+        }
+      }
+    }
+
+    .pri-review-info-container {
+
+      .pri-review-info-wrap {
+        border-top: solid 1px $beige-bg;
+
+        .pri-review-title {
+          margin: 8px 14px 15px;
+          font-weight: bold;
+          line-height: 1.6;
+
+          a {
+            text-decoration: none;
+            color: $black;
+          }
+        }
+
+        .pri-review-text {
+          margin: 12px 25px 15px;
+          line-height: 1.6;
+          letter-spacing: -0.04em;
+          width: 400px;
+        }
+
+        .pri-review-all-text {
+          margin: 5px 14px 14px;
+          text-decoration: none;
+          display: block;
+          color: $view-more-link;
+          line-height: 1;
+
+          &:hover {
+            cursor: pointer;
+            opacity: 0.5;
+          }
+        }
+
+        .pri-review-img-container {
+
+          .pri-review-img-wrap {
+            position: relative;
+            margin: 0 auto;
+
+            .pri-review-img-ul {
+              display: inline-block;
+              padding: 0;
+              margin-left: 6px;
+
+              .pri-review-img-item {
+                position: relative;
+                z-index: 0;
+                float: left;
+                margin: 0 7px 7px 0;
+                width: 152px;
+
+                .pri-review-img-item-p {
+
+                  a {
+                    display: block;
+                    border: solid 1px transparent;
+                    cursor: pointer;
+                    text-decoration: none;
+
+                    img {
+                      height: 150px;
+                      width: 150px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

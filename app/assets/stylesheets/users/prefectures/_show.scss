@@ -1,352 +1,367 @@
-.ps-show-container {
-  padding: 0;
-  width: 980px;
-  min-width: 980px;
-  max-width: 980px;
-  margin: 0 auto;
+.ps-main {
+  width: 100%;
   background-color: $white;
-  display: flex;
-
-  .ps-side-wrap {
-    width: 220px;
-    min-width: 220px;
-    max-width: 220px;
-  }
-
-  .ps-wrap {
-    width: 760px;
-    min-width: 760px;
-    max-width: 760px;
-
-    .ps-main {
-      position: relative;
-      padding: 18px 20px 20px;
-      background-color: $photo-preview-bg;
+  .ps-show-container {
+    padding: 0;
+    width: 980px;
+    min-width: 980px;
+    max-width: 980px;
+    margin: 0 auto;
+    display: flex;
+    
+    .ps-side-wrap {
+      width: 220px;
+      min-width: 220px;
+      max-width: 220px;
     }
     
-    .ps-main-nav-container {
+    .ps-wrap {
+      width: 760px;
+      min-width: 760px;
+      max-width: 760px;
       
-      .ps-main-nav-wrap {
-        padding: 0;
-        border-bottom: 0 solid $nav-border;
-        display: table;
-        width: 100%;
-        box-sizing: border-box;
-        text-align: center;
-        table-layout: fixed;
+      .ps-main {
+        position: relative;
+        padding: 18px 20px 20px;
         background-color: $photo-preview-bg;
-        margin: 0;
+      }
+      
+      .ps-main-nav-container {
         
-        li {
-          display: table-cell;
-          position: relative;
-          border-bottom: 1px solid $nav-border;
-
-          a {
-            text-decoration: none;
-            color: $black;
-
-            div {
-              display: block;
-              padding: 15px 0;
-              border-top: 1px solid $photo-preview-bg;
-            }
-          }
-        }
-
-        .cloth-stores-list {
-
-          &:not(.is-active) {
-
-            div {
-  
-              &:hover {
-                border-top: 1px solid $red;
-                color: $red;
+        .ps-main-nav-wrap {
+          padding: 0;
+          border-bottom: 0 solid $nav-border;
+          display: table;
+          width: 100%;
+          box-sizing: border-box;
+          text-align: center;
+          table-layout: fixed;
+          background-color: $photo-preview-bg;
+          margin: 0;
+          
+          li {
+            display: table-cell;
+            position: relative;
+            border-bottom: 1px solid $nav-border;
+            
+            a {
+              text-decoration: none;
+              color: $black;
+              
+              div {
+                display: block;
+                padding: 15px 0;
+                border-top: 1px solid $photo-preview-bg;
               }
             }
           }
-        }
-
-        .reviews-list {
-
-          &:not(.is-active) {
-
-            div {
-  
-              &:hover {
-                border-top: 1px solid $reviews-list;
-                color: $reviews-list;
+          
+          .cloth-stores-list {
+            
+            &:not(.is-active) {
+              
+              div {
+                
+                &:hover {
+                  border-top: 1px solid $red;
+                  color: $red;
+                }
               }
             }
           }
-        }
-
-        .is-active {
-          background-color: $white;
-          border-right: 1px solid $nav-border;
-          border-bottom: 1px solid $white;
-
-          &.cloth-stores-list {
-            color: $red;
-            border-top: 1px solid $red;
+          
+          .reviews-list {
+            
+            &:not(.is-active) {
+              
+              div {
+                
+                &:hover {
+                  border-top: 1px solid $reviews-list;
+                  color: $reviews-list;
+                }
+              }
+            }
           }
-
-          &.reviews-list {
-            color: $reviews-list;
-            border-top: 1px solid $reviews-list;
+          
+          .is-active {
+            background-color: $white;
+            border-bottom: 1px solid $white;
+            
+            &.cloth-stores-list {
+              color: $red;
+              border-top: 1px solid $red;
+              border-right: 1px solid $nav-border;
+            }
+            
+            &.reviews-list {
+              color: $reviews-list;
+              border-top: 1px solid $reviews-list;
+              border-left: 1px solid $nav-border;
+            }
           }
         }
       }
-    }
-
-    .ps-info-container {
-      margin-top: 15px;
-
-      .ps-info-wrap {
-        border-top: solid 1px $photo-btn-border;
-        position: relative;
-
-        .ps-info-store-container {
-
-          .ps-info-store-body {
-            padding: 0 0 0 240px;
-            min-height: 320px;
-
-            .ps-info-store-contents {
-              display: block;
-              padding-top: 20px;
-              table-layout: inherit;
-              margin-bottom: 10px;
-              width: 100%;
-              box-sizing: border-box;
-
-              .ps-info-store-container {
-
-                .ps-info-store-name {
-                  display: table;
-                  width: 100%;
-                  box-sizing: border-box;
-
-                  .ps-info-store-name-kana {
-                    margin: 15px 0 0 0;
-                    padding-bottom: 15px;
-                    text-indent: 0;
-                    border-bottom: 1px solid $name-kana-border;
+      
+      .ps-info-container {
+        margin-top: 15px;
+        
+        .ps-info-wrap {
+          border-top: solid 1px $photo-btn-border;
+          position: relative;
+          text-align: left;
+          
+          .ps-info-store-container {
+            
+            .ps-info-store-body {
+              padding: 0 0 0 240px;
+              min-height: 320px;
+              
+              .ps-info-store-contents {
+                display: block;
+                padding-top: 20px;
+                table-layout: inherit;
+                margin-bottom: 10px;
+                width: 100%;
+                box-sizing: border-box;
+                
+                .ps-info-store-container {
+                  
+                  .ps-info-store-name {
+                    display: table;
+                    width: 100%;
+                    box-sizing: border-box;
+                    
+                    .cloth-store-link {
+                      text-decoration: none;
+                      color: $black;
+                      
+                      .ps-info-store-name-kana {
+                        margin: 15px 0 0 0;
+                        padding-bottom: 15px;
+                        text-indent: 0;
+                        border-bottom: 1px solid $name-kana-border;
+                      }
+                    }
+                    
                   }
                 }
               }
             }
           }
-        }
-
-        .ps-info-star-container {
-          margin-top: 10px;
-
-          .star-rating {
-            position: relative;
-            width: 5em;
-            font-size: 25px;
-          }
-          .star-rating-front {
-            position: absolute;
-            top: 0;
-            left: 0;
-            overflow: hidden;
-            color: $star;
-          }
-          .star-rating-back {
-            color: $nav-border;
+          
+          .ps-info-star-container {
+            margin-top: 10px;
+            
+            .ps-info-average-score {
+              display: flex;
+              align-items: center;
+              
+              .star-rating {
+                position: relative;
+                width: 5em;
+                font-size: 25px;
+                
+                .star-rating-front {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  overflow: hidden;
+                  color: $star;
+                }
+                .star-rating-back {
+                  color: $nav-border;
+                }
+              }
+              
+              .average-score-display {
+                margin-left: 10px;
+                
+                .average-score-num {
+                  color: $red;
+                }
+              }
+            }
           }
           
-          .average-score {
-            display: flex;
+          .ps-info-average-price-container {
+            margin-top: 10px;
           }
-          .average-score-display {
-            
-            .average-score-num {
-              color: $red;
-            }
+          
+          .ps-info-address-container {
+            margin-top: 10px;
           }
-        }
-
-        .ps-info-average-price-container {
-          margin-top: 10px;
-        }
-
-        .ps-info-address-container {
-          margin-top: 10px;
-        }
-
-        .ps-latest-review {
-          margin-top: 15px;
-          border-radius: 3px;
-          box-sizing: border-box;
-          background-color: $beige-bg-2;
-          padding: 8px;
-          border-bottom: 1px solid $border;
-
-          .ps-review-title {
-            text-decoration: none;
-          }
-
-          .ps-review-text {
-            display: block;
-          }
-        }
-
-        .ps-info-image-container {
-          position: absolute;
-          top: 20px;
-          left: 0;
-          width: 220px;
-
-          .gallery-top {
-            height: 200px;
-            width: 100%;
-            overflow: hidden;
-            position: relative;
-  
-            .swiper-wrapper {
-  
-              .swiper-slide {
-  
-                img {
-                  height: 100%;
-                  width: 100%;
-                }
-              }
-            }
-          }
-  
-          .gallery-thumbs {
-            overflow: hidden;
-            height: 70px;
-            display: block;
-            padding: 2px;
-            width: 100%;
+          
+          .ps-latest-review {
+            margin-top: 15px;
+            border-radius: 3px;
             box-sizing: border-box;
-            background-color: $thumbnail-bg;
-  
-            .swiper-wrapper {
-  
-              .swiper-slide {
-                height: 100%;
-                opacity: 0.4;
-  
-                img {
-                  height: 100%;
-                  width: 100%;
-                }
-              }
-  
-              .swiper-slide-thumb-active {
-                opacity: 1;
-              }
+            background-color: $beige-bg-2;
+            padding: 8px;
+            border-bottom: 1px solid $border;
+            
+            .ps-review-title {
+              text-decoration: none;
             }
-          }
-        }
-      }
-    }
-
-    .ps-pagenation-container {
-      margin: 30px 0;
-
-      .pagination-wrap {
-        padding: 20px 0;
-        border-top: 1px solid $beige-bg;
-        border-bottom: 1px solid $beige-bg;
-        width: 100%;
-        background-color: $beige-bg-2;
-
-        .pagination-list {
-          display: table;
-          margin: 0 auto;
-
-          .pagination-item {
-            display: table-cell;
-
-            .is-current {
-              border-bottom: 2px solid $beige;
-              padding: 0 0.9rem;
-              line-height: 2rem;
-              font-weight: bold;
+            
+            .ps-review-text {
               display: block;
             }
-
-            .pagenation-num {
-              display: inline-block;
-              color: #13131e;
-              text-align: center;
+          }
+          
+          .ps-info-image-container {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: 220px;
+            
+            .gallery-top {
+              height: 200px;
+              width: 100%;
+              overflow: hidden;
+              position: relative;
+              
+              .swiper-wrapper {
+                
+                .swiper-slide {
+                  
+                  img {
+                    height: 100%;
+                    width: 100%;
+                  }
+                }
+              }
+            }
+            
+            .gallery-thumbs {
+              overflow: hidden;
+              height: 70px;
+              display: block;
+              padding: 2px;
+              width: 100%;
               box-sizing: border-box;
-              min-width: 2.2rem;
-              height: 2.2rem;
-
-              &:not(.is-current) {
-                position: relative;
-                border-top: 1px solid $beige-bg;
-                border-bottom: 1px solid $beige-bg;
-                background-color: $white;
-                padding: 0 0.7rem;
-                line-height: 2rem;
-                text-decoration: none;
-
-                &:hover {
-                  background-color: $pagenation-hover-btn;
-                  color: $white;
+              background-color: $thumbnail-bg;
+              
+              .swiper-wrapper {
+                
+                .swiper-slide {
+                  height: 100%;
+                  opacity: 0.4;
+                  
+                  img {
+                    height: 100%;
+                    width: 100%;
+                  }
+                }
+                
+                .swiper-slide-thumb-active {
+                  opacity: 1;
                 }
               }
             }
           }
-
-          .arrow-btn {
+        }
+      }
+      
+      .ps-pagenation-container {
+        margin: 30px 0;
+        
+        .pagination-wrap {
+          padding: 20px 0;
+          border-top: 1px solid $beige-bg;
+          border-bottom: 1px solid $beige-bg;
+          width: 100%;
+          background-color: $beige-bg-2;
+          
+          .pagination-list {
+            display: table;
+            margin: 0 auto;
             
-            a {
-              text-decoration: none;
-              color: $beige;
-
-              &:hover {
-                color: $star;
+            .pagination-item {
+              display: table-cell;
+              
+              .is-current {
+                border-bottom: 2px solid $beige;
+                padding: 0 0.9rem;
+                line-height: 2rem;
+                font-weight: bold;
+                display: block;
+              }
+              
+              .pagenation-num {
+                display: inline-block;
+                color: #13131e;
+                text-align: center;
+                box-sizing: border-box;
+                min-width: 2.2rem;
+                height: 2.2rem;
+                
+                &:not(.is-current) {
+                  position: relative;
+                  border-top: 1px solid $beige-bg;
+                  border-bottom: 1px solid $beige-bg;
+                  background-color: $white;
+                  padding: 0 0.7rem;
+                  line-height: 2rem;
+                  text-decoration: none;
+                  
+                  &:hover {
+                    background-color: $pagenation-hover-btn;
+                    color: $white;
+                  }
+                }
               }
             }
-          }
-
-          .first {
-            padding-right: 10px;
-          }
-
-          .prev {
-            padding-right: 10px;
-          }
-
-          .next {
-            padding-left: 10px;
-          }
-
-          .last {
-            padding-left: 10px;
+            
+            .arrow-btn {
+              
+              a {
+                text-decoration: none;
+                color: $beige;
+                
+                &:hover {
+                  color: $star;
+                }
+              }
+            }
+            
+            .first {
+              padding-right: 10px;
+            }
+            
+            .prev {
+              padding-right: 10px;
+            }
+            
+            .next {
+              padding-left: 10px;
+            }
+            
+            .last {
+              padding-left: 10px;
+            }
           }
         }
       }
-    }
-
-    .ps-notice-container {
-      background-color: $notice-bg;
-      text-align: center;
-      padding: 15px;
-
-      p {
-
-        i {
-          color: $notice-icon;
-        }
-
-        a {
-          text-decoration: none;
-          color: $a-blue;
-
-          &:hover {
-            border-bottom: 1px solid $a-blue;
+      
+      .ps-notice-container {
+        background-color: $notice-bg;
+        text-align: center;
+        padding: 15px;
+        
+        p {
+          
+          i {
+            color: $notice-icon;
+          }
+          
+          a {
+            text-decoration: none;
+            color: $a-blue;
+            
+            &:hover {
+              border-bottom: 1px solid $a-blue;
+            }
           }
         }
       }
