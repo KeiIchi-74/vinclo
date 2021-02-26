@@ -33,26 +33,13 @@
       <div class='pri-review-img-container'>
         <div class='pri-review-img-wrap'>
           <ul class='pri-review-img-ul'>
-            <li class='pri-review-img-item'>
-              <p class='pri-review-img-item-p'>
-                <a><%= image_tag 'store1.jpg' %></a>
-              </p>
-            </li>
-            <li class='pri-review-img-item'>
-              <p class='pri-review-img-item-p'>
-                <a><%= image_tag 'store1.jpg' %></a>
-              </p>
-            </li>
-            <li class='pri-review-img-item'>
-              <p class='pri-review-img-item-p'>
-                <a><%= image_tag 'store1.jpg' %></a>
-              </p>
-            </li>
-            <li class='pri-review-img-item'>
-              <p class='pri-review-img-item-p'>
-                <a><%= image_tag 'store1.jpg' %></a>
-              </p>
-            </li>
+            <% review.review_images.each do |image| %>
+              <li class='pri-review-img-item'>
+                <p class='pri-review-img-item-p'>
+                  <a><%= image_tag image %></a>
+                </p>
+              </li>
+            <% end %>
           </ul>
         </div>
       </div>

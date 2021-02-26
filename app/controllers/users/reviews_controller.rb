@@ -1,7 +1,7 @@
 class Users::ReviewsController < Users::ApplicationController
   def index
     @prefecture = JpPrefecture::Prefecture.find(code: params[:id])
-    @reviews = Review.includes(:cloth_store).where(cloth_stores: { prefecture_code: params[:id]}).order(created_at: :desc).page(params[:page]).per(20)
+    @reviews = Review.includes(:cloth_store).where(cloth_stores: { prefecture_code: params[:id]}).order(created_at: :desc).page(params[:page]).per(20).with_attached_review_images
   end
 
   def new
@@ -43,11 +43,11 @@ class Users::ReviewsController < Users::ApplicationController
       :score,
       :title,
       :text
-    ).merge(images: uploaded_images, cloth_store_id: @cloth_store.id, user_id: current_user.id)
+    ).merge(review_images: uploaded_images, cloth_store_id: @cloth_store.id, user_id: current_user.id)
   end
 
   def uploaded_images
-    params[:review][:images]&.map { |id| ActiveStorage::Blob.find(id) }
+    params[:review][:review_images]&.map { |id| ActiveStorage::Blob.find(id) }
   end
 
   def create_blob(uploading_file)
