@@ -1,7 +1,9 @@
 class Users::ReviewsController < Users::ApplicationController
   def index
+    @prefecture = JpPrefecture::Prefecture.find(code: params[:id])
+    @reviews = Review.includes(:cloth_store).where(cloth_stores: { prefecture_code: params[:id]}).order(created_at: :desc).page(params[:page]).per(20)
   end
-  
+
   def new
     @review = Review.new
     @cloth_store = ClothStore.find_by(id: params[:format])
@@ -26,6 +28,10 @@ class Users::ReviewsController < Users::ApplicationController
 
   def close
     ActiveStorage::Blob.unattached.find_each(&:purge)
+  end
+
+  def show_more_text
+    @review = Review.find(params[:format])
   end
 
   private

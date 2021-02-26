@@ -1,0 +1,6 @@
+document.body.addEventListener('ajax:success', () => {
+  const reviewText = document.getElementById("pri-review-text-<%= j(@review.id) %>");
+  reviewText.textContent = "<%= j(@review.text) %>";
+  const showMoreLink = document.getElementById("show-more-text-<%= j(@review.id) %>");
+  showMoreLink.remove();
+})

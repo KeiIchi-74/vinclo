@@ -26,4 +26,5 @@ Rails.application.routes.draw do
   post 'reviews/create', to: 'users/reviews#create'
   post 'reviews/upload_image', to: 'users/reviews#upload_image'
   get 'reviews/close', to: 'users/reviews#close'
+  get 'reviews/show_more_text', to: 'users/reviews#show_more_text'
 end

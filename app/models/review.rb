@@ -12,4 +12,8 @@ class Review < ApplicationRecord
     message: 'を半角数字で入力してください。',
     allow_blank: true
   }
+
+  def short_text
+    text.truncate(60)
+  end
 end

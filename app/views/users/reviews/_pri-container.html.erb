@@ -27,9 +27,9 @@
         <a href=#><strong class='fs-20'><%= review.title %></strong></a>
       </p>
       <div class='pri-review-text fs-15'>
-        <p><%= review.text %></p>
+        <p id="pri-review-text-<%= review.id %>"><%= review.short_text %></p>
       </div>
-      <a class='pri-review-all-text fw-bold fs-15' href=#>もっと見る</a>
+      <%= link_to 'もっと見る', reviews_show_more_text_path(review), class:'pri-review-all-text fw-bold fs-15', id: "show-more-text-#{review.id}", remote: true %>
       <div class='pri-review-img-container'>
         <div class='pri-review-img-wrap'>
           <ul class='pri-review-img-ul'>
