@@ -29,14 +29,14 @@
       <div class='pri-review-text fs-15'>
         <p id="pri-review-text-<%= review.id %>"><%= review.short_text %></p>
       </div>
-      <%= link_to 'もっと見る', reviews_show_more_text_path(review), class:'pri-review-all-text fw-bold fs-15', id: "show-more-text-#{review.id}", remote: true %>
+      <%= link_to 'もっと見る', reviews_show_more_text_path(review), class:'pri-review-all-text fw-bold fs-15', id: "show-more-text-#{review.id}", remote: true if review.display_more_btn? %>
       <div class='pri-review-img-container'>
         <div class='pri-review-img-wrap'>
           <ul class='pri-review-img-ul'>
             <% review.review_images.each do |image| %>
               <li class='pri-review-img-item'>
                 <p class='pri-review-img-item-p'>
-                  <a><%= image_tag image %></a>
+                  <a><%= image_tag image.variant(resize: "150x150^", gravity: :center, crop:"150x150+0+0").processed %></a>
                 </p>
               </li>
             <% end %>

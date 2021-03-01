@@ -16,4 +16,8 @@ class Review < ApplicationRecord
   def short_text
     text.truncate(60)
   end
+
+  def display_more_btn?
+    text.length > 60
+  end
 end
