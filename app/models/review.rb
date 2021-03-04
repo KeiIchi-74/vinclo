@@ -28,4 +28,8 @@ class Review < ApplicationRecord
   def image_length(image, type)
     image.blob.metadata[type]
   end
+
+  def score_percentage
+    score.round(1).to_f * 100 / 5
+  end
 end
