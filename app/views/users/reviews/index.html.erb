@@ -31,6 +31,7 @@
         <%= render partial: "pri-container", collection: @reviews, as: :review %>
       </div>
       <div class='ps-pagenation-container'>
+        <%= paginate @reviews %>
       </div>
     </div>
   </div>
