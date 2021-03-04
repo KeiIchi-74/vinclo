@@ -58,7 +58,7 @@ class ClothStore < ApplicationRecord
 
   def latest_review_title
     if reviews.empty?
-      "レビューは投稿されていません"
+      'レビューは投稿されていません'
     else
       reviews&.last&.title
     end

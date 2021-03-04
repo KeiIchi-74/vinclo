@@ -22,7 +22,6 @@ Rails.application.routes.draw do
       end
     end
   end
-  
   post 'reviews/create', to: 'users/reviews#create'
   post 'reviews/upload_image', to: 'users/reviews#upload_image'
   get 'reviews/close', to: 'users/reviews#close'

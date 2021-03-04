@@ -1,7 +1,7 @@
 class Users::ReviewsController < Users::ApplicationController
   def index
     @prefecture = JpPrefecture::Prefecture.find(code: params[:id])
-    @reviews = Review.includes(:cloth_store).where(cloth_stores: { prefecture_code: params[:id]}).order(created_at: :desc).page(params[:page]).per(20).with_attached_review_images
+    @reviews = Review.find_by_store_prefecture(params).order(created_at: :desc).page(params[:page]).per(20)
   end
 
   def new
