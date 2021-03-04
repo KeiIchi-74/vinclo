@@ -32,12 +32,12 @@
       <%= link_to 'もっと見る', reviews_show_more_text_path(review), class:'pri-review-all-text fw-bold fs-15', id: "show-more-text-#{review.id}", remote: true if review.display_more_btn? %>
       <div class='pri-review-img-container'>
         <div class='pri-review-img-wrap'>
-          <ul class='pri-review-img-ul'>
+          <ul class='pri-review-img-ul my-gallery'>
             <% review.review_images.each do |image| %>
               <li class='pri-review-img-item'>
-                <p class='pri-review-img-item-p'>
-                  <a><%= image_tag image.variant(resize: "150x150^", gravity: :center, crop:"150x150+0+0").processed %></a>
-                </p>
+                <%= link_to polymorphic_url(image), 'data-size': "#{review.image_length(image, "width")}x#{review.image_length(image, "height")}" do %>
+                  <%= image_tag review.image_variant_review_index(image), alt: '' %>
+                <% end %>
               </li>
             <% end %>
           </ul>

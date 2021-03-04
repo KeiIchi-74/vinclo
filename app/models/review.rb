@@ -20,4 +20,12 @@ class Review < ApplicationRecord
   def display_more_btn?
     text.length > 60
   end
+
+  def image_variant_review_index(image)
+    image.variant(resize: "150x150^", gravity: :center, crop: "150x150+0+0").processed
+  end
+
+  def image_length(image, type)
+    image.blob.metadata[type]
+  end
 end
