@@ -23,7 +23,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
@@ -64,8 +64,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'cells-rails'
 gem 'cells-erb'
 
-gem 'active_hash'
-
 gem 'rails-i18n'
 
 gem 'jp_prefecture'
@@ -77,3 +75,7 @@ gem 'devise', git: "https://github.com/heartcombo/devise.git",  branch: "ca-omni
 
 gem 'gon'
 gem 'dotenv-rails'
+
+gem 'activerecord-import'
+
+gem 'kaminari'

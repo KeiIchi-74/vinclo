@@ -40,10 +40,11 @@ RSpec.feature 'Post Review', type: :feature do
     # すべての項目を空欄で投稿ボタンを押す
     expect do
       find('#rmw-footer-button').click
+      sleep 0.2
       find('.review-text-error')
     end.to change { Review.count }.by(0)
-    expect(page).to have_content '評価を入力して下さい'
-    expect(page).to have_content 'レビュータイトルを入力して下さい'
-    expect(page).to have_content 'レビュー本文を入力して下さい'
+    expect(page).to have_content '評価を入力してください'
+    expect(page).to have_content 'レビュータイトルを入力してください'
+    expect(page).to have_content 'レビュー本文を入力してください'
   end
 end

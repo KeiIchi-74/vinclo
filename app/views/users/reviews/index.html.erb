@@ -1,0 +1,39 @@
+<div class='ps-main'>
+  <div class='ps-show-container'>
+    <div class='ps-side-wrap'></div>
+    <div class='ps-wrap'>
+      <div class='ps-main'>
+        <div class='ps-main-head'>
+          <div class='ps-main-head-title'>
+            <h2><%= "#{@prefecture.name}のお店" %></h2>
+          </div>
+        </div>
+      </div>
+      <div class='ps-main-nav-container'>
+        <ul class='ps-main-nav-wrap'>
+          <li class='cloth-stores-list' id='cloth-stores-list'>
+            <%= link_to prefecture_path(@prefecture.code) do %>
+              <div>
+                <i class="fas fa-store-alt"></i>
+                <span>店舗一覧</span>
+              </div>
+            <% end %>
+          </li>
+          <li class='reviews-list is-active' id='reviews-list'>
+            <div>
+              <i class="fas fa-pen"></i>
+              <span>レビュー一覧</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class='ps-info-container'>
+        <%= render partial: "pri-container", collection: @reviews, as: :review %>
+      </div>
+      <div class='ps-pagenation-container'>
+        <%= paginate @reviews %>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render partial: 'users/photo_swipe/photo_swipe' %>

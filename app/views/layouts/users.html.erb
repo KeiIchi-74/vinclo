@@ -6,10 +6,15 @@
     <%= csp_meta_tag %>
     <%= include_gon %>
 
-    <%= stylesheet_link_tag 'css/reset.css', media: 'all' %>
-    <%= stylesheet_link_tag 'users', media: 'all' %>
+    <%= stylesheet_link_tag 'css/reset.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'users', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <%= javascript_pack_tag 'users' %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.css" integrity="sha512-yxWNfGm+7EK+hqP2CMJ13hsUNCQfHmOuCuLmOq2+uv/AVQtFAjlAJO8bHzpYGQnBghULqnPuY8NEr7f5exR3Qw==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/default-skin/default-skin.min.css" integrity="sha512-Rck8F2HFBjAQpszOB9Qy+NVLeIy4vUOMB7xrp46edxB3KXs2RxXRguHfrJqNK+vJ+CkfvcGqAKMJTyWYBiBsGA==" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/fb52d9c8d6.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.js" integrity="sha512-2R4VJGamBudpzC1NTaSkusXP7QkiUYvEKhpJAxeVCqLDsgW4OqtzorZGpulE3eEA7p++U0ZYmqBwO3m+R2hRjA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe-ui-default.min.js" integrity="sha512-SxO0cwfxj/QhgX1SgpmUr0U2l5304ezGVhc0AO2YwOQ/C8O67ynyTorMKGjVv1fJnPQgjdxRz6x70MY9r0sKtQ==" crossorigin="anonymous"></script>
+    <%= javascript_pack_tag 'users', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
@@ -22,7 +27,6 @@
     <footer class='fs-12'>
       <%= render partial: 'users/shared/footer' %>
     </footer>
-    <script src="https://kit.fontawesome.com/fb52d9c8d6.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script type="text/javascript" src="//jpostal-1006.appspot.com/jquery.jpostal.js"></script>
   </body>

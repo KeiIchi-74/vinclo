@@ -109,8 +109,8 @@
             }
 
             .rmw-main-price {
-              display: flex;
               padding-bottom: 29px;
+              position: relative;
 
               textarea {
                 width: 80%;
@@ -122,8 +122,8 @@
               }
 
               .price-text {
-                padding: 8px;
                 color: $times-color;
+                text-align: right;
               }
             }
 

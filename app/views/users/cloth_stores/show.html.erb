@@ -54,7 +54,7 @@
               <tr>
                 <th>住所</th>
                 <td>
-                  <p><%= @address %></p>
+                  <p><%= @cloth_store.address_display %></p>
                   <div class='map-box'>
                     <div id='map'></div>
                   </div>
@@ -67,7 +67,7 @@
       <div class='cloth-store-show-review'>
         <div class='cloth-store-show-review-contents'>
           <p class='cloth-store-show-review-button'>
-            <%= link_to new_review_path(@cloth_store.id), remote: true do %>
+            <%= link_to new_review_path(@cloth_store), remote: true do %>
               <i class="fas fa-pen"></i>レビューを投稿する
             <% end %>
           </p>

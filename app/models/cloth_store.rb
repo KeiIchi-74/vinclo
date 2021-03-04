@@ -5,11 +5,11 @@ class ClothStore < ApplicationRecord
     validates :name
     validates :name_kana, format: {
       with: /\A[ァ-ン]+\z/,
-      message: 'を全角カタカナで入力して下さい。'
+      message: 'を全角カタカナで入力してください。'
     }
     validates :postcode, format: {
       with: /\A[0-9]{3}-[0-9]{4}\z/,
-      message: 'を半角数字で、ハイフンを含めて入力して下さい。'
+      message: 'を半角数字で、ハイフンを含めて入力してください。'
     }
   end
   jp_prefecture :prefecture_code
@@ -25,12 +25,50 @@ class ClothStore < ApplicationRecord
   end
 
   def address
-    prefecture = prefecture_name
-    [name, prefecture, address_city, address_street].compact.join(', ')
+    [name, prefecture_name, address_city, address_street].compact.join
   end
 
   def address_display
-    prefecture = prefecture_name
-    [prefecture, address_city, address_street].compact.join
+    [prefecture_name, address_city, address_street].compact.join
+  end
+
+  def avg_score
+    if reviews.empty?
+      0.0
+    else
+      reviews.average(:score).round(1).to_f
+    end
+  end
+
+  def avg_price
+    if reviews.pluck(:price).empty?
+      '価格は登録されていません'
+    else
+      "#{reviews.average(:price).floor}円"
+    end
+  end
+
+  def reviews_score_percentage
+    if reviews.empty?
+      0.0
+    else
+      reviews.average(:score).round(1).to_f * 100 / 5
+    end
+  end
+
+  def latest_review_title
+    if reviews.empty?
+      "レビューは投稿されていません"
+    else
+      reviews&.last&.title
+    end
+  end
+
+  def latest_review_text
+    reviews.last.text.truncate(40) unless reviews.empty?
+  end
+
+  def reviews_count
+    reviews.length
   end
 end
