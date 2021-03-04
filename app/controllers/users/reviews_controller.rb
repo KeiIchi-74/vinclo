@@ -2,6 +2,7 @@ class Users::ReviewsController < Users::ApplicationController
   def index
     @prefecture = JpPrefecture::Prefecture.find(code: params[:id])
     @reviews = Review.find_by_store_prefecture(params).order(created_at: :desc).page(params[:page]).per(20)
+    @cities = Array.new(16, '市区町村')
   end
 
   def new
