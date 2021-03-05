@@ -1,8 +1,9 @@
 .ps-main {
   width: 100%;
   background-color: $white;
+
   .ps-show-container {
-    padding: 0;
+    padding: 30px 0;
     width: 980px;
     min-width: 980px;
     max-width: 980px;
@@ -10,15 +11,132 @@
     display: flex;
     
     .ps-side-wrap {
-      width: 220px;
-      min-width: 220px;
-      max-width: 220px;
+      min-width: 280px;
+      max-width: 320px;
+
+      .ps-side-area-search {
+        position: relative;
+        margin-bottom: 16px;
+        padding: 12px;
+        border-radius: 4px;
+        width: 100%;
+        box-sizing: border-box;
+        background: $beige-bg;
+
+        .ps-side-area-search-main {
+          border-radius: 4px;
+          width: 100%;
+          box-sizing: border-box;
+          background: $white;
+
+          .ps-side-area-search-header {
+            padding: 15px 12px;
+          }
+
+          .ps-side-area-search-item {
+            position: relative;
+            line-height: 1.4;
+
+            .ps-side-city-a {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 15px 20px 14px;
+              border-left: none;
+              border-bottom: none;
+              background: $beige-bg-2;
+              border-top: solid 1px $beige-bg-3;
+
+              &:hover {
+                cursor: pointer;
+                color: $pagenation-hover-btn;
+              }
+            }
+
+            .ps-side-area-search-mw {
+              position: absolute;
+              margin-left: 172px;
+              top: -45px;
+              z-index: 500;
+              left: auto;
+              right: 0;
+              transform: translateX(100%);
+
+              .ps-side-area-search-mw-main {
+                width: 720px;
+                position: relative;
+                margin-left: 20px;
+                padding: 20px;
+                box-sizing: border-box;
+                position: relative;
+                border: 1px solid $photo-btn-color;
+                border-radius: 4px;
+                box-shadow: 0 1px 3px $times-color;
+                background-color: $white;
+
+                .ps-side-area-search-mw-head {
+                  width: 100%;
+                  background: $photo-preview-bg;
+                  border-top: 1px solid $beige-bg;
+                  border-bottom: 1px solid $nav-border;
+                  margin-bottom: 12px;
+                  box-sizing: border-box;
+
+                  ul {
+                    margin-top: 6px;
+                    margin-left: 12px;
+                    margin-bottom: 0;
+                    color: $black;
+                    list-style: none;
+
+                    a {
+                      display: block;
+                      position: relative;
+                      padding: 0.5em 1em;
+                    }
+                  }
+                }
+
+                .ps-side-area-search-mw-city-item {
+
+                  .ps-side-area-search-mw-city-list {
+                    display: table;
+                    margin-bottom: 16px;
+                    width: 100%;
+                    table-layout: fixed;
+
+                    ul {
+                      display: table-cell;
+                      padding-right: 8px;
+                      box-sizing: border-box;
+                      list-style: none;
+
+                      a {
+                        display: block;
+                        padding: 4px 0;
+                        color: $a-blue;
+
+                        &:hover {
+                          color: $pagenation-hover-btn;
+                          text-decoration: underline;
+                          cursor: pointer;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
     
     .ps-wrap {
       width: 760px;
       min-width: 760px;
       max-width: 760px;
+      margin-left: 15px;
       
       .ps-main {
         position: relative;

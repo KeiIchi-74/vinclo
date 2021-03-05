@@ -24,7 +24,7 @@ RSpec.feature 'Photo Preview', type: :feature do
     image2_path = Rails.root.join('spec/files/test2.jpg')
     image3_path = Rails.root.join('spec/files/test3.jpg')
     # 3枚の画像を追加して、3枚のプレビューが描画されている
-    page.attach_file('review_images', [image1_path, image2_path, image3_path], make_visible: true)
+    page.attach_file('review_review_images', [image1_path, image2_path, image3_path], make_visible: true)
     sleep 0.2
     expect(all('.photo-preview').length).to eq 3
     # 削除ボタン（✕）ボタンをクリックするとプレビュー描画がなくなる
@@ -39,7 +39,7 @@ RSpec.feature 'Photo Preview', type: :feature do
     sleep 0.2
     expect(all('.photo-preview').length).to eq 2
     # すべての合計枚数が4枚を超える画像をアップロードしようとするとプレビューは新たに生成されない
-    page.attach_file('review_images', [image1_path, image2_path, image3_path], make_visible: true)
+    page.attach_file('review_review_images', [image1_path, image2_path, image3_path], make_visible: true)
     sleep 0.2
     expect(all('.photo-preview').length).to eq 2
   end
