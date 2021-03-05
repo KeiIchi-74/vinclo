@@ -1,4 +1,5 @@
 class Review < ApplicationRecord
+  has_many   :cloths
   belongs_to :user
   belongs_to :cloth_store
   has_many_attached :review_images, dependent: :destroy
@@ -7,11 +8,6 @@ class Review < ApplicationRecord
     validates :title
     validates :text
   end
-  validates :price, format: {
-    with: /\A\d+\z/,
-    message: 'を半角数字で入力してください。',
-    allow_blank: true
-  }
 
   # 古着屋の都道府県コードがパラメーターと一致するレビューを持ってくる
   scope :find_by_store_prefecture, lambda { |params|
