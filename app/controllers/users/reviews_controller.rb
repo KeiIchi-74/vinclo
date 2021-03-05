@@ -6,15 +6,17 @@ class Users::ReviewsController < Users::ApplicationController
   end
 
   def new
-    @review = Review.new
     @cloth_store = ClothStore.find_by(id: params[:format])
+    @review_form = ReviewForm.new
+    @review = Review.new
   end
 
   def create
     @cloth_store = ClothStore.find_by(id: params[:format])
-    @review = Review.new(review_params)
-    return unless @review.save
-
+    @review_form = ReviewForm.new(review_form_params)
+    @review = Review.new
+    return attach_image(@review) unless @review_form.valid?
+    @review_form.save(uploaded_images)
     ActiveStorage::Blob.unattached.find_each(&:purge)
     flash[:notice] = 'レビューを投稿しました。'
     redirect_to cloth_store_path(@cloth_store.id)
@@ -37,18 +39,22 @@ class Users::ReviewsController < Users::ApplicationController
 
   private
 
-  def review_params
-    params.require(:review).permit(
+  def review_form_params
+    params.require(:review_form).permit(
       :cloth_name,
       :price,
       :score,
       :title,
-      :text
-    ).merge(review_images: uploaded_images, cloth_store_id: @cloth_store.id, user_id: current_user.id)
+      :text,
+    ).merge(
+      review_images: [], 
+      cloth_store_id: @cloth_store.id, 
+      user_id: current_user.id
+    )
   end
 
   def uploaded_images
-    params[:review][:review_images]&.map { |id| ActiveStorage::Blob.find(id) }
+    params[:review_form][:review_images]&.map { |id| ActiveStorage::Blob.find(id) }
   end
 
   def create_blob(uploading_file)
@@ -57,5 +63,15 @@ class Users::ReviewsController < Users::ApplicationController
       filename: uploading_file.original_filename,
       content_type: uploading_file.content_type
     )
+  end
+
+  def attach_image(review)
+    image_files = []
+    params[:review_form][:review_images]&.each do |id|
+      image_files << ActiveStorage::Blob.find(id)
+    end
+    image_files.each do |image_file|
+      review.review_images.attach(image_file)
+    end
   end
 end
