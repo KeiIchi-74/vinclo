@@ -16,6 +16,7 @@ class Users::ReviewsController < Users::ApplicationController
     @review_form = ReviewForm.new(review_form_params)
     @review = Review.new
     return attach_image(@review) unless @review_form.valid?
+
     @review_form.save(uploaded_images)
     ActiveStorage::Blob.unattached.find_each(&:purge)
     flash[:notice] = 'レビューを投稿しました。'
@@ -48,7 +49,7 @@ class Users::ReviewsController < Users::ApplicationController
       :text,
       review_images: []
     ).merge(
-      cloth_store_id: @cloth_store.id, 
+      cloth_store_id: @cloth_store.id,
       user_id: current_user.id
     )
   end

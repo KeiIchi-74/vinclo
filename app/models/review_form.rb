@@ -1,7 +1,7 @@
 class ReviewForm
   include ActiveModel::Model
   attr_accessor :title, :score, :text, :user_id, :cloth_store_id,
-  :cloth_name, :price, :review_id, :review_images
+                :cloth_name, :price, :review_id, :review_images
 
   with_options presence: true do
     validates :score
@@ -27,10 +27,12 @@ class ReviewForm
       review.review_images.attach(image_file)
     end
 
+    return if cloth_name.empty? && price.empty?
+
     Cloth.create(
       cloth_name: cloth_name,
       price: price,
       review_id: review.id
-    ) unless cloth_name.empty? && price.empty?
+    )
   end
 end
