@@ -46,15 +46,15 @@ class Users::ReviewsController < Users::ApplicationController
       :score,
       :title,
       :text,
+      review_images: []
     ).merge(
-      review_images: [], 
       cloth_store_id: @cloth_store.id, 
       user_id: current_user.id
     )
   end
 
   def uploaded_images
-    params[:review_form][:review_images]&.map { |id| ActiveStorage::Blob.find(id) }
+    review_form_params[:review_images]&.map { |id| ActiveStorage::Blob.find(id) }
   end
 
   def create_blob(uploading_file)
@@ -67,7 +67,7 @@ class Users::ReviewsController < Users::ApplicationController
 
   def attach_image(review)
     image_files = []
-    params[:review_form][:review_images]&.each do |id|
+    review_form_params[:review_images]&.each do |id|
       image_files << ActiveStorage::Blob.find(id)
     end
     image_files.each do |image_file|
