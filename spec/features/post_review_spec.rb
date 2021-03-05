@@ -24,7 +24,7 @@ RSpec.feature 'Post Review', type: :feature do
     fill_in 'rmw-main-title-textarea', with: @review.title
     fill_in 'rmw-main-text-textarea', with: @review.text
     image1_path = Rails.root.join('spec/files/test1.jpg')
-    page.attach_file('review_images', image1_path, make_visible: true)
+    page.attach_file('review_review_images', image1_path, make_visible: true)
     sleep 0.2
     expect(all('.photo-preview').length).to eq 1
     expect do

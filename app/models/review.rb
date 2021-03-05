@@ -13,6 +13,11 @@ class Review < ApplicationRecord
     allow_blank: true
   }
 
+  # 古着屋の都道府県コードがパラメーターと一致するレビューを持ってくる
+  scope :find_by_store_prefecture, lambda { |params|
+    includes(:cloth_store).with_attached_review_images.where(cloth_stores: { prefecture_code: params[:id] })
+  }
+
   def short_text
     text.truncate(60)
   end
@@ -22,7 +27,7 @@ class Review < ApplicationRecord
   end
 
   def image_variant_review_index(image)
-    image.variant(resize: "150x150^", gravity: :center, crop: "150x150+0+0").processed
+    image.variant(resize: '150x150^', gravity: :center, crop: '150x150+0+0').processed
   end
 
   def image_length(image, type)

@@ -1,6 +1,47 @@
 <div class='ps-main'>
   <div class='ps-show-container'>
-    <div class='ps-side-wrap'></div>
+    <div class='ps-side-wrap'>
+      <div class='ps-side-area-search'>
+        <div class='ps-side-area-search-main'>
+          <div class='ps-side-area-search-container'>
+            <div class='ps-side-area-search-header'>
+              <p><strong class='fs-20 fw-600'>エリア</strong>から探す</p>
+            </div>
+            <div class='ps-side-area-search-item'>
+              <a class='ps-side-city-a'>
+                <span class='ps-side-city-title fs-20 fw-600'><%= @prefecture.name %></span><i class='fas fa-angle-right'></i>
+              </a>
+              <div class='ps-side-area-search-mw hidden'>
+                <div class='ps-side-area-search-mw-main'>
+                  <div class='ps-side-area-search-mw-container'>
+                    <div class='ps-side-area-search-mw-head fs-15 fw-600'>
+                      <ul>
+                        <li>
+                          <a>市区町村から探す</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class='ps-side-area-search-mw-city-item'>
+                      <div class='ps-side-area-search-mw-city-list fs-13'>
+                        <% @cities.each_slice(6) do |cities| %>
+                          <ul>
+                            <% cities.each do |city| %>
+                              <li>
+                                <a><span>市区町村</span></a>
+                              </li>
+                            <% end %>
+                          </ul>
+                        <% end %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class='ps-wrap'>
       <div class='ps-main'>
         <div class='ps-main-head'>
