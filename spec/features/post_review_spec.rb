@@ -5,7 +5,7 @@ RSpec.feature 'Post Review', type: :feature do
     ActionController::Base.allow_forgery_protection = true
     @user = FactoryBot.create(:user, :authenticated_user)
     @cloth_store = FactoryBot.create(:cloth_store)
-    @review = FactoryBot.build(:review, :data_when_post_review)
+    @review_form = FactoryBot.build(:review_form)
     sign_in(@user)
   end
   after do
@@ -16,15 +16,15 @@ RSpec.feature 'Post Review', type: :feature do
     expect(page).to have_content('店舗情報（詳細）')
     click_link 'レビューを投稿する'
     expect(page).to have_selector('#c-overlay')
-    fill_in 'review_cloth_name', with: @review.cloth_name
-    fill_in 'review_price', with: @review.price
+    fill_in 'review_form_cloth_name', with: @review_form.cloth_name
+    fill_in 'review_form_price', with: @review_form.price
     target = page.find('#star-score-3')
     target.hover
     expect(find('#score-value', visible: false).value).to eq '3'
-    fill_in 'rmw-main-title-textarea', with: @review.title
-    fill_in 'rmw-main-text-textarea', with: @review.text
+    fill_in 'rmw-main-title-textarea', with: @review_form.title
+    fill_in 'rmw-main-text-textarea', with: @review_form.text
     image1_path = Rails.root.join('spec/files/test1.jpg')
-    page.attach_file('review_review_images', image1_path, make_visible: true)
+    page.attach_file('review_form_review_images', image1_path, make_visible: true)
     sleep 0.2
     expect(all('.photo-preview').length).to eq 1
     expect do

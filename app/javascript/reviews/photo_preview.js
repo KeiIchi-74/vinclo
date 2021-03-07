@@ -10,7 +10,7 @@ document.addEventListener('turbolinks:load', () => {
     observer.observe(target, config);
     function photoPreview() {
       const token = document.getElementsByName("csrf-token")[0].content;
-      const inputFile = document.getElementById("review_review_images");
+      const inputFile = document.getElementById("review_form_review_images");
       const photoPreviewArea = document.getElementById("photo-preview-area");
       const photoPreviewCount = document.querySelectorAll(".photo-preview").length;
       const photoPreviewInfo = document.getElementById("photo-preview-info");
@@ -157,7 +157,7 @@ document.addEventListener('turbolinks:load', () => {
         const imageIdInput = document.createElement("input");
         imageIdInput.setAttribute("class", "image-id-input");
         imageIdInput.setAttribute("type", "hidden");
-        imageIdInput.setAttribute("name", "review[review_images][]");
+        imageIdInput.setAttribute("name", "review_form[review_images][]");
         imageIdInput.setAttribute("value", image_id);
         const divWrap = document.createElement("div");
         divWrap.classList.add("photo-preview-wrap");
