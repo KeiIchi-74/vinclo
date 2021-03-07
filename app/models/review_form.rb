@@ -39,6 +39,7 @@ class ReviewForm < FormBase
 
     Cloth.transaction { 
       target_cloths.each do |cloth|
+        return if cloth.cloth_name.empty? && cloth.price.empty?
         cloth.review_id = review.id
         cloth.save!
       end 

@@ -14,23 +14,7 @@
     <div class='rmw-main-wrap'>
       <div class='rmw-main-container'>
         <div class='rmw-main-contents'>
-        <%= f.fields_for :cloths do |cloth_f| %>
-          <div class='rmw-main-cloth-name'>
-            <%= cloth_f.text_area :cloth_name, class: 'fs-16 fw-bold', placeholder: '購入したアイテム等あれば、その種類、名称を入力して下さい' %>
-          </div>
-          <div class='rmw-main-price'>
-            <% if review_form.errors.any? %>
-              <% review_form.errors.messages[:price].each do |message| %>
-                <li class='red'><%= "値段#{message}" %></li>
-              <% end %>
-            <% end %>
-            <%= cloth_f.text_area :price, class: 'fs-16 fw-bold', rows: '1', placeholder: 'アイテムの値段を入力して下さい（半角数字）' %>
-            <div class='price-text fs-16 fw-bold'>円</div>
-          </div>
-          <div class='rmw-main-register'>
-            <%= cloth_f.check_box :register, class: 'register-check-box' %>
-          </div>
-        <% end %>
+          <%= render partial: 'users/cloth_stores/cloth_form', locals: { f: f } %>
           <div class='rmw-main-score'>
             <% if review_form.errors.any? %>
               <% review_form.errors.messages[:score].each do |message| %>
@@ -70,54 +54,7 @@
             <%= f.text_area :text, class: 'fs-14', id: 'rmw-main-text-textarea', maxlength: '5000', placeholder: 'レビュー本文を入力して下さい（この項目は必須です、5000文字まで）' %>
             <div class='text-count-wrap fs-14'><span id='text-count'>0</span>/5000</div>
           </div>
-          <div class='rmw-main-pthoto-wrap'>
-            <div class='rmw-main-pthoto-inner'>
-              <ul>
-                <li>
-                  <p>
-                    <a class='fs-12'><i class="fas fa-camera"></i>写真追加（4枚まで）</a>
-                  </p>
-                </li>
-              </ul>
-            </div>
-            <div class='rmw-main-photo-option-container'>
-              <div class='rmw-main-photo-option-area'>
-                <%= f.file_field :review_images, multiple: true, class: "file-input hidden", accept: "image/*" %>
-                <div class='rmw-main-photo-preview-area'>
-                  <ul id='photo-preview-area'>
-                    <% review.review_images.each  do |image| %>
-                      <li class='photo-preview'>
-                        <div class='photo-preview-container'>
-                          <div class='delete-icon'>✕</div>
-                          <div class='edit-icon'>編集</div>
-                          <input class='edit-image-file-input hidden' type='file' accept="image/*">
-                          <%= f.hidden_field :review_images, name: 'review_form[review_images][]', class: 'image-id-input', value: image.blob.id %>
-                          <div class='photo-preview-wrap'>
-                            <%= image_tag image %>
-                          </div>
-                        </div>
-                      </li>
-                    <% end %>
-                    <li id='photo-add-box'>
-                      <div class='photo-add-box-wrap'>
-                        <button disabled>
-                          <div class='image-btn'>
-                            <i class="fas fa-plus fs-30"></i>
-                            <p>写真追加</p>
-                          </div>
-                        </button>
-                      </div>
-                    </li>
-                  </ul>
-                  <div class='rmw-main-photo-preview-info fs-18' id='photo-preview-info'>
-                    <p>左のアイコンをクリックして</p>
-                    <p>購入したアイテムの画像などを</p>
-                    <p>アップロード（4枚まで）することができます</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <%= render partial: 'users/cloth_stores/photo_form', locals: { f: f, review: review } %>
         </div>
       </div>
     </div>

@@ -1,2 +1,7 @@
 $(".rmw-form").remove();
 $(".c-overlay").append("<%= j(render partial: 'users/cloth_stores/rmw_form', locals: { review: @review, review_form: @review_form, cloth_store: @cloth_store}) %>");
+<% @review_form.cloths.each_with_index do |cloth, index| %>
+  <% if cloth.errors.any? %>
+    $("#review_form_cloths_attributes_<%= index %>_price").before("<li class='red' style='margin-bottom: 15px;'><%= "値段#{cloth.errors.messages[:price][0]}" %></li>")
+  <% end %>
+<% end %>
