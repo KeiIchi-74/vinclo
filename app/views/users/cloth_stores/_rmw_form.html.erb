@@ -14,8 +14,9 @@
     <div class='rmw-main-wrap'>
       <div class='rmw-main-container'>
         <div class='rmw-main-contents'>
+        <%= f.fields_for :cloths do |cloth_f| %>
           <div class='rmw-main-cloth-name'>
-            <%= f.text_area :cloth_name, class: 'fs-16 fw-bold', placeholder: '購入したアイテム等あれば、その種類、名称を入力して下さい' %>
+            <%= cloth_f.text_area :cloth_name, class: 'fs-16 fw-bold', placeholder: '購入したアイテム等あれば、その種類、名称を入力して下さい' %>
           </div>
           <div class='rmw-main-price'>
             <% if review_form.errors.any? %>
@@ -23,9 +24,13 @@
                 <li class='red'><%= "値段#{message}" %></li>
               <% end %>
             <% end %>
-            <%= f.text_area :price, class: 'fs-16 fw-bold', rows: '1', placeholder: 'アイテムの値段を入力して下さい（半角数字）' %>
+            <%= cloth_f.text_area :price, class: 'fs-16 fw-bold', rows: '1', placeholder: 'アイテムの値段を入力して下さい（半角数字）' %>
             <div class='price-text fs-16 fw-bold'>円</div>
           </div>
+          <div class='rmw-main-register'>
+            <%= cloth_f.check_box :register, class: 'register-check-box' %>
+          </div>
+        <% end %>
           <div class='rmw-main-score'>
             <% if review_form.errors.any? %>
               <% review_form.errors.messages[:score].each do |message| %>

@@ -1,7 +1,7 @@
-class ReviewForm
-  include ActiveModel::Model
+class ReviewForm < FormBase
+  DEFAULT_ITEM_COUNT = 4
   attr_accessor :title, :score, :text, :user_id, :cloth_store_id,
-                :cloth_name, :price, :review_id, :review_images
+                 :review_images, :cloths
 
   with_options presence: true do
     validates :score
@@ -9,11 +9,21 @@ class ReviewForm
     validates :text
   end
 
-  validates :price, format: {
-    with: /\A\d+\z/,
-    message: 'を半角数字で入力してください。',
-    allow_blank: true
-  }
+  def initialize(attributes = {})
+    super attributes
+    self.cloths = DEFAULT_ITEM_COUNT.times.map {Cloth.new} unless cloths.present?
+  end
+
+  def cloths_attributes=(attributes)
+    self.cloths = attributes.map do | _, cloths_attributes |
+      Cloth.new(cloths_attributes)
+    end
+  end
+
+  def valid?
+    valid_cloths = target_cloths.map(&:valid?).all?
+    super && valid_cloths
+  end
 
   def save(image_files)
     review = Review.create(
@@ -27,12 +37,23 @@ class ReviewForm
       review.review_images.attach(image_file)
     end
 
-    return if cloth_name.empty? && price.empty?
+    Cloth.transaction { 
+      target_cloths.each do |cloth|
+        cloth.review_id = review.id
+        cloth.save!
+      end 
+    }
 
-    Cloth.create(
-      cloth_name: cloth_name,
-      price: price,
-      review_id: review.id
-    )
+    # return if cloth_name.empty? && price.empty?
+
+    # Cloth.create(
+    #   cloth_name: cloth_name,
+    #   price: price,
+    #   review_id: review.id
+    # )
+  end
+
+  def target_cloths
+    self.cloths.select { |cloth| cloth.register.include?("1") }
   end
 end

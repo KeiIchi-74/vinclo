@@ -15,12 +15,20 @@ class Users::ReviewsController < Users::ApplicationController
     @cloth_store = ClothStore.find_by(id: params[:format])
     @review_form = ReviewForm.new(review_form_params)
     @review = Review.new
-    return attach_image(@review) unless @review_form.valid?
-
-    @review_form.save(uploaded_images)
-    ActiveStorage::Blob.unattached.find_each(&:purge)
-    flash[:notice] = 'レビューを投稿しました。'
-    redirect_to cloth_store_path(@cloth_store.id)
+    if @review_form.valid?
+      @review_form.save(uploaded_images)
+      ActiveStorage::Blob.unattached.find_each(&:purge)
+      flash[:notice] = 'レビューを投稿しました。'
+      redirect_to cloth_store_path(@cloth_store.id)
+    else
+      @cloths = []
+      @review_form.target_cloths.each do |cloth|
+        cloth.valid?
+        @cloths << cloth
+      end
+      binding.pry
+    end
+    attach_image(@review)
   end
 
   def upload_image
@@ -42,12 +50,13 @@ class Users::ReviewsController < Users::ApplicationController
 
   def review_form_params
     params.require(:review_form).permit(
-      :cloth_name,
-      :price,
+      # :cloth_name,
+      # :price,
       :score,
       :title,
       :text,
-      review_images: []
+      review_images: [],
+      cloths_attributes: Cloth::REGISTRABLE_ATTRIBUTES
     ).merge(
       cloth_store_id: @cloth_store.id,
       user_id: current_user.id
