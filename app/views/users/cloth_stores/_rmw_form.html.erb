@@ -16,11 +16,7 @@
         <div class='rmw-main-contents'>
           <%= render partial: 'users/cloth_stores/cloth_form', locals: { f: f } %>
           <div class='rmw-main-score'>
-            <% if review_form.errors.any? %>
-              <% review_form.errors.messages[:score].each do |message| %>
-                <li class='red' style='margin-bottom: 15px;'><%= "評価#{message}" %></li>
-              <% end %>
-            <% end %>
+            <%= render partial: "users/shared/error_messages", locals: { f: review_form, attribute: "score", attribute_string: "評価" } %>
             <p class='fs-16 fw-bold'>店舗評価を5段階評価で入力して下さい（この項目は必須です）</p>
             <div class='score-box'>
               <div class='score-wrap'>
@@ -37,20 +33,12 @@
             </div>
           </div>
           <div class='rmw-main-title'>
-            <% if review_form.errors.any? %>
-              <% review_form.errors.messages[:title].each do |message| %>
-                <li class='red'><%= "レビュータイトル#{message}" %></li>
-              <% end %>
-            <% end %>
+            <%= render partial: "users/shared/error_messages", locals: { f: review_form, attribute: "title", attribute_string: "レビュータイトル" } %>
             <%= f.text_area :title, class: 'fs-16 fw-bold', id: 'rmw-main-title-textarea', maxlength: '50', placeholder: 'レビュータイトルを入力して下さい（この項目は必須です、50文字まで）' %>
             <div class='title-count-wrap fs-16 fw-bold'><span id='title-count'>0</span>/50</div>
           </div>
           <div class='rmw-main-text'>
-            <% if review_form.errors.any? %>
-              <% review_form.errors.messages[:text].each do |message| %>
-                <li class='red review-text-error'><%= "レビュー本文#{message}" %></li>
-              <% end %>
-            <% end %>
+            <%= render partial: "users/shared/error_messages", locals: { f: review_form, attribute: "text", attribute_string: "レビュー本文" } %>
             <%= f.text_area :text, class: 'fs-14', id: 'rmw-main-text-textarea', maxlength: '5000', placeholder: 'レビュー本文を入力して下さい（この項目は必須です、5000文字まで）' %>
             <div class='text-count-wrap fs-14'><span id='text-count'>0</span>/5000</div>
           </div>
