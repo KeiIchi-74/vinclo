@@ -1,7 +1,7 @@
 class ReviewForm < FormBase
   DEFAULT_ITEM_COUNT = 4
   attr_accessor :title, :score, :text, :user_id, :cloth_store_id,
-                 :review_images, :cloths
+                :review_images, :cloths
 
   with_options presence: true do
     validates :score
@@ -11,11 +11,11 @@ class ReviewForm < FormBase
 
   def initialize(attributes = {})
     super attributes
-    self.cloths = DEFAULT_ITEM_COUNT.times.map {Cloth.new} unless cloths.present?
+    self.cloths = DEFAULT_ITEM_COUNT.times.map { Cloth.new } unless cloths.present?
   end
 
   def cloths_attributes=(attributes)
-    self.cloths = attributes.map do | _, cloths_attributes |
+    self.cloths = attributes.map do |_, cloths_attributes|
       Cloth.new(cloths_attributes)
     end
   end
@@ -37,24 +37,15 @@ class ReviewForm < FormBase
       review.review_images.attach(image_file)
     end
 
-    Cloth.transaction { 
+    Cloth.transaction do
       target_cloths.each do |cloth|
-        return if cloth.cloth_name.empty? && cloth.price.empty?
         cloth.review_id = review.id
-        cloth.save!
-      end 
-    }
-
-    # return if cloth_name.empty? && price.empty?
-
-    # Cloth.create(
-    #   cloth_name: cloth_name,
-    #   price: price,
-    #   review_id: review.id
-    # )
+        cloth.save! unless cloth.cloth_name.empty? && cloth.price.empty?
+      end
+    end
   end
 
   def target_cloths
-    self.cloths.select { |cloth| cloth.register.include?("1") }
+    cloths.select { |cloth| cloth.register.include?('1') }
   end
 end
