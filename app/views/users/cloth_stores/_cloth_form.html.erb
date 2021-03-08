@@ -1,5 +1,5 @@
 <%= f.fields_for :cloths do |cloth_f| %>
-  <div class='rmw-main-cloth-container' id="rmw-main-cloth-container-<%= cloth_f.index %>">
+  <div class='rmw-main-cloth-container hidden' id="rmw-main-cloth-container-<%= cloth_f.index %>">
     <div class='rmw-main-cloth-name'>
       <%= cloth_f.text_area :cloth_name, class: 'fs-16 fw-bold', placeholder: '購入したアイテム等あれば、その種類、名称を入力して下さい' %>
     </div>
@@ -7,8 +7,18 @@
       <%= cloth_f.text_area :price, class: 'fs-16 fw-bold', rows: '1', placeholder: 'アイテムの値段を入力して下さい（半角数字）' %>
       <div class='price-text fs-16 fw-bold'>円</div>
     </div>
-    <div class='rmw-main-register'>
-      <%= cloth_f.check_box :register, class: 'register-check-box' %>
+    <div class='rmw-main-register' id="rmw-main-register-<%= cloth_f.index %>">
+      <%= cloth_f.check_box :register, class: 'register-check-box hidden' %>
     </div>
   </div>
 <% end %>
+<div class='cloth-form-button'>
+  <p class='cloth-form-add-content'>
+    <i class="fas fa-plus-circle"></i>
+    入力欄追加（アイテム、値段）※全部で4つまで
+  </p>
+  <p class='cloth-form-remove-content hidden'>
+    <i class="fas fa-minus-circle"></i>
+    入力欄削除
+  </p>
+</div>
