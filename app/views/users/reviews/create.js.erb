@@ -3,6 +3,6 @@ $(".c-overlay").append("<%= j(render partial: 'users/cloth_stores/rmw_form', loc
 $("#register-count").append("<%= @register_count %>");
 <% @review_form.cloths.each_with_index do |cloth, index| %>
   <% if cloth.errors.any? %>
-    $("#review_form_cloths_attributes_<%= index %>_price").before("<li class='red' style='margin-bottom: 15px;'><%= "値段#{cloth.errors.messages[:price][0]}" %></li>")
+    $("#review_form_cloths_attributes_<%= index %>_price").before("<li class='red' id='cloth-form-price-error-<%= index %>' style='margin-bottom: 15px;'><%= "値段#{cloth.errors.messages[:price][0]}" %></li>")
   <% end %>
 <% end %>

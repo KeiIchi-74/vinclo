@@ -15,7 +15,6 @@ document.addEventListener('turbolinks:load', () => {
       const clothFormRemoveButton = document.querySelector(".cloth-form-remove-content");
       if (registerCount.textContent) {
         count = registerCount.textContent - 1;
-        console.log(count);
         if (count == 3) {
           clothFormRemoveButton.classList.remove('hidden');
           clothFormAddButton.classList.add('hidden');
@@ -43,6 +42,10 @@ document.addEventListener('turbolinks:load', () => {
         clothFormAddButton.classList.remove("hidden");
         document.getElementById(`review_form_cloths_attributes_${count}_register`).removeAttribute("checked");
         document.getElementById(`rmw-main-cloth-container-${count}`).classList.add("hidden");
+        document.getElementById(`review_form_cloths_attributes_${count}_price`).value = "";
+        if (document.getElementById(`cloth-form-price-error-${count}`)) {
+          document.getElementById(`cloth-form-price-error-${count}`).remove();
+        }
         count = count - 1;
         if (count == 0) {
           clothFormRemoveButton.classList.add("hidden");
