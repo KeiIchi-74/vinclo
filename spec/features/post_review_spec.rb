@@ -30,7 +30,7 @@ RSpec.feature 'Post Review', type: :feature do
     expect do
       find('#rmw-footer-button').click
       find('.flash-success')
-    end.to change { Review.count }.by(1)
+    end.to change { Review.count }.by(1).and change { Cloth.count }.by(1)
   end
   scenario 'レビュー登録フォームにて、投稿に必要な情報を入力しないと、投稿が完了せず、エラー文が表示される', js: true do
     visit cloth_store_path(@cloth_store.id)

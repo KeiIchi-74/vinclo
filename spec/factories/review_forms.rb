@@ -4,7 +4,7 @@ FactoryBot.define do
     score    { 3 }
     text     { 'サンプルレビューのテキストです。' }
     after(:build) do |review_form|
-      review_form.cloths.each_with_index do |cloth, _index|
+      review_form.cloths.each_with_index do |cloth, index|
         cloth.register = '1' if index == 0
       end
     end
