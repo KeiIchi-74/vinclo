@@ -21,7 +21,7 @@ RSpec.feature 'Cloth Form', type: :feature do
     expect(all('.rmw-main-cloth-container').length).to eq 2
     expect(page).to have_selector('.cloth-form-remove-content')
     # 入力欄が全部で4つになると、入力欄追加ボタンは表示されない
-    2.times do 
+    2.times do
       target.click
     end
     expect(all('.rmw-main-cloth-container').length).to eq 4
@@ -44,7 +44,7 @@ RSpec.feature 'Cloth Form', type: :feature do
     page.find('#rmw-footer-button').click
     expect(page).to have_content('値段を半角数字で入力してください。')
     # 2つの入力欄にて、不適切な値を入力したため、エラー文が2つ表示されている
-    expect(find('#cloth-form-price-error-1')).to have_content("値段を半角数字で入力してください。")
-    expect(find('#cloth-form-price-error-3')).to have_content("値段を半角数字で入力してください。")
+    expect(find('#cloth-form-price-error-1')).to have_content('値段を半角数字で入力してください。')
+    expect(find('#cloth-form-price-error-3')).to have_content('値段を半角数字で入力してください。')
   end
 end

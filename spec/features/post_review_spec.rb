@@ -16,8 +16,8 @@ RSpec.feature 'Post Review', type: :feature do
     expect(page).to have_content('店舗情報（詳細）')
     click_link 'レビューを投稿する'
     expect(page).to have_selector('#c-overlay')
-    fill_in 'review_form_cloths_attributes_0_cloth_name', with: "サンプル"
-    fill_in 'review_form_cloths_attributes_0_price', with: "1111"
+    fill_in 'review_form_cloths_attributes_0_cloth_name', with: 'サンプル'
+    fill_in 'review_form_cloths_attributes_0_price', with: '1111'
     target = page.find('#star-score-3')
     target.hover
     expect(find('#score-value', visible: false).value).to eq '3'
