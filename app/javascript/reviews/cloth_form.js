@@ -10,7 +10,7 @@ document.addEventListener('turbolinks:load', () => {
     observer.observe(target, config);
     function initClothForm() {
       let count = 0;
-      const registerCount = document.getElementById("register-count")
+      const registerCount = document.getElementById("register-count");
       const clothFormAddButton = document.querySelector(".cloth-form-add-content");
       const clothFormRemoveButton = document.querySelector(".cloth-form-remove-content");
       if (registerCount.textContent) {
