@@ -46,7 +46,7 @@ class ReviewForm < FormBase
   end
 
   private
-  
+
   def target_cloths
     cloths.select { |cloth| cloth.register.include?('1') }
   end

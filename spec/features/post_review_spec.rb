@@ -16,8 +16,8 @@ RSpec.feature 'Post Review', type: :feature do
     expect(page).to have_content('店舗情報（詳細）')
     click_link 'レビューを投稿する'
     expect(page).to have_selector('#c-overlay')
-    fill_in 'review_form_cloth_name', with: @review_form.cloth_name
-    fill_in 'review_form_price', with: @review_form.price
+    fill_in 'review_form_cloths_attributes_0_cloth_name', with: "サンプル"
+    fill_in 'review_form_cloths_attributes_0_price', with: "1111"
     target = page.find('#star-score-3')
     target.hover
     expect(find('#score-value', visible: false).value).to eq '3'
@@ -41,7 +41,6 @@ RSpec.feature 'Post Review', type: :feature do
     expect do
       find('#rmw-footer-button').click
       sleep 0.2
-      find('.review-text-error')
     end.to change { Review.count }.by(0)
     expect(page).to have_content '評価を入力してください'
     expect(page).to have_content 'レビュータイトルを入力してください'

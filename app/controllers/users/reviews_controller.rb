@@ -78,9 +78,9 @@ class Users::ReviewsController < Users::ApplicationController
 
   def register_count
     count = 0
-    review_form_params["cloths_attributes"].each do |_,cloth|
-      count += 1 if cloth["register"].include?("1")
+    review_form_params['cloths_attributes'].each do |_, cloth|
+      count += 1 if cloth['register'].include?('1')
     end
-    count 
+    count
   end
 end
