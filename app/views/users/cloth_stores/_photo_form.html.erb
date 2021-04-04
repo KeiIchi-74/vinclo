@@ -1,0 +1,48 @@
+<div class='rmw-main-pthoto-wrap'>
+  <div class='rmw-main-pthoto-inner'>
+    <ul>
+      <li>
+        <p>
+          <a class='fs-12'><i class="fas fa-camera"></i>写真追加（4枚まで）</a>
+        </p>
+      </li>
+    </ul>
+  </div>
+  <div class='rmw-main-photo-option-container'>
+    <div class='rmw-main-photo-option-area'>
+      <%= f.file_field :review_images, multiple: true, class: "file-input hidden", accept: "image/*" %>
+      <div class='rmw-main-photo-preview-area'>
+        <ul id='photo-preview-area'>
+          <% review.review_images.each  do |image| %>
+            <li class='photo-preview'>
+              <div class='photo-preview-container'>
+                <div class='delete-icon'>✕</div>
+                <div class='edit-icon'>編集</div>
+                <input class='edit-image-file-input hidden' type='file' accept="image/*">
+                <%= f.hidden_field :review_images, name: 'review_form[review_images][]', class: 'image-id-input', value: image.blob.id %>
+                <div class='photo-preview-wrap'>
+                  <%= image_tag image %>
+                </div>
+              </div>
+            </li>
+          <% end %>
+          <li id='photo-add-box'>
+            <div class='photo-add-box-wrap'>
+              <button disabled>
+                <div class='image-btn'>
+                  <i class="fas fa-plus fs-30"></i>
+                  <p>写真追加</p>
+                </div>
+              </button>
+            </div>
+          </li>
+        </ul>
+        <div class='rmw-main-photo-preview-info fs-18' id='photo-preview-info'>
+          <p>左のアイコンをクリックして</p>
+          <p>購入したアイテムの画像などを</p>
+          <p>アップロード（4枚まで）することができます</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

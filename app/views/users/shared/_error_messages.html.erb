@@ -1,0 +1,5 @@
+<% if f.errors.any? %>
+  <% f.errors.messages[:"#{attribute}"].each do |message| %>
+    <li class='red' style='margin-bottom: 15px;'><%= "#{attribute_string}#{message}" %></li>
+  <% end %>
+<% end %>

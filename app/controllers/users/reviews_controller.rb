@@ -15,20 +15,13 @@ class Users::ReviewsController < Users::ApplicationController
     @cloth_store = ClothStore.find_by(id: params[:format])
     @review_form = ReviewForm.new(review_form_params)
     @review = Review.new
-    if @review_form.valid?
-      @review_form.save(uploaded_images)
-      ActiveStorage::Blob.unattached.find_each(&:purge)
-      flash[:notice] = 'レビューを投稿しました。'
-      redirect_to cloth_store_path(@cloth_store.id)
-    else
-      @cloths = []
-      @review_form.target_cloths.each do |cloth|
-        cloth.valid?
-        @cloths << cloth
-      end
-      binding.pry
-    end
-    attach_image(@review)
+    @register_count = register_count
+    return attach_image(@review) unless @review_form.valid?
+
+    @review_form.save(uploaded_images)
+    ActiveStorage::Blob.unattached.find_each(&:purge)
+    flash[:notice] = 'レビューを投稿しました。'
+    redirect_to cloth_store_path(@cloth_store.id)
   end
 
   def upload_image
@@ -50,8 +43,6 @@ class Users::ReviewsController < Users::ApplicationController
 
   def review_form_params
     params.require(:review_form).permit(
-      # :cloth_name,
-      # :price,
       :score,
       :title,
       :text,
@@ -83,5 +74,13 @@ class Users::ReviewsController < Users::ApplicationController
     image_files.each do |image_file|
       review.review_images.attach(image_file)
     end
+  end
+
+  def register_count
+    count = 0
+    review_form_params['cloths_attributes'].each do |_, cloth|
+      count += 1 if cloth['register'].include?('1')
+    end
+    count
   end
 end

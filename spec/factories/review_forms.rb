@@ -3,7 +3,11 @@ FactoryBot.define do
     title    { 'サンプルレビューのタイトルです。' }
     score    { 3 }
     text     { 'サンプルレビューのテキストです。' }
-    cloth_name { 'シャツ' }
-    price      { 1234 }
+    after(:build) do |review_form|
+      review_form.cloths.each_with_index do |cloth, index|
+        cloth.register = '1' if index == 0
+        cloth.register = ''  if index != 0
+      end
+    end
   end
 end

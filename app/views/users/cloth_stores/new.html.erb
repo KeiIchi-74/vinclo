@@ -16,11 +16,7 @@
                 <label class='fs-15'>店名</label>
               </th>
               <td>
-                <% if @cloth_store.errors.any? %>
-                  <% @cloth_store.errors.messages[:name].each do |message| %>
-                    <li><%= "店名#{message}" %></li>
-                  <% end %>
-                <% end %>
+                <%= render partial: "users/shared/error_messages", locals: { f: @cloth_store, attribute: "name", attribute_string: "店名" } %>
                 <%= f.text_field :name, placeholder: "例) Vinclo", maxlength: "50" %>
               </td>
             </tr>
@@ -30,11 +26,7 @@
                 <label class='fs-15'>フリガナ<br><span>(全角カナ)</span></label>
               </th>
               <td>
-                <% if @cloth_store.errors.any? %>
-                  <% @cloth_store.errors.messages[:name_kana].each do |message| %>
-                    <li><%= "フリガナ#{message}" %></li>
-                  <% end %>
-                <% end %>
+                <%= render partial: "users/shared/error_messages", locals: { f: @cloth_store, attribute: "name_kana", attribute_string: "フリガナ" } %>
                 <%= f.text_field :name_kana, placeholder: "例) ビンクロ", maxlength: "50" %>
               </td>
             </tr>
@@ -50,11 +42,7 @@
                 <label class='fs-15'>郵便番号<br><span>(半角数字・ハイフン)</span></label>
               </th>
               <td>
-                <% if @cloth_store.errors.any? %>
-                  <% @cloth_store.errors.messages[:postcode].each do |message| %>
-                    <li><%= "郵便番号#{message}" %></li>
-                  <% end %>
-                <% end %>
+                <%= render partial: "users/shared/error_messages", locals: { f: @cloth_store, attribute: "postcode", attribute_string: "郵便番号" } %>
                 <%= f.text_field :postcode, placeholder: "例) 123-4567", maxlength:"8" %>
               </td>
             </tr>

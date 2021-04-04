@@ -127,6 +127,40 @@
               }
             }
 
+            .cloth-form-button {
+              display: flex;
+              justify-content: space-evenly;
+              margin-bottom: 20px;
+
+              .cloth-form-add-content {
+                border: 1px solid $review-btn-border;
+                box-shadow: 0 0 1px $black;
+                color: $white;
+                background-color: $review-btn-bg;
+                padding: 10px;
+                border-radius: 4px;
+
+                &:hover {
+                  cursor: pointer;
+                  opacity: 0.7;
+                }
+              }
+
+              .cloth-form-remove-content {
+                border: 1px solid $cloth-form-remove-border;
+                box-shadow: 0 0 1px $black;
+                color: $white;
+                background-color: $cloth-form-remove-bg;
+                padding: 10px;
+                border-radius: 4px;
+
+                &:hover {
+                  cursor: pointer;
+                  opacity: 0.7;
+                }
+              }
+            }
+
             .rmw-main-score {
               display: flex;
               flex-direction: column;

@@ -21,22 +21,14 @@
               <p class='regis-form-input-p fs-12'>※すべてが必須項目です。パスワードは半角英字と半角数字の両方を含めて設定してください。</p>
               <div class='regis-input-box'>
                 <div>
-                  <% if @user.errors.any? %>
-                    <% @user.errors.messages[:email].each do |message| %>
-                      <li><%= "メールアドレス#{message}" %></li>
-                    <% end %>
-                  <% end %>
+                  <%= render partial: "devise/shared/error_messages", locals: { f: @user, attribute: "email", attribute_string: "メールアドレス" } %>
                   <%= f.email_field :email, autofocus: true, placeholder: "メールアドレス", class: 'fs-16 fw-700' %>
                 </div>
               </div>
               <div class='regis-input-box'>
                 <p class='regis-input-title fs-14 fw-700'>生年月日</p>
                 <div>
-                  <% if @user.errors.any? %>
-                      <% @user.errors.messages[:birth_date].each  do |message| %>
-                        <li><%= "生年月日#{message}" %></li>
-                      <% end %>
-                  <% end %>
+                  <%= render partial: "devise/shared/error_messages", locals: { f: @user, attribute: "birth_date", attribute_string: "生年月日" } %>
                   <%= f.date_select(
                       :birth_date,
                       class:'select-birth fs-16 fw-700',
@@ -50,19 +42,11 @@
               </div>
               <div class='regis-input-box'>
                 <div class='regis-input-password'>
-                  <% if @user.errors.any? %>
-                    <% @user.errors.messages[:password].each do |message| %>
-                      <li><%= "パスワード#{message}" %></li>
-                    <% end %>
-                  <% end %>
+                  <%= render partial: "devise/shared/error_messages", locals: { f: @user, attribute: "password", attribute_string: "パスワード" } %>
                   <%= f.password_field :password, placeholder: "パスワード【6〜16文字】", class: 'fs-16 fw-700' %>
                 </div>
                 <div class='regis-confirmation'>
-                  <% if @user.errors.any? %>
-                    <% @user.errors.messages[:password_confirmation].each do |message| %>
-                      <li><%= "パスワード【確認用】#{message}" %></li>
-                    <% end %>
-                  <% end %>
+                  <%= render partial: "devise/shared/error_messages", locals: { f: @user, attribute: "password_confirmation", attribute_string: "パスワード【確認用】" } %>
                   <%= f.password_field :password_confirmation, placeholder: "パスワード【確認用】", class: 'fs-16 fw-700' %>
                 </div>
               </div>

@@ -17,6 +17,7 @@ RSpec.feature 'Count Scores By Star', type: :feature do
     expect(all('.far.fa-star.fs-30').length).to eq 5
     # 5つのスターアイコンのうち三番目の星（評価3に該当）するものをホバーすると、3つのスターアイコンのクラスはfas（色が塗りつぶされたデザイン）に変更する
     target = page.find('#star-score-3')
+    scroll_to(target, align: :top)
     target.hover
     expect(all('.fas.fa-star.fs-30').length).to eq 3
     # 3つのスターアイコンが塗りつぶされて、inputのscoreを送信する値に3が代入されている
@@ -25,6 +26,7 @@ RSpec.feature 'Count Scores By Star', type: :feature do
     expect(find('#score-value-display').text).to eq '3'
     # 次に2つめのスターアイコンにホバーすると、3つ目の塗りつぶされていた要素はくり抜かれたものに変化して、input要素のvalueも2に変化する
     target = page.find('#star-score-2')
+    scroll_to(target, align: :top)
     target.hover
     # 色付きが2つ
     expect(all('.fas.fa-star.fs-30').length).to eq 2

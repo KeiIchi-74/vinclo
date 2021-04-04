@@ -24,11 +24,7 @@
               <p class='regis-form-input-p fs-12'>※新規会員登録ページで入力したメールアドレスを入力してください。<br>※メールが届かない場合は、登録時のメールアドレスと異なっている可能性がございます。右上のリンクより、もう一度新規会員登録を行ってください。</p>
               <div class='regis-input-box'>
                 <div>
-                  <% if resource.errors.any? %>
-                    <% resource.errors.messages[:email].each do |message| %>
-                      <li><%= "メールアドレス#{message}" %></li>
-                    <% end %>
-                  <% end %>
+                  <%= render partial: "devise/shared/error_messages", locals: { f: resource, attribute: "email", attribute_string: "メールアドレス" } %>
                   <%= f.email_field :email, autofocus: true, placeholder: "メールアドレス", class: 'fs-16 fw-700' %>
                 </div>
               </div>

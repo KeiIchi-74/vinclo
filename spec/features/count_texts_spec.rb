@@ -13,6 +13,8 @@ RSpec.feature 'Count Texts', type: :feature do
     click_link 'レビューを投稿する'
     expect(page).to have_field('rmw-main-title-textarea')
     expect(page).to have_field('rmw-main-text-textarea')
+    target = page.find('#title-count', visible: false)
+    scroll_to(target, align: :top)
     # レビュータイトルの最初の文字数表示は0である
     expect(find('#title-count').text).to eq '0'
     # レビュータイトルにサンプルと入力すると、文字数が4として表示される
