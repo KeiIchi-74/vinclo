@@ -41,10 +41,10 @@ class ClothStore < ApplicationRecord
   end
 
   def avg_price
-    if reviews.pluck(:price).empty?
+    if reviews.cloths.pluck(:price).empty?
       '価格は登録されていません'
     else
-      "#{reviews.average(:price).floor}円"
+      "#{reviews.cloths.average(:price).floor}円"
     end
   end
 
