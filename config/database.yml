@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: vinclo_production
-  username: vinclo
-  password: <%= ENV['VINCLO_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
