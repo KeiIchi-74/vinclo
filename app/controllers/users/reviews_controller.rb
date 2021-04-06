@@ -1,4 +1,5 @@
 class Users::ReviewsController < Users::ApplicationController
+  before_action :authenticate_user!, only: :new
   def index
     @prefecture = JpPrefecture::Prefecture.find(code: params[:id])
     @reviews = Review.find_by_store_prefecture(params).order(created_at: :desc).page(params[:page]).per(20)

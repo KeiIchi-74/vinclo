@@ -1,4 +1,5 @@
 class Users::ClothStoresController < Users::ApplicationController
+  before_action :authenticate_user!, only: [:new, :show]
   def new
     @review = Review.new
     @cloth_store = ClothStore.new

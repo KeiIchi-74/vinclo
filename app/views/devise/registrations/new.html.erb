@@ -16,13 +16,13 @@
       <div class='regis-main'>
         <section class='regis-main-section'>
           <div class='regis-input' >
-            <h2 class='fs-17 fw-700'>メールアドレスで新規会員登録</h2>
+            <h2 class='fs-17 fw-700'>gmailで新規会員登録</h2>
             <div class='regis-form-input'>
               <p class='regis-form-input-p fs-12'>※すべてが必須項目です。パスワードは半角英字と半角数字の両方を含めて設定してください。</p>
               <div class='regis-input-box'>
                 <div>
                   <%= render partial: "devise/shared/error_messages", locals: { f: @user, attribute: "email", attribute_string: "メールアドレス" } %>
-                  <%= f.email_field :email, autofocus: true, placeholder: "メールアドレス", class: 'fs-16 fw-700' %>
+                  <%= f.email_field :email, autofocus: true, placeholder: "gmailアドレス", class: 'fs-16 fw-700' %>
                 </div>
               </div>
               <div class='regis-input-box'>

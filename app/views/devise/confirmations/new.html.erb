@@ -21,7 +21,7 @@
                 <div>
                   <% if @user.errors.any? %>
                     <% @user.errors.messages[:email].each do |message| %>
-                      <li><%= "メールアドレス#{message}" %></li>
+                      <li><%= "gmailアドレス#{message}" %></li>
                     <% end %>
                   <% end %>
                 </div>
