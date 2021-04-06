@@ -19,10 +19,10 @@
     <%= form_with model: @user, url: user_session_path, class: 'registration-main', local: true do |f| %>
       <div class='regis-main'>
         <section class='regis-main-section'>
-          <div class='regis-input' style="border-right:1px solid rgb(204, 204, 204);float:left;">
+          <div class='regis-input' >
             <h2 class='fs-17 fw-700'>メールアドレスでログイン</h2>
             <div class='regis-form-input'>
-              <p class='regis-form-input-p fs-12'>※新規会員登録ページで入力したメールアドレスとパスワードを入力してください。<br>※他のサービス（メールアドレス）を用いた方は右のボタンからでもログインが可能です。</p>
+              <p class='regis-form-input-p fs-12'>※新規会員登録ページで入力したメールアドレスとパスワードを入力してください。<!--<br>※他のサービス（メールアドレス）を用いた方は右のボタンからでもログインが可能です。--></p>
               <div class='regis-input-box'>
                 <div>
                   <% if flash[:alert] %>
@@ -49,7 +49,7 @@
             </div>
           </div>
         </section>
-        <section>
+        <!--<section>
           <div class='regis-social-login'>
             <h2 class='fs-17 fw-700'>他のサービスでログイン</h2>
             <div class='regis-social-box'>
@@ -62,7 +62,7 @@
               </ul>
             </div>
           </div>
-        </section>
+        </section>-->
       </div>
     <% end %>
   </div>
