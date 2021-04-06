@@ -88,3 +88,5 @@ gem 'dotenv-rails'
 gem 'activerecord-import'
 
 gem 'kaminari'
+
+gem 'aws-sdk-s3', require: false
