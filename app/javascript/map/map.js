@@ -1,5 +1,6 @@
 let markers = [];
 document.addEventListener("turbolinks:load", () => {
+  console.log(process.env.GOOGLE_MAP_API_KEY);
   if (document.URL.match(/\/cloth_stores\/new/) || document.URL.match(/\/cloth_stores\/create/)) {
     const script = document.createElement("script");
     script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_MAP_API_KEY}&callback=initMap&libraries=&v=weekly`;
