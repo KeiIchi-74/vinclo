@@ -27,13 +27,13 @@ vinclo（ビンクロ)は、「自分の知らない古着屋に出会える」�
 # メイン機能
 登録したユーザーは、自分が登録したい店舗の情報と、そのお店のレビューを行うことができます。
 
-店舗登録機能
+## 店舗登録機能
 [![Image from Gyazo](https://i.gyazo.com/fb7727b2b45622260f63d1502fcc888c.gif)](https://gyazo.com/fb7727b2b45622260f63d1502fcc888c)
 
-店舗へのレビュー機能
+## 店舗へのレビュー機能
 [![Image from Gyazo](https://i.gyazo.com/01776e1966b67873052317b10e66589b.gif)](https://gyazo.com/01776e1966b67873052317b10e66589b)
 
-店舗で購入した衣服の複数画像添付とそのプレビュー機能
+## 店舗で購入した衣服の複数画像添付とそのプレビュー機能
 [![Image from Gyazo](https://i.gyazo.com/6e93905df6431a05ce8b7c5534dac3c9.gif)](https://gyazo.com/6e93905df6431a05ce8b7c5534dac3c9)
 
 
