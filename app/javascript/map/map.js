@@ -1,13 +1,8 @@
 let markers = [];
 document.addEventListener("turbolinks:load", () => {
-  console.log(GOOGLE_MAP_API_KEY);
   if (document.URL.match(/\/cloth_stores\/new/) || document.URL.match(/\/cloth_stores\/create/)) {
     const script = document.createElement("script");
-    if (process.env.GOOGLE_MAP_API_KEY) {
-      script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_MAP_API_KEY}&callback=initMap&libraries=&v=weekly`;
-    } else {
-      script.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAP_API_KEY}&callback=initMap&libraries=&v=weekly`;
-    }
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_MAP_API_KEY}&callback=initMap&libraries=&v=weekly`;
     script.async = true;
     window.initMap = function () {
       const map = new google.maps.Map(document.getElementById("map"), {
