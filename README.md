@@ -1,24 +1,46 @@
-# README
+# Vicnlo
+[vinclo](vinclo)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# 概要
+vincloとは
 
-Things you may want to cover:
+vinclo（ビンクロ)は、「自分の知らない古着屋にであえる」を目的とした、古着屋情報のシェアサービスです。
 
-* Ruby version
+# vincloの開発環境
+# 使用技術
+* フレームワーク : Rails 6.0.3.4
+* フロント　: HTML、　Sass、　JavaScript(jQuery)
+* サーバーサイド言語　: Ruby2.6.6
+* データベース　: MySQL
+* テストフレームワーク : RSpec
+* コードチェック　: RuboCop
+* サーバー : puma nginx
+* バージョン管理 : GitHub
+* 本番環境 : AWS(EC2 /S3)
+* ユーザー認証機能　：devise
+* 画像投稿　：Active_Storage
+* 使用マシン　: Mac Big Sur(11.2.3)
 
-* System dependencies
+# このアプリケーションを作った背景
+大学時代、古着屋巡りが趣味で、自分の知らない古着屋の情報、そして自分だけが知っている古着屋の情報を共有できるサイトがあればいいなと感じていました。vincloは、そんな人が使って、訪れて、そのレビュー、そこで購入した服、お店の感想を共有できるシェアサービスです。
 
-* Configuration
+# メイン機能
+登録したユーザーは、自分が登録したい店舗の情報と、そのお店のレビューを行うことができます。
+店舗登録機能
 
-* Database creation
+店舗へのレビュー機能
 
-* Database initialization
+店舗で購入した衣服の画像などを添付する機能
 
-* How to run the test suite
+# サブ機能
+* メール送信を用いた、ユーザー情報登録機能
+* 各都道府県ごとの、店舗一覧機能
+* ページネーション機能
+* 複数画像登録と、そのプレビュー機能
+* 店舗登録の際の、住所自動入力機能
+* google map apiを用いた、位置情報検索とその情報登録
 
-* Services (job queues, cache servers, search engines, etc.)
+# このアプリで一番、注力した店
+このアプリで、一番ユーザーにしてもらいたいのは、店舗レビューです。その作業が苦にならないような、UIを実現するために、非同期でのレビュー投稿実装を行い。その中でも、画像の複数投稿機能や、情報入力欄を増減できるように工夫したところです。
 
-* Deployment instructions
 
-* ...
