@@ -47,6 +47,11 @@
             <div class='regis-submit-button'>
               <%= f.submit "ログイン" %>
             </div>
+            <div class='regis-submit-button'>
+              <%= link_to  guest_login_path, method: :post, class: 'guest_login' do %>
+                <li>ゲストログイン</li>
+              <% end %>
+            </div>
           </div>
         </section>
         <!--<section>
