@@ -1,0 +1,48 @@
+<div class='pri-container' style="float: left;">
+  <div class='pri-user-container'>
+    <div class='pri-user-wrap'>
+      <p class='pri-user-nickname'>
+        <a class='fs-16 fw-bold'><span>名無しさん</span></a>
+        <span>のレビュー</span>
+      </p>
+    </div>
+  </div>
+  <div class='pri-review-cloth-store'>
+    <%= link_to cloth_store_path(review.cloth_store), class: 'pri-review-cloth-store-link' do %>
+      <h4 class='fs-20'>Vinclo<span class='ps-info-store-name-kana fs-15'>（ビンクロ）</span></h4>
+    <% end %>
+  </div>
+  <div class='pri-review-score'>
+    <ul class='pri-review-score-container'>
+      <div class="star-rating">
+        <div class="star-rating-front" style="width: <%= review.score_percentage %>%">★★★★★</div>
+        <div class="star-rating-back">★★★★★</div>
+        <div class='pri-review-score-text fs-20 fw-bold'><%= review.score %></div>
+      </div>
+    </ul>
+  </div>
+  <div class='pri-review-info-container'>
+    <div class='pri-review-info-wrap'>
+      <p class='pri-review-title'>
+        <a href=#><strong class='fs-20'><%= review.title %></strong></a>
+      </p>
+      <div class='pri-review-text fs-15'>
+        <p id="pri-review-text-<%= review.id %>"><%= review.short_text %></p>
+      </div>
+      <%= link_to 'もっと見る', reviews_show_more_text_path(review), class:'pri-review-all-text fw-bold fs-15', id: "show-more-text-#{review.id}", remote: true if review.display_more_btn? %>
+      <div class='pri-review-img-container'>
+        <div class='pri-review-img-wrap'>
+          <ul class='pri-review-img-ul my-gallery'>
+            <% review.review_images.each do |image| %>
+              <li class='pri-review-img-item'>
+                <%= link_to polymorphic_url(image), 'data-size': "#{review.image_length(image, "width")}x#{review.image_length(image, "height")}" do %>
+                  <%= image_tag review.image_variant_review_index(image), alt: '' %>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
