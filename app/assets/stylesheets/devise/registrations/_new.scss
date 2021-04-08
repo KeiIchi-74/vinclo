@@ -167,6 +167,29 @@
               position: relative;
               width: 308px;
 
+              a {
+                text-align: center;
+                text-decoration: none;
+                border: 0;
+                cursor: pointer;
+                display: flex;
+                height: 59px;
+                width: 308px;
+                color: $white;
+                background-color: $pagenation-hover-btn;
+                border-radius: 8px;
+                align-items: center;
+
+                &:hover {
+                  opacity: 0.7;
+                }
+                
+                li {
+                  margin: 0 auto;
+                  list-style: none;
+                }
+              }
+
               input {
                 border: 0;
                 cursor: pointer;

@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     confirmations: 'users/confirmations',
     omniauth_callbacks: "users/omniauth_callbacks",
   }
+  devise_scope :user do 
+    post 'guest_login', to: 'users/sessions#new_guest'
+  end
   root 'users/home#index'
   get 'users/pre_registrations', to: 'users/pre_registrations#index'
   get 'users/pre_reset_passwords', to: 'users/pre_reset_passwords#index'
