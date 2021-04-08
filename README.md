@@ -37,7 +37,7 @@ vinclo（ビンクロ)は、「自分の知らない古着屋に出会える」�
 [![Image from Gyazo](https://i.gyazo.com/6e93905df6431a05ce8b7c5534dac3c9.gif)](https://gyazo.com/6e93905df6431a05ce8b7c5534dac3c9)
 
 ## ER図
-[![sample]](https://raw.githubusercontent.com/wiki/KeiIchi-74/vinclo/vinclo.drawio.png)
+([![Image from Gyazo](https://i.gyazo.com/b3a5c56f168b7f3cdc714f3eafda7937.png)](https://gyazo.com/b3a5c56f168b7f3cdc714f3eafda7937))
 
 
 # サブ機能
