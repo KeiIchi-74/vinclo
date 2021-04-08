@@ -36,6 +36,9 @@ vinclo（ビンクロ)は、「自分の知らない古着屋に出会える」�
 ## 店舗で購入した衣服の複数画像添付とそのプレビュー機能
 [![Image from Gyazo](https://i.gyazo.com/6e93905df6431a05ce8b7c5534dac3c9.gif)](https://gyazo.com/6e93905df6431a05ce8b7c5534dac3c9)
 
+## ER図
+[![sample]](https://raw.githubusercontent.com/wiki/KeiIchi-74/vinclo/vinclo.drawio.png)
+
 
 # サブ機能
 * メール送信を用いた、ユーザー情報登録機能
