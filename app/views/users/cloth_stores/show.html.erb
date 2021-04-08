@@ -79,5 +79,18 @@
     </div>
   </div>
 </div>
+<div class='reviews-list-cloth-store fs-30 fw-bold'><%= "#{@cloth_store.name}のレビュー一覧" %></div>
+<div class='ps-main'>
+  <div class='ps-show-container'>
+    <div class='ps-wrap'>
+      <div class='ps-info-container'>
+        <%= render partial: "pri-container", collection: @reviews, as: :review %>
+      </div>
+      <div class='ps-pagenation-container'>
+        <%= paginate @reviews %>
+      </div>
+    </div>
+  </div>
+</div>
 <div class='c-overlay hidden' id='c-overlay'></div>
 <div class='hidden' id='register-count'></div>

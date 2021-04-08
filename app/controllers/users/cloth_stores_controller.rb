@@ -16,8 +16,8 @@ class Users::ClothStoresController < Users::ApplicationController
   end
 
   def show
-    @review = Review.new
     @cloth_store = ClothStore.find(params[:id])
+    @reviews = Review.where(cloth_store_id: params[:id]).order(created_at: :desc).includes(:cloth_store).includes(:review_images_attachments).page(params[:page]).per(20)
     gon.latitude = @cloth_store.latitude
     gon.longitude = @cloth_store.longitude
   end
