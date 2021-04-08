@@ -23,12 +23,12 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   def new_guest
-    user = User.find_or_create_by(email: 'guest@example.com') do |user|
+    guest = User.find_or_create_by(email: 'guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
       user.confirmed_at = Time.now
-      user.birth_date = 19300101
+      user.birth_date = 19_300_101
     end
-    sign_in user
+    sign_in guest
     redirect_to root_path, notice: 'ゲストユーザーとしてログインしました。'
   end
 
