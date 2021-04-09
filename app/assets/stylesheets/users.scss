@@ -1,3 +1,23 @@
+$pc: 1130px; // PC
+$tab: 680px; // タブレット
+$sp: 480px;  // スマホ
+
+@mixin pc {
+  @media (min-width: ($pc)) {
+    @content;
+  }
+}
+@mixin tab {
+  @media (min-width: ($tab)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (min-width: ($sp)) {
+    @content;
+  }
+}
+
 @import 'users/shared/custom-variables';
 @import 'users/shared/font-size';
 @import 'users/shared/font-weight';
@@ -19,6 +39,9 @@
 @import 'users/home/index.scss';
 
 @import 'devise/registrations/new';
+.wrap {
+  overflow: hidden;
+}
 
 body {
   background-color: $gray;
