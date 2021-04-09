@@ -8,7 +8,14 @@
     min-width: 980px;
     max-width: 980px;
     margin: 0 auto;
-    display: flex;
+    @include pc {
+      display: flex;
+    };
+    @include tab {
+    };
+    @include sp {
+    };
+    
     
     .ps-side-wrap {
       min-width: 280px;
@@ -63,7 +70,15 @@
               transform: translateX(100%);
 
               .ps-side-area-search-mw-main {
-                width: 720px;
+                @include pc {
+                  width: 720px;
+                };
+                @include tab {
+                  width: 400px
+                };
+                @include sp {
+                };
+                
                 position: relative;
                 margin-left: 20px;
                 padding: 20px;
@@ -240,7 +255,7 @@
                 padding-top: 20px;
                 table-layout: inherit;
                 margin-bottom: 10px;
-                width: 100%;
+                width: 80%;
                 box-sizing: border-box;
                 
                 .ps-info-store-container {
