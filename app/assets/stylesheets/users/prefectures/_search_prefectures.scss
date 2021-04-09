@@ -40,10 +40,18 @@
             .search-prefectures-button-span {
               padding: .5rem 1.7rem;
               border-radius: 42px;
-              font-size: .8rem;
               border: 1px solid $border;
               display: block;
               transition: all 0.3s ease-out 0s;
+              @include pc {
+                font-size: .8rem;
+              };
+              @include tab {
+                font-size: 1.6rem;
+              };
+              @include sp {
+                font-size: 1.6rem;
+              };
 
               &:hover {
                 border: 1px solid $red;
