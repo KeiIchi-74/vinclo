@@ -2,11 +2,9 @@
   color: $black;
   margin: 0 auto;
   position: relative;
-  width: 960px;
 
   .regis-header {
-    width: 100%;
-    margin: 0 auto 40px;
+        margin: 0 auto 40px;
     border-bottom: 1px solid $border;
 
     .regis-header-wrap {
@@ -14,10 +12,8 @@
       align-items: center;
       justify-content: space-between;
       margin: 20px auto;
-      width: 960px;
 
       h1 {
-        width: auto;
 
         a {
           color: $black;
@@ -70,8 +66,7 @@
   }
 
   .flash-success {
-    width: 50%;
-    padding: 10px;
+        padding: 10px;
     margin: 0 auto 30px;
     text-align: center;
     background-color: $green;
@@ -88,24 +83,21 @@
         border: 1px solid $border;
         overflow: hidden;
         padding: 50px 40px;
-        width: 880px;
         margin: 0 auto 40px;
+        text-align: center;
 
         .regis-main-section {
 
           .regis-input {
-            width: 440px;
-            margin: 0 auto 40px;
+                        margin: 0 auto 40px;
 
             h2 {
               margin: 0 auto 40px;
               text-align: center;
-              width: 390px;
-            }
+                        }
 
             .regis-form-input {
               margin: 0 auto 32px;
-              width: 390px;
 
               .regis-form-input-p {
                 margin-bottom: 10px;
@@ -126,8 +118,7 @@
                   
                   input {
                     padding: 15px 10px;
-                    width: 100%;
-                    -webkit-border-radius: 4px;
+                                        -webkit-border-radius: 4px;
                     border: 1px solid $border;
                     -webkit-box-shadow: 1px 1px 5px $border inset;
                   }
@@ -137,8 +128,7 @@
                     -webkit-border-radius: 4px;
                     border: 1px solid $border;
                     -webkit-box-shadow: 1px 1px 5px $border inset;
-                    width: calc(80% / 3);
-                  }
+                                    }
                 }
 
                 .regis-confirmation {
@@ -165,7 +155,6 @@
               margin: 20px auto;
               padding: 1px;
               position: relative;
-              width: 308px;
 
               a {
                 text-align: center;
@@ -174,11 +163,12 @@
                 cursor: pointer;
                 display: flex;
                 height: 59px;
-                width: 308px;
                 color: $white;
                 background-color: $pagenation-hover-btn;
                 border-radius: 8px;
                 align-items: center;
+                width: 30%;
+                margin: 0 auto;
 
                 &:hover {
                   opacity: 0.7;
@@ -195,11 +185,12 @@
                 cursor: pointer;
                 display: block;
                 height: 59px;
-                width: 308px;
                 color: $white;
                 background-color: $white;
                 background-color: $green;
                 border-radius: 8px;
+                margin: 0 auto;
+                width: 30%;
 
                 &:hover {
                   opacity: 0.7;
@@ -212,19 +203,16 @@
         section {
 
           .regis-social-login {
-            width: 380px;
-            margin-right: 0;
+                        margin-right: 0;
             margin-left: auto;
 
             h2 {
               margin-bottom: 40px;
               text-align: center;
-              width: 380px;
-            }
+                        }
 
             .regis-social-box {
               margin: 0 auto;
-              width: 253px;
 
               ul {
                 list-style: none;
@@ -248,8 +236,7 @@
                     align-items: center;
                     text-decoration: none;
                     text-indent: 0;
-                    width: auto;
-                    height: auto;
+                                        height: auto;
                     display: flex;
 
                     &:hover {
@@ -258,8 +245,7 @@
 
                     .regis-social-icon {
                       height: 35px;
-                      width: 35px;
-                      margin-right: 30px;
+                                            margin-right: 30px;
                     }
                   }
                 }
@@ -278,7 +264,6 @@
 
           .regis-other-agreement {
             margin: 0 auto;
-            width: 853px;
 
             .regis-other-agreement-container {
               margin-bottom: 50px!important;
@@ -329,15 +314,13 @@
         margin: 20px auto 40px;
         padding: 1px;
         position: relative;
-        width: 308px;
 
         input {
           border: 0;
           cursor: pointer;
           display: block;
           height: 59px;
-          width: 308px;
-          color: $white;
+                    color: $white;
           background-color: $white;
           background-color: $green;
           border-radius: 8px;

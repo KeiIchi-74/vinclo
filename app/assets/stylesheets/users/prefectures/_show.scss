@@ -62,19 +62,18 @@
             .ps-side-area-search-mw {
               position: absolute;
               margin-left: 172px;
-              top: -45px;
               z-index: 500;
               left: auto;
               right: 0;
               transform: translateX(100%);
 
               .ps-side-area-search-mw-main {
-                width: 720px;
                 position: relative;
                 margin-left: 20px;
                 padding: 20px;
                 box-sizing: border-box;
-                position: relative;
+                position: absolute;
+                left: -300px;
                 border: 1px solid $photo-btn-color;
                 border-radius: 4px;
                 box-shadow: 0 1px 3px $times-color;
