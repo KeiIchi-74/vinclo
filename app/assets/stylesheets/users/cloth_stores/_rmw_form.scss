@@ -63,20 +63,32 @@
     }
 
     .rmw-main {
-      max-height: 547px;
+      @media screen and (max-width: 399px) {
+        height: 1300px;
+      }
+      @media screen and (min-width: 400px) {
+        height: 547px;
+      }
 
       .rmw-main-wrap {
         position: relative;
         overflow: hidden;
         overflow-y: scroll;
         max-width: 100%;
-        max-height: 547px;
         outline: none;
+        @media screen and (max-width: 399px) {
+          height: 1300px;
+        }
+        @media screen and (min-width: 400px)  {
+          height: 547px;
+        };
+        
 
         .rmw-main-container {
           margin-right: 0;
 
           .rmw-main-contents {
+            background-color: $white;
 
           .rmw-main-cloth-name, .rmw-main-price, .rmw-main-score, .rmw-main-title {
               margin: 0 auto;
@@ -401,7 +413,6 @@
 
       .rmw-footer {
         padding: 15px;
-        position: absolute;
         bottom: 0;
         width: 100%;
         background-color: $rmw-footer-bg;

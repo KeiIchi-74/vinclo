@@ -43,16 +43,16 @@
             <div class='text-count-wrap fs-14'><span id='text-count'>0</span>/5000</div>
           </div>
           <%= render partial: 'users/cloth_stores/photo_form', locals: { f: f, review: review } %>
+          <div  class='rmw-footer'>
+            <div class='rmw-footer-contents'>
+              <p class='rmw-footer-button'>
+                <%= f.button type: "submit", id: 'rmw-footer-button' do %>
+                  <i class="fas fa-pen"></i>レビューを投稿する
+                <% end %>
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div  class='rmw-footer'>
-      <div class='rmw-footer-contents'>
-        <p class='rmw-footer-button'>
-          <%= f.button type: "submit", id: 'rmw-footer-button' do %>
-            <i class="fas fa-pen"></i>レビューを投稿する
-          <% end %>
-        </p>
       </div>
     </div>
   </div>

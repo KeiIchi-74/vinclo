@@ -1,13 +1,13 @@
 .cloth-stores-container {
   width: 100%;
-  min-width: 980px;
+  min-width: 100%;
   box-sizing: border-box;
   padding-top: 20px;
   padding-bottom: 20px;
   background-color: $white;
 
   .cloth-stores-wrap {
-    width: 980px;
+    width: 80%;
     margin: 0 auto;
 
     h2 {
@@ -121,7 +121,7 @@
 
                   .map-box {
                     margin-right: 14px;
-                    width: 482px;
+                    width: 80%;
                     height: 280px;
                     float: left;
 
@@ -136,9 +136,7 @@
                   }
 
                   .map-box-support {
-                    width: calc(100% - 496px);
-                    float: right;
-                    display: flex;
+                    display: inline-block;
                     flex-direction: column;
 
                     .map-box-support-wrap {
