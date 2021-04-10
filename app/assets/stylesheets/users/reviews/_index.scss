@@ -9,6 +9,7 @@
     background-color: $white;
     display: inline-block;
     text-align: left;
+    width: 80%;
 
     .pri-user-container {
       position: relative;
@@ -106,7 +107,7 @@
           margin: 12px 25px 15px;
           line-height: 1.6;
           letter-spacing: -0.04em;
-          width: 400px;
+          width: 80%;
         }
 
         .pri-review-all-text {
@@ -127,7 +128,7 @@
           .pri-review-img-wrap {
             position: relative;
             margin: 0 auto;
-            width: 642px;
+            width: 80%;
 
             .pri-review-img-ul {
               display: inline-block;
