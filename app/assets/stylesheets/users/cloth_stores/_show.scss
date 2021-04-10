@@ -54,11 +54,11 @@
 
   .cloth-store-show-contents {
     margin: 15px auto;
-    width: 980px;
+    width: 60%;
 
     .cloth-store-show-column-main {
       float: left;
-      width: 660px;
+      width: 60%;
 
       .cloth-store-show-image {
         width: 100%;
@@ -197,7 +197,7 @@
 
           .cloth-store-show-review-button {
             display: inline-block;
-            width: 32%;
+            width: 100%;
 
             a {
               border: 1px solid $review-btn-border;
@@ -220,7 +220,7 @@
 
     .cloth-store-show-column-side {
       float: right;
-      width: 300px;
+      width: 40%;
 
       .cloth-store-show-column-side-wrap {
         height: 800px;
