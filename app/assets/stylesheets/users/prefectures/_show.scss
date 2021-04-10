@@ -4,9 +4,9 @@
 
   .ps-show-container {
     padding: 30px 0;
-    width: 980px;
-    min-width: 980px;
-    max-width: 980px;
+    width: 80%;
+    min-width: 80%;
+    max-width: 80%;
     margin: 0 auto;
     @include pc {
       display: flex;
@@ -15,7 +15,6 @@
     };
     @include sp {
     };
-    
     
     .ps-side-wrap {
       min-width: 280px;
@@ -70,15 +69,7 @@
               transform: translateX(100%);
 
               .ps-side-area-search-mw-main {
-                @include pc {
-                  width: 720px;
-                };
-                @include tab {
-                  width: 400px
-                };
-                @include sp {
-                };
-                
+                width: 720px;
                 position: relative;
                 margin-left: 20px;
                 padding: 20px;
@@ -148,18 +139,9 @@
     }
     
     .ps-wrap {
-      @include pc {
-        width: 760px;
-        min-width: 760px;
-        max-width: 760px;
-        
-      };
-      @include tab {
-        width: 100%
-      };
-      @include sp {
-        width: 100%
-      };
+      width: 90%;
+      min-width: 90%;
+      max-width: 90%;
       margin-left: 15px;
       
       .ps-main {
@@ -264,7 +246,7 @@
                 padding-top: 20px;
                 table-layout: inherit;
                 margin-bottom: 10px;
-                width: 80%;
+                width: 100%;
                 box-sizing: border-box;
                 
                 .ps-info-store-container {
