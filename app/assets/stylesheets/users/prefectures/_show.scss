@@ -233,20 +233,34 @@
           border-top: solid 1px $photo-btn-border;
           position: relative;
           text-align: left;
+          @media screen and (max-width: 459px) {
+            display: flex;
+            flex-direction: row-reverse;
+          }
           
           .ps-info-store-container {
             
             .ps-info-store-body {
-              padding: 0 0 0 240px;
               min-height: 320px;
+              @media screen and (min-width: 460px) {
+                padding: 0 0 0 240px;
+              }
+              @media screen and (max-width: 459px) {
+                margin: 0 auto;
+              }
               
               .ps-info-store-contents {
                 display: block;
-                padding-top: 20px;
                 table-layout: inherit;
                 margin-bottom: 10px;
                 width: 100%;
                 box-sizing: border-box;
+                @media screen and (min-width: 460px) {
+                  padding-top: 20px;
+                }
+                @media screen and (max-width: 459px) {
+                  padding-top: 300px;
+                }
                 
                 .ps-info-store-container {
                   
@@ -323,6 +337,7 @@
             background-color: $beige-bg-2;
             padding: 8px;
             border-bottom: 1px solid $border;
+            width: 80%;
             
             .ps-review-title {
               text-decoration: none;
@@ -340,7 +355,7 @@
             width: 220px;
             
             .gallery-top {
-              height: 200px;
+              height: 100%;
               width: 100%;
               overflow: hidden;
               position: relative;

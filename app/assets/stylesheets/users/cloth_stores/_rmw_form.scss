@@ -14,14 +14,11 @@
   background: $rmw-black;
 
   .rmw-form {
-    position: absolute;
-    top: 100px;
-    left: 50%;
-    width: 700px;
-    margin-left: -350px;
+    width: 70%;
+    margin: 50px auto;
     z-index: 999;
     border-radius: 4px;
-    background-color: $white;
+    background-color: white;
 
     .rmw-header {
       position: relative;
