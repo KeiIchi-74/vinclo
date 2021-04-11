@@ -39,6 +39,9 @@ vinclo（ビンクロ)は、「自分の知らない古着屋に出会える」�
 ## ER図
 [![Image from Gyazo](https://i.gyazo.com/b3a5c56f168b7f3cdc714f3eafda7937.png)](https://gyazo.com/b3a5c56f168b7f3cdc714f3eafda7937)
 
+## 環境
+[![Image from Gyazo](https://i.gyazo.com/4dd0c2250bc4c014b86c788b74458717.png)](https://gyazo.com/4dd0c2250bc4c014b86c788b74458717)
+
 
 # サブ機能
 * メール送信を用いた、ユーザー情報登録機能
