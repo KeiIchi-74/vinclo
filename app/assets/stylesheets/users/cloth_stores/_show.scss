@@ -2,7 +2,6 @@
   padding-top: 2px;
   margin: 0 auto;
   width: 100%;
-  height: 1300px;
   background-color: $white;
 
   .cloth-store-show-header-wrap {
@@ -200,13 +199,15 @@
             width: 100%;
 
             a {
-              border: 1px solid $review-btn-border;
-              box-shadow: 0 0 1px $black;
-              color: $white;
-              background-color: $review-btn-bg;
+              border: 1px solid #82ad24;
+              box-shadow: 0 0 1px #222222;
+              color: white;
+              background-color: #9c0;
               padding: 10px;
               border-radius: 4px;
               text-decoration: none;
+              width: 80%;
+              display: inline-block;
 
               &:hover {
                 cursor: pointer;
