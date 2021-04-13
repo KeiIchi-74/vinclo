@@ -233,7 +233,7 @@
           border-top: solid 1px $photo-btn-border;
           position: relative;
           text-align: left;
-          @media screen and (max-width: 459px) {
+          @media screen and (max-width: 759px) {
             display: flex;
             flex-direction: row-reverse;
           }
@@ -242,10 +242,10 @@
             
             .ps-info-store-body {
               min-height: 320px;
-              @media screen and (min-width: 460px) {
+              @media screen and (min-width: 760px) {
                 padding: 0 0 0 240px;
               }
-              @media screen and (max-width: 459px) {
+              @media screen and (max-width: 759px) {
                 margin: 0 auto;
               }
               
@@ -255,10 +255,10 @@
                 margin-bottom: 10px;
                 width: 100%;
                 box-sizing: border-box;
-                @media screen and (min-width: 460px) {
+                @media screen and (min-width: 760px) {
                   padding-top: 20px;
                 }
-                @media screen and (max-width: 459px) {
+                @media screen and (max-width: 759px) {
                   padding-top: 300px;
                 }
                 
